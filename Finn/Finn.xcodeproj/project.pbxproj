@@ -43,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				350E61312072041C00904768 /* KakaoOpenSDK.framework in Frameworks */,
 				2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +379,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-force_load",
+					"$(SRCROOT)/Finn/Framework/KakaoOpenSDK.framework/KakaoOpenSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -406,6 +412,13 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-force_load",
+					"$(SRCROOT)/Finn/Framework/KakaoOpenSDK.framework/KakaoOpenSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
