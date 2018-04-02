@@ -26,10 +26,23 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rG-pL-Bv2">
                                 <rect key="frame" x="150" y="283" width="75" height="30"/>
-                                <state key="normal" title="Get token"/>
+                                <state key="normal" title="LoginFlow"/>
                                 <connections>
-                                    <segue destination="tan-Wv-Ecx" kind="show" id="6C3-Pb-Zsx"/>
+                                    <segue destination="a6c-Zc-CPR" kind="show" id="9IQ-iG-JpE"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-Dc-x6r">
+                                <rect key="frame" x="147" y="333" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UploadFlow"/>
+                                <connections>
+                                    <segue destination="ajv-0h-jar" kind="show" id="0DR-K2-esx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ut-pR-SKd">
+                                <rect key="frame" x="163" y="391" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,6 +142,7 @@
                             <constraint firstItem="PzV-g7-f24" firstAttribute="leading" secondItem="8m5-Hn-m2c" secondAttribute="leading" id="SGX-CK-hP4"/>
                             <constraint firstItem="PzV-g7-f24" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" id="UQK-ko-ciU"/>
                             <constraint firstItem="PzV-g7-f24" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8m5-Hn-m2c" secondAttribute="bottom" constant="35" id="VQZ-RR-xIy"/>
+                            <constraint firstItem="yBB-PE-eDG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hPY-uQ-vaN" secondAttribute="leading" constant="20" symbolic="YES" id="XdU-64-XYP"/>
                             <constraint firstItem="FTY-C3-kLw" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" constant="20" id="ZP7-xe-Clz"/>
                             <constraint firstItem="FTY-C3-kLw" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gow-6v-6kW" secondAttribute="bottom" constant="243" id="dOo-Cu-DxC"/>
                             <constraint firstItem="8m5-Hn-m2c" firstAttribute="top" relation="lessThanOrEqual" secondItem="FTY-C3-kLw" secondAttribute="top" constant="200" id="ekd-YT-E4A"/>
@@ -329,6 +343,22 @@
             </objects>
             <point key="canvasLocation" x="820" y="1255"/>
         </scene>
+        <!--LoginFlow-->
+        <scene sceneID="bob-Uj-gQg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginFlow" id="a6c-Zc-CPR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9c-Dh-Qjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="1924"/>
+        </scene>
+        <!--UploadFlow-->
+        <scene sceneID="qhb-6z-k0t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UploadFlow" id="ajv-0h-jar" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpk-QM-3fP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2342" y="2213"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cd1-bZ-M9D">
             <objects>
@@ -349,6 +379,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hnm-F5-CmT"/>
+        <segue reference="K7T-FU-xeJ"/>
     </inferredMetricsTieBreakers>
 </document>
