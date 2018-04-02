@@ -13,6 +13,7 @@
 		1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCE2072009400F4F673 /* Assets.xcassets */; };
 		1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
+		350E61312072041C00904768 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350E61302072041C00904768 /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		1E8C8DCE2072009400F4F673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E8C8DD12072009400F4F673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E8C8DD32072009400F4F673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		350E61302072041C00904768 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Finn/Framework/KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		350E6132207205D400904768 /* Finn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finn-Bridging-Header.h"; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350E61312072041C00904768 /* KakaoOpenSDK.framework in Frameworks */,
 				2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +71,7 @@
 				1E8C8DCB2072009300F4F673 /* Main.storyboard */,
 				1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */,
 				1E8C8DD32072009400F4F673 /* Info.plist */,
+				350E6132207205D400904768 /* Finn-Bridging-Header.h */,
 			);
 			path = Finn;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 		CE752654003619FF4BBA5261 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				350E61302072041C00904768 /* KakaoOpenSDK.framework */,
 				61469443F95D9982AA5910DA /* Pods_Finn.framework */,
 			);
 			name = Frameworks;
@@ -122,6 +128,7 @@
 				TargetAttributes = {
 					1E8C8DC32072009300F4F673 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -346,13 +353,31 @@
 			baseConfigurationReference = 808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Finn/Framework",
+				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-force_load",
+					"$(SRCROOT)/Finn/Framework/KakaoOpenSDK.framework/KakaoOpenSDK",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finn/Finn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -363,13 +388,30 @@
 			baseConfigurationReference = 06FBF5FA90CDBB1779124772 /* Pods-Finn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Finn/Framework",
+				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-force_load",
+					"$(SRCROOT)/Finn/Framework/KakaoOpenSDK.framework/KakaoOpenSDK",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finn/Finn-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
