@@ -8,24 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC72072009300F4F673 /* AppDelegate.swift */; };
-		1E8C8DCA2072009300F4F673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC92072009300F4F673 /* ViewController.swift */; };
+		1E8C8DCA2072009300F4F673 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC92072009300F4F673 /* BoardViewController.swift */; };
 		1E8C8DCD2072009300F4F673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCB2072009300F4F673 /* Main.storyboard */; };
 		1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCE2072009400F4F673 /* Assets.xcassets */; };
 		1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
+		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
+		98EFBEC820720AB3002F3A60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */; };
+		98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */; };
+		98EFBECC20720B1E002F3A60 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBECB20720B1E002F3A60 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06FBF5FA90CDBB1779124772 /* Pods-Finn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.release.xcconfig"; sourceTree = "<group>"; };
 		1E8C8DC42072009300F4F673 /* Finn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8C8DC72072009300F4F673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1E8C8DC92072009300F4F673 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1E8C8DC92072009300F4F673 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		1E8C8DCC2072009300F4F673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E8C8DCE2072009400F4F673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E8C8DD12072009400F4F673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E8C8DD32072009400F4F673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
+		98EFBEC520720AA4002F3A60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
+		98EFBECB20720B1E002F3A60 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,11 @@
 			isa = PBXGroup;
 			children = (
 				1E8C8DC72072009300F4F673 /* AppDelegate.swift */,
-				1E8C8DC92072009300F4F673 /* ViewController.swift */,
+				1E8C8DC92072009300F4F673 /* BoardViewController.swift */,
+				98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */,
+				98EFBECB20720B1E002F3A60 /* ProfileViewController.swift */,
+				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
+				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
 				1E8C8DCE2072009400F4F673 /* Assets.xcassets */,
 				1E8C8DCB2072009300F4F673 /* Main.storyboard */,
 				1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */,
@@ -200,7 +212,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E8C8DCA2072009300F4F673 /* ViewController.swift in Sources */,
+				98EFBECC20720B1E002F3A60 /* ProfileViewController.swift in Sources */,
+				98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */,
+				1E8C8DCA2072009300F4F673 /* BoardViewController.swift in Sources */,
+				98EFBEC820720AB3002F3A60 /* SignUpViewController.swift in Sources */,
+				98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */,
 				1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +365,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -366,7 +385,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.willicious.Finn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
