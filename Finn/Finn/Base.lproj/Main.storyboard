@@ -57,45 +57,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m5-Hn-m2c">
-                                <rect key="frame" x="153.5" y="200.5" width="68" height="30"/>
-                                <state key="normal" title="KakaoTalk"/>
+                                <rect key="frame" x="20" y="264" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <state key="normal" title="카카오톡 계정으로 로그인">
+                                    <color key="titleColor" red="0.30196078431372547" green="0.69019607843137254" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzV-g7-f24">
-                                <rect key="frame" x="153.5" y="281" width="68" height="30"/>
-                                <state key="normal" title="Facebook"/>
+                                <rect key="frame" x="20" y="329" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="페이스북 계정으로 로그인">
+                                    <color key="titleColor" red="0.30196078431372547" green="0.69019607843137254" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBB-PE-eDG">
-                                <rect key="frame" x="153.5" y="361" width="68" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="305" y="94" width="50" height="28"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="H47-PU-LOi" kind="show" id="avo-4a-wqD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gow-6v-6kW">
-                                <rect key="frame" x="153.5" y="441" width="68" height="30"/>
-                                <state key="normal" title="SignUp"/>
+                                <rect key="frame" x="20" y="394" width="335" height="30"/>
+                                <state key="normal" title="회원가입">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="hRn-YW-qpH" kind="show" id="K7T-FU-xeJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에어비앤비에 오신 것을환영합니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-K7-p2j">
+                                <rect key="frame" x="20" y="157" width="335" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.18690301564198711" green="0.69023635786802029" blue="0.61143066074951258" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Gow-6v-6kW" firstAttribute="leading" secondItem="yBB-PE-eDG" secondAttribute="leading" id="3vX-XO-aNH"/>
-                            <constraint firstItem="Gow-6v-6kW" firstAttribute="trailing" secondItem="yBB-PE-eDG" secondAttribute="trailing" id="9pr-Nn-kuc"/>
-                            <constraint firstItem="PzV-g7-f24" firstAttribute="leading" secondItem="8m5-Hn-m2c" secondAttribute="leading" id="ACJ-52-xCh"/>
-                            <constraint firstItem="PzV-g7-f24" firstAttribute="centerX" secondItem="FTY-C3-kLw" secondAttribute="centerX" id="BUJ-P6-hwx"/>
-                            <constraint firstItem="Gow-6v-6kW" firstAttribute="centerX" secondItem="yBB-PE-eDG" secondAttribute="centerX" id="DUE-5J-cQ5"/>
-                            <constraint firstItem="yBB-PE-eDG" firstAttribute="leading" secondItem="PzV-g7-f24" secondAttribute="leading" id="IYP-2d-Ika"/>
-                            <constraint firstItem="yBB-PE-eDG" firstAttribute="top" secondItem="PzV-g7-f24" secondAttribute="bottom" constant="50" id="Ini-yn-tfC"/>
-                            <constraint firstItem="yBB-PE-eDG" firstAttribute="trailing" secondItem="PzV-g7-f24" secondAttribute="trailing" id="L6g-3c-iwH"/>
-                            <constraint firstItem="Gow-6v-6kW" firstAttribute="top" secondItem="yBB-PE-eDG" secondAttribute="bottom" constant="50" id="N1x-ce-aRu"/>
-                            <constraint firstItem="yBB-PE-eDG" firstAttribute="centerX" secondItem="PzV-g7-f24" secondAttribute="centerX" id="Nem-w2-j3y"/>
-                            <constraint firstItem="PzV-g7-f24" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" id="T2p-4X-5Md"/>
-                            <constraint firstItem="FTY-C3-kLw" firstAttribute="bottom" secondItem="Gow-6v-6kW" secondAttribute="bottom" constant="196" id="Vf2-KF-H8r"/>
-                            <constraint firstItem="PzV-g7-f24" firstAttribute="top" secondItem="8m5-Hn-m2c" secondAttribute="bottom" constant="50" id="WUW-2Y-nKD"/>
-                            <constraint firstItem="8m5-Hn-m2c" firstAttribute="centerX" secondItem="FTY-C3-kLw" secondAttribute="centerX" id="XGR-D0-KCc"/>
-                            <constraint firstItem="8m5-Hn-m2c" firstAttribute="centerY" secondItem="FTY-C3-kLw" secondAttribute="centerY" constant="-150" id="swD-vA-Jew"/>
+                            <constraint firstItem="3dh-K7-p2j" firstAttribute="leading" secondItem="FTY-C3-kLw" secondAttribute="leading" constant="20" id="BbC-1V-KNg"/>
+                            <constraint firstItem="FTY-C3-kLw" firstAttribute="trailing" secondItem="yBB-PE-eDG" secondAttribute="trailing" constant="20" id="EZK-VV-WgE"/>
+                            <constraint firstItem="Gow-6v-6kW" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" id="G1P-Lq-w7U"/>
+                            <constraint firstItem="Gow-6v-6kW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PzV-g7-f24" secondAttribute="bottom" constant="35" id="KZZ-lW-qmG"/>
+                            <constraint firstItem="3dh-K7-p2j" firstAttribute="top" secondItem="FTY-C3-kLw" secondAttribute="top" constant="93" id="O2i-8R-fde"/>
+                            <constraint firstItem="FTY-C3-kLw" firstAttribute="trailing" secondItem="3dh-K7-p2j" secondAttribute="trailing" constant="20" id="Ohn-Zx-lkC"/>
+                            <constraint firstItem="PzV-g7-f24" firstAttribute="leading" secondItem="8m5-Hn-m2c" secondAttribute="leading" id="SGX-CK-hP4"/>
+                            <constraint firstItem="PzV-g7-f24" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" id="UQK-ko-ciU"/>
+                            <constraint firstItem="PzV-g7-f24" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8m5-Hn-m2c" secondAttribute="bottom" constant="35" id="VQZ-RR-xIy"/>
+                            <constraint firstItem="FTY-C3-kLw" firstAttribute="trailing" secondItem="8m5-Hn-m2c" secondAttribute="trailing" constant="20" id="ZP7-xe-Clz"/>
+                            <constraint firstItem="yBB-PE-eDG" firstAttribute="leading" secondItem="FTY-C3-kLw" secondAttribute="leading" constant="305" id="a2a-Py-6SH"/>
+                            <constraint firstItem="FTY-C3-kLw" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gow-6v-6kW" secondAttribute="bottom" constant="243" id="dOo-Cu-DxC"/>
+                            <constraint firstItem="8m5-Hn-m2c" firstAttribute="top" secondItem="FTY-C3-kLw" secondAttribute="top" constant="200" id="ekd-YT-E4A"/>
+                            <constraint firstItem="8m5-Hn-m2c" firstAttribute="leading" secondItem="FTY-C3-kLw" secondAttribute="leading" constant="20" id="nid-RF-szo"/>
+                            <constraint firstItem="Gow-6v-6kW" firstAttribute="leading" secondItem="8m5-Hn-m2c" secondAttribute="leading" id="pVy-kG-5uf"/>
+                            <constraint firstItem="yBB-PE-eDG" firstAttribute="top" secondItem="FTY-C3-kLw" secondAttribute="top" constant="30" id="qvc-iL-3ka"/>
+                            <constraint firstItem="FTY-C3-kLw" firstAttribute="bottom" secondItem="yBB-PE-eDG" secondAttribute="bottom" constant="545" id="s0o-2O-WV1"/>
+                            <constraint firstItem="8m5-Hn-m2c" firstAttribute="top" secondItem="3dh-K7-p2j" secondAttribute="bottom" constant="53" id="saS-GE-rsc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FTY-C3-kLw"/>
                     </view>
@@ -128,14 +158,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gve-4K-QBA">
                                 <rect key="frame" x="60" y="389" width="50" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="DEk-AF-en6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="DEk-AF-en6"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqz-gc-70d">
                                 <rect key="frame" x="265" y="389" width="50" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="LXC-Qe-LqV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="LXC-Qe-LqV"/>
                                 </constraints>
                                 <state key="normal" title="SignUp"/>
                                 <connections>
@@ -199,14 +229,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-vP-Da0">
                                 <rect key="frame" x="50" y="390" width="50" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Vn8-lf-eYI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Vn8-lf-eYI"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmo-bh-17z">
                                 <rect key="frame" x="275" y="390" width="50" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="fO2-X8-bFH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fO2-X8-bFH"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
