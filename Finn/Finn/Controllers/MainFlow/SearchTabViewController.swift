@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BoardViewController: UIViewController {
+class SearchTabViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

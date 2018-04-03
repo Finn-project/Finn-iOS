@@ -1,14 +1,14 @@
 //
-//  ProfileViewController.swift
+//  SettingViewController.swift
 //  Finn
 //
-//  Created by 배지호 on 2018. 4. 2..
+//  Created by 김성종 on 2018. 4. 3..
 //  Copyright © 2018년 Willicious-k. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
