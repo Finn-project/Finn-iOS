@@ -11,7 +11,9 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var firstNameTF: UITextField!
-    @IBOutlet weak var lastNameTF: UITextField!
+    @IBOutlet weak var lastNameTF: UITextField!    
+    @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
+    @IBOutlet weak var nextBtn: UIButton!
     
     @IBAction func removeKeyboard(_ sender: Any) {
         firstNameTF.resignFirstResponder()
@@ -22,8 +24,12 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
         lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
+        btnCustom()
+        addKeyboardObserver()
     }
 }
+
+
 
 extension UITextField {
     func borderBottom(height: CGFloat, color: UIColor) {
@@ -36,6 +42,40 @@ extension UITextField {
 
 extension SignUpViewController {
     
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
+            [weak self] in
+            guard let userInfo = $0.userInfo,
+                let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+                let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
+                let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
+                else { return }
+            
+            UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
+                self?.keyboardMargin.constant = keyboardFrame.height + 30
+                self?.view.layoutIfNeeded()
+            })
+        }
+        
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: .main) {
+            [weak self] in
+            guard let userInfo = $0.userInfo,
+                let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+                let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
+                let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
+                else { return }
+            
+            UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
+                self?.keyboardMargin.constant = 20
+                self?.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    private func btnCustom() {
+        nextBtn.backgroundColor = .white
+//        nextBtn.layer.cornerRadius = self.view.frame.width / 2.0
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
