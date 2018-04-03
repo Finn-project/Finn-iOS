@@ -6,4 +6,5 @@ target 'Finn' do
   use_frameworks!
 
 	pod 'Alamofire', '~> 4.7'
+	pod 'FacebookLogin'
 end
