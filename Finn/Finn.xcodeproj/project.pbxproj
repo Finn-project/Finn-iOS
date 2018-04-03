@@ -12,6 +12,8 @@
 		1E8C8DCD2072009300F4F673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCB2072009300F4F673 /* Main.storyboard */; };
 		1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCE2072009400F4F673 /* Assets.xcassets */; };
 		1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */; };
+		1EC05838207258C9005D24E0 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05836207258C9005D24E0 /* LoginFlow.storyboard */; };
+		1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC0583920725970005D24E0 /* UploadFlow.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
 		98EFBEC820720AB3002F3A60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */; };
@@ -28,6 +30,8 @@
 		1E8C8DCE2072009400F4F673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E8C8DD12072009400F4F673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E8C8DD32072009400F4F673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EC05837207258C9005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginFlow.storyboard; sourceTree = "<group>"; };
+		1EC0583A20725970005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UploadFlow.storyboard; sourceTree = "<group>"; };
 		350E61302072041C00904768 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Finn/Framework/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		350E6132207205D400904768 /* Finn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finn-Bridging-Header.h"; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,18 +76,60 @@
 			isa = PBXGroup;
 			children = (
 				1E8C8DC72072009300F4F673 /* AppDelegate.swift */,
-				1E8C8DC92072009300F4F673 /* BoardViewController.swift */,
-				98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */,
-				98EFBECB20720B1E002F3A60 /* ProfileViewController.swift */,
-				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
-				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
+				1EC0583E207259BD005D24E0 /* Models */,
+				1EC0583C20725983005D24E0 /* Controllers */,
+				1EC0583D207259A3005D24E0 /* Views */,
 				1E8C8DCE2072009400F4F673 /* Assets.xcassets */,
-				1E8C8DCB2072009300F4F673 /* Main.storyboard */,
-				1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */,
 				1E8C8DD32072009400F4F673 /* Info.plist */,
 				350E6132207205D400904768 /* Finn-Bridging-Header.h */,
 			);
 			path = Finn;
+			sourceTree = "<group>";
+		};
+		1EC0583C20725983005D24E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EC0584020725A42005D24E0 /* UploadFlow */,
+				1EC0583F20725A2D005D24E0 /* LoginFlow */,
+				1E8C8DC92072009300F4F673 /* BoardViewController.swift */,
+				98EFBECB20720B1E002F3A60 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1EC0583D207259A3005D24E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */,
+				1E8C8DCB2072009300F4F673 /* Main.storyboard */,
+				1EC05836207258C9005D24E0 /* LoginFlow.storyboard */,
+				1EC0583920725970005D24E0 /* UploadFlow.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EC0583E207259BD005D24E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1EC0583F20725A2D005D24E0 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
+				98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */,
+				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		1EC0584020725A42005D24E0 /* UploadFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UploadFlow;
 			sourceTree = "<group>";
 		};
 		44CE1BAFCFCEFA8EFD5088CD /* Pods */ = {
@@ -165,9 +211,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC05838207258C9005D24E0 /* LoginFlow.storyboard in Resources */,
 				1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */,
 				1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */,
 				1E8C8DCD2072009300F4F673 /* Main.storyboard in Resources */,
+				1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,10 +230,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Finn/Pods-Finn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -243,6 +301,22 @@
 				1E8C8DD12072009400F4F673 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1EC05836207258C9005D24E0 /* LoginFlow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EC05837207258C9005D24E0 /* Base */,
+			);
+			name = LoginFlow.storyboard;
+			sourceTree = "<group>";
+		};
+		1EC0583920725970005D24E0 /* UploadFlow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EC0583A20725970005D24E0 /* Base */,
+			);
+			name = UploadFlow.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,10 +449,7 @@
 					"$(PROJECT_DIR)/Finn/Framework",
 				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -409,10 +480,7 @@
 					"$(PROJECT_DIR)/Finn/Framework",
 				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
