@@ -17,7 +17,7 @@ class User: Codable {
   
   enum CodingKeys: String, CodingKey {
     case token
-    case userInfo
+    case userInfo = "user"
   }
   
   //MARK:- UserDefaults helper functions
@@ -93,7 +93,8 @@ class UserInfo: Codable {
   var phoneNumber: String = "0000"
   var firstName: String = "0000"
   var lastName: String = "0000"
-  var profileImg: String = "0000"
+  var profileImg: String!
+  var signUpType: String = "0000"
   
   enum CodingKeys: String, CodingKey {
     case pk = "id"
@@ -103,5 +104,6 @@ class UserInfo: Codable {
     case firstName = "first_name"
     case lastName = "last_name"
     case profileImg = "img_profile"
+    case signUpType = "signup_type"
   }
 }
