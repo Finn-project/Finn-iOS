@@ -20,11 +20,18 @@ class SignUpViewController: UIViewController {
         lastNameTF.resignFirstResponder()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
         lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
-        btnCustom()
         addKeyboardObserver()
     }
 }
@@ -40,6 +47,17 @@ extension UITextField {
     }
 }
 
+extension UIButton {
+    func btnCustom() {
+        let btn = CALayer()
+        btn.cornerRadius = self.frame.width / 2
+        btn.borderWidth = 2
+        btn.borderColor = UIColor.black.cgColor
+        btn.backgroundColor = UIColor.white.cgColor
+        self.layer.addSublayer(btn)
+    }
+}
+
 extension SignUpViewController {
     
     private func addKeyboardObserver() {
@@ -52,7 +70,7 @@ extension SignUpViewController {
                 else { return }
             
             UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-                self?.keyboardMargin.constant = keyboardFrame.height + 30
+                self?.keyboardMargin.constant = keyboardFrame.height + 20
                 self?.view.layoutIfNeeded()
             })
         }
@@ -66,15 +84,10 @@ extension SignUpViewController {
                 else { return }
             
             UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-                self?.keyboardMargin.constant = 20
+                self?.keyboardMargin.constant = 10
                 self?.view.layoutIfNeeded()
             })
         }
-    }
-    
-    private func btnCustom() {
-        nextBtn.backgroundColor = .white
-//        nextBtn.layer.cornerRadius = self.view.frame.width / 2.0
     }
 }
 
