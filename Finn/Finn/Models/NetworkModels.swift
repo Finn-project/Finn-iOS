@@ -8,7 +8,10 @@
 
 import Foundation
 
-let hostURL: String = "https://himanmen.com/"
-let signUpURL: String = hostURL + "user/"
+let hostURL: String = "https://himanmen.com"
+let signUpURL: String = hostURL + "/user/"
+let loginURL: String = hostURL + "/user/login/"
 
 //MARK: possible error types?
+
+//MARK: api request body keys
