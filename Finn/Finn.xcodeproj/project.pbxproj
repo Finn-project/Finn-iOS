@@ -17,14 +17,15 @@
 		1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0DEA42073698800971DCB /* SettingViewController.swift */; };
 		1EB6A939207466DD00D000EF /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6A938207466DD00D000EF /* UserModels.swift */; };
 		1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6A93A2074674C00D000EF /* HouseModels.swift */; };
-		1EB6A93D2074795A00D000EF /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6A93C2074795A00D000EF /* SignUpEmailViewController.swift */; };
+		1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6A93C2074795A00D000EF /* SignUpEmailPhoneViewController.swift */; };
 		1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB6A93E20747F3E00D000EF /* NetworkModels.swift */; };
 		1EC05838207258C9005D24E0 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05836207258C9005D24E0 /* LoginFlow.storyboard */; };
 		1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC0583920725970005D24E0 /* UploadFlow.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
+		98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
-		98EFBEC820720AB3002F3A60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */; };
+		98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */; };
 		98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */; };
 		98EFBECC20720B1E002F3A60 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBECB20720B1E002F3A60 /* ProfileTabViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +44,7 @@
 		1EA0DEA42073698800971DCB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1EB6A938207466DD00D000EF /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
 		1EB6A93A2074674C00D000EF /* HouseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseModels.swift; sourceTree = "<group>"; };
-		1EB6A93C2074795A00D000EF /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		1EB6A93C2074795A00D000EF /* SignUpEmailPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailPhoneViewController.swift; sourceTree = "<group>"; };
 		1EB6A93E20747F3E00D000EF /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		1EC05837207258C9005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginFlow.storyboard; sourceTree = "<group>"; };
 		1EC0583A20725970005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UploadFlow.storyboard; sourceTree = "<group>"; };
@@ -52,8 +53,9 @@
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
+		98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPassWordViewController.swift; sourceTree = "<group>"; };
 		98EFBEC520720AA4002F3A60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
 		98EFBECB20720B1E002F3A60 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,9 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
-				98EFBEC720720AB2002F3A60 /* SignUpViewController.swift */,
+				98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */,
 				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
-				1EB6A93C2074795A00D000EF /* SignUpEmailViewController.swift */,
+				1EB6A93C2074795A00D000EF /* SignUpEmailPhoneViewController.swift */,
+				98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -314,8 +317,9 @@
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
-				1EB6A93D2074795A00D000EF /* SignUpEmailViewController.swift in Sources */,
-				98EFBEC820720AB3002F3A60 /* SignUpViewController.swift in Sources */,
+				98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */,
+				1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */,
+				98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */,
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
 				1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */,
 				1EA0DEA02073652300971DCB /* ProfileDetailViewController.swift in Sources */,
