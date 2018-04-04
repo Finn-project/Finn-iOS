@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="1989.5999999999999" y="562.66866566716647"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Email Password View Controller-->
         <scene sceneID="BUm-bQ-mhk">
             <objects>
-                <viewController id="Xnt-AK-vtS" sceneMemberID="viewController">
+                <viewController id="Xnt-AK-vtS" customClass="SignUpEmailPasswordViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OUr-0R-sWY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
