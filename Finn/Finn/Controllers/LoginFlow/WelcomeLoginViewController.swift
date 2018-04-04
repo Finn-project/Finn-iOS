@@ -10,6 +10,17 @@ import UIKit
 
 class WelcomeLoginViewController: UIViewController {
 
+    @IBOutlet weak var kakaoLogin: UIButton!
+    @IBOutlet weak var facebookLogin: UIButton!
+    
+    @IBAction func kakaoLoginAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func facebookLoginAction(_ sender: Any) {
+        
+    }
+    
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
