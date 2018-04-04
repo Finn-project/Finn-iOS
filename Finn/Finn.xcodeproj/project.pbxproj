@@ -22,6 +22,16 @@
 		1EC05838207258C9005D24E0 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05836207258C9005D24E0 /* LoginFlow.storyboard */; };
 		1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC0583920725970005D24E0 /* UploadFlow.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
+		351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA32074B76900A288FB /* UploadIntroViewController.swift */; };
+		351A0BA62074B7B800A288FB /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */; };
+		351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */; };
+		351A0BAA2074B84400A288FB /* AddressOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */; };
+		351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */; };
+		351A0BAE2074B96700A288FB /* RoomImageAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BAD2074B96700A288FB /* RoomImageAddViewController.swift */; };
+		351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BAF2074B98E00A288FB /* RoomImagePreviewViewController.swift */; };
+		351A0BB22074B9F300A288FB /* RoomDescriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */; };
+		351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */; };
+		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
 		98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
@@ -50,6 +60,16 @@
 		1EC0583A20725970005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UploadFlow.storyboard; sourceTree = "<group>"; };
 		350E61302072041C00904768 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Finn/Framework/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		350E6132207205D400904768 /* Finn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finn-Bridging-Header.h"; sourceTree = "<group>"; };
+		351A0BA32074B76900A288FB /* UploadIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIntroViewController.swift; sourceTree = "<group>"; };
+		351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
+		351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAddressViewController.swift; sourceTree = "<group>"; };
+		351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressOnMapViewController.swift; sourceTree = "<group>"; };
+		351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientViewController.swift; sourceTree = "<group>"; };
+		351A0BAD2074B96700A288FB /* RoomImageAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImageAddViewController.swift; sourceTree = "<group>"; };
+		351A0BAF2074B98E00A288FB /* RoomImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomImagePreviewViewController.swift; sourceTree = "<group>"; };
+		351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDescriptViewController.swift; sourceTree = "<group>"; };
+		351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSettingViewController.swift; sourceTree = "<group>"; };
+		351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalenderViewController.swift; sourceTree = "<group>"; };
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +183,16 @@
 			isa = PBXGroup;
 			children = (
 				35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */,
+				351A0BA32074B76900A288FB /* UploadIntroViewController.swift */,
+				351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */,
+				351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */,
+				351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */,
+				351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */,
+				351A0BAD2074B96700A288FB /* RoomImageAddViewController.swift */,
+				351A0BAF2074B98E00A288FB /* RoomImagePreviewViewController.swift */,
+				351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */,
+				351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */,
+				351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */,
 			);
 			path = UploadFlow;
 			sourceTree = "<group>";
@@ -310,19 +340,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */,
 				1EA0DEA22073653800971DCB /* BecomeHostViewController.swift in Sources */,
 				1EB6A939207466DD00D000EF /* UserModels.swift in Sources */,
+				351A0BB22074B9F300A288FB /* RoomDescriptViewController.swift in Sources */,
 				98EFBECC20720B1E002F3A60 /* ProfileTabViewController.swift in Sources */,
 				98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */,
+				351A0BA62074B7B800A288FB /* RoomDetailViewController.swift in Sources */,
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
+				351A0BAA2074B84400A288FB /* AddressOnMapViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
 				98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */,
+				351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */,
 				1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */,
+				351A0BAE2074B96700A288FB /* RoomImageAddViewController.swift in Sources */,
 				98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */,
+				351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */,
+				351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */,
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
 				1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */,
 				1EA0DEA02073652300971DCB /* ProfileDetailViewController.swift in Sources */,
+				351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */,
+				351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */,
 				98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */,
 				1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */,
 			);
