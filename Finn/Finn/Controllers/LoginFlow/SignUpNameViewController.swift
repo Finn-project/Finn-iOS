@@ -44,7 +44,7 @@ class SignUpNameViewController: UIViewController {
 }
 
 
-//MARK: - extension: UITextField
+//MARK: UITextField borderBottom
 extension UITextField {
   func borderBottom(height: CGFloat, color: UIColor) {
     let border = CALayer()
@@ -70,6 +70,7 @@ extension UIButton {
 
 extension SignUpNameViewController {
   
+  //MARK: text update data
   private func nameData() {
     guard let firstName = firstNameTF.text else { return print("firstName: nil") }
     signUpData.updateValue(firstNameTF.text, forKey: "first_name")

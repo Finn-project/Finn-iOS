@@ -511,6 +511,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="signUpAction:" destination="s2U-HD-Cln" eventType="touchUpInside" id="u34-3O-hyQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1869030156" green="0.69023635790000004" blue="0.61143066069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

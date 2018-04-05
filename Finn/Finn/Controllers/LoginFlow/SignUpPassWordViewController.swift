@@ -21,6 +21,11 @@ class SignUpPassWordViewController: UIViewController {
     passWordTF.resignFirstResponder()
     checkPassWordTF.resignFirstResponder()
   }
+  @IBAction func signUpAction(_ sender: Any) {
+    passwordData()
+    print("signUpDataTotal:\(signUpData)")
+    self.dismiss(animated: true, completion: nil)
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +41,17 @@ class SignUpPassWordViewController: UIViewController {
 }
 
 extension SignUpPassWordViewController {
+  
+//  private func doSignUp() {
+//    let params
+//  }
+  
+  private func passwordData() {
+    guard let password = passWordTF.text else { return print("passwordTF: nil") }
+    signUpData.updateValue(passWordTF.text, forKey: "password")
+    guard let checkPassword = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
+    signUpData.updateValue(checkPassWordTF.text, forKey: "confirm_password")
+  }
   
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
