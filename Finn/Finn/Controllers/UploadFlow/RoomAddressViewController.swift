@@ -10,6 +10,8 @@ import UIKit
 
 class RoomAddressViewController: UIViewController {
 
+  //MARK: IBOutlets
+  @IBOutlet weak var inputAddressTf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
