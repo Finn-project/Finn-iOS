@@ -64,6 +64,7 @@ extension LoginViewController {
     Alamofire
       .request(loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
       .responseJSON { (response) in
+//        print(response.)
         switch response.result {
         case .success:
           if let data = response.data, let text = String(data: data, encoding: .utf8) {
@@ -72,7 +73,6 @@ extension LoginViewController {
               let user = try JSONDecoder().decode(User.self, from: data)
               user.saveToUserDefaults()
               
-              //please!!
               if let writtenToken = User.loadTokenFromUserDefaults() {
                 print("login: success, writtenToken: \(writtenToken)")
               }

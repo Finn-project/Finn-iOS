@@ -219,9 +219,6 @@
                             <constraint firstItem="ObW-kY-xQ8" firstAttribute="top" secondItem="93p-Kr-HE2" secondAttribute="top" constant="24" id="o48-oU-q0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="thL-92-34i"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="Xtl-Tc-kbH">
                         <barButtonItem key="rightBarButtonItem" title="수정" id="3qX-yS-sLp"/>
@@ -260,6 +257,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wdu-8w-2du" secondAttribute="trailing" constant="20" symbolic="YES" id="7Bb-Z5-ECh"/>
                             <constraint firstItem="aGL-TA-7tS" firstAttribute="trailing" secondItem="SU3-fN-cdd" secondAttribute="trailing" id="KqN-ro-Xfp"/>
@@ -269,10 +267,21 @@
                             <constraint firstItem="wdu-8w-2du" firstAttribute="leading" secondItem="SU3-fN-cdd" secondAttribute="leading" constant="24" id="rB3-b6-8jR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SU3-fN-cdd"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xRb-Ev-hfb" appends="YES" id="YLa-Vq-fHa"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="CUf-Zf-FZg"/>
+                    <connections>
+                        <outlet property="searchBar" destination="aGL-TA-7tS" id="9Xm-dJ-u7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhV-H4-Ekz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xRb-Ev-hfb">
+                    <connections>
+                        <action selector="wallTapped" destination="aSJ-Fy-rq9" id="IqH-0D-fKj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1768.8" y="921.58920539730138"/>
         </scene>
@@ -331,7 +340,7 @@
                                     <segue destination="ajv-0h-jar" kind="presentation" id="JWk-eK-7ai"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempHostBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SJw-IT-bsa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempHostBackground" translatesAutoresizingMaskIntoConstraints="NO" id="SJw-IT-bsa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="380"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="380" id="nch-s2-rCH"/>
