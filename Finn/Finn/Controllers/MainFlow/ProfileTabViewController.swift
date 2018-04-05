@@ -10,9 +10,18 @@ import UIKit
 
 class ProfileTabViewController: UIViewController {
   
+  //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
+}
+
+//MARK:- Segue support
+extension ProfileTabViewController {
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let targetVC = segue.destination as UIViewController
+    targetVC.hidesBottomBarWhenPushed = true
+  }
 }

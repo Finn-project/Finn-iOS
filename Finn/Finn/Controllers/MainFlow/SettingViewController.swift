@@ -10,6 +10,7 @@ import UIKit
 
 class SettingViewController: UIViewController {
   
+  //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
     

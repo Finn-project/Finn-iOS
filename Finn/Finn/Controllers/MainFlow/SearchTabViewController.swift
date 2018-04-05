@@ -10,9 +10,19 @@ import UIKit
 
 class SearchTabViewController: UIViewController {
 
+  //MARK:- IBOutlets
+  @IBOutlet weak var searchBar: UISearchBar!
+  
+  //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 
 }
 
+//MARK:- IBActions
+extension SearchTabViewController {
+  @IBAction func wallTapped() {
+    searchBar.resignFirstResponder()
+  }
+}
