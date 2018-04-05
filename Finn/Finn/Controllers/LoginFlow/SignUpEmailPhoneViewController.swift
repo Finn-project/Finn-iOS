@@ -40,9 +40,22 @@ class SignUpEmailPhoneViewController: UIViewController {
     NotificationCenter.default.removeObserver(self)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let passwordVC = segue.destination as? SignUpPassWordViewController else {return }
+    emailPhoneData()
+    passwordVC.signUpData = signUpData
+  }
+  
 }
 
 extension SignUpEmailPhoneViewController {
+  
+  private func emailPhoneData() {
+    guard let email = emailTF.text else { return print("emailTF: nil") }
+    signUpData.updateValue(emailTF.text, forKey: "email")
+    guard let phone = phoneNumTF.text else { return print("phoneNumTF: nil") }
+    signUpData.updateValue(phoneNumTF.text, forKey: "phone_num")
+  }
   
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
