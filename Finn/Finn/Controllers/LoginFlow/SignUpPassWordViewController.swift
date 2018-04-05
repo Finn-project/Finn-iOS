@@ -28,6 +28,11 @@ class SignUpPassWordViewController: UIViewController {
     checkPassWordTF.borderBottom(height: 1.0, color: .white)
     addKeyboardObserver()
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    NotificationCenter.default.removeObserver(self)
+  }
 }
 
 extension SignUpPassWordViewController {
