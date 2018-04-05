@@ -22,19 +22,6 @@ class User: Codable {
   
   //MARK:- UserDefaults helper functions
   
-  /// checks user defaults whether currentUser exists or not
-  /// by token value
-  /// - Returns: true or false
-  private func checkCurrentUser() -> Bool {
-    if let target = UserDefaults.standard.dictionary(forKey: currentUserKey),
-       let token = target["token"] as? String,
-       token != "0000" {
-      return true
-    }
-    return false
-  }
-  
-  
   /// Only Called in signUp, login Views, where User instance exists
   func saveToUserDefaults() {
     var info: [String: Any] = [:]
@@ -81,6 +68,26 @@ class User: Codable {
       return token
     }
     return nil
+  }
+  
+  /// checks user defaults whether currentUser exists or not
+  /// by token value
+  /// - Returns: true or false
+  class func checkCurrentUser() -> Bool {
+    if let target = UserDefaults.standard.dictionary(forKey: currentUserKey),
+      let token = target["token"] as? String,
+      token != "0000" {
+      return true
+    }
+    return false
+  }
+  
+  
+  //Used in profile tab
+  class func loadProfileInfoFromUserDefaults() -> [String: String] {
+    var info: [String: String] = [:]
+    
+    return info
   }
   
 }

@@ -10,6 +10,11 @@ import UIKit
 
 class UploadIntroViewController: UIViewController {
 
+  //MARK: IBOultlets
+  @IBOutlet weak var roomCountTf: UITextField!
+  @IBOutlet weak var bedCountTf: UITextField!
+  @IBOutlet weak var bathCountTf: UITextField!
+  @IBOutlet weak var allowedPeopleTf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 

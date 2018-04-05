@@ -23,7 +23,6 @@
 		1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC0583920725970005D24E0 /* UploadFlow.storyboard */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
 		351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA32074B76900A288FB /* UploadIntroViewController.swift */; };
-		351A0BA62074B7B800A288FB /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */; };
 		351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */; };
 		351A0BAA2074B84400A288FB /* AddressOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */; };
 		351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */; };
@@ -61,7 +60,6 @@
 		350E61302072041C00904768 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Finn/Framework/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		350E6132207205D400904768 /* Finn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finn-Bridging-Header.h"; sourceTree = "<group>"; };
 		351A0BA32074B76900A288FB /* UploadIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIntroViewController.swift; sourceTree = "<group>"; };
-		351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
 		351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAddressViewController.swift; sourceTree = "<group>"; };
 		351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressOnMapViewController.swift; sourceTree = "<group>"; };
 		351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenientViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */,
 				351A0BA32074B76900A288FB /* UploadIntroViewController.swift */,
-				351A0BA52074B7B800A288FB /* RoomDetailViewController.swift */,
 				351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */,
 				351A0BA92074B84400A288FB /* AddressOnMapViewController.swift */,
 				351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */,
@@ -346,7 +343,6 @@
 				351A0BB22074B9F300A288FB /* RoomDescriptViewController.swift in Sources */,
 				98EFBECC20720B1E002F3A60 /* ProfileTabViewController.swift in Sources */,
 				98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */,
-				351A0BA62074B7B800A288FB /* RoomDetailViewController.swift in Sources */,
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				351A0BAA2074B84400A288FB /* AddressOnMapViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,

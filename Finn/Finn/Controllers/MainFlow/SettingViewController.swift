@@ -17,3 +17,11 @@ class SettingViewController: UIViewController {
   }
 
 }
+
+//MARK:- IBActions
+extension SettingViewController {
+  
+  @IBAction func logoutTapped() {
+    
+  }
+}
