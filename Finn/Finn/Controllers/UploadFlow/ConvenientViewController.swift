@@ -39,13 +39,14 @@ class ConvenientViewController: UIViewController {
    */
   
 }
-//MARK: UITableViewDelegate
+//MARK: UITableViewDelegate -> numberOfSections & numberOfRowsInSection
 extension ConvenientViewController: UITableViewDelegate{
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if section == 1{
+    if section == 0{
       return 4
     }else {
       return 3
@@ -53,11 +54,41 @@ extension ConvenientViewController: UITableViewDelegate{
   }
 }
 
+//MARK: amenity goods & amenity Facilities
+let amenityGoods: [String] = ["전자렌지", "냉장고", "컴퓨터", "에어컨"]
+let amenities: [String] = ["엘리베이터", "에스컬레이터", "세탁기"]
+//MARK: UITableViewDataSource
 extension ConvenientViewController: UITableViewDataSource{
+  
+  //MARK: Setting cell data
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    
+    if indexPath.section == 0 {
+      cell.textLabel?.text = amenityGoods[indexPath.row]
+    }else{
+      cell.textLabel?.text = amenities[indexPath.row]
+    }
     return cell
   }
- 
+  //MARK: Setting section title
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    var title: String?
+    if section == 0 {
+      title = "편의 물품"
+    }else{
+      title = "편의 시설"
+    }
+    
+    
+    return title
+  }
+  //MARK: When cell did select, accessoryType become checkmark or none
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let cell = tableView.cellForRow(at: indexPath) else { return }
+    if cell.accessoryType == .checkmark{
+      cell.accessoryType = .none
+    }else{
+      cell.accessoryType = .checkmark
+    }
+  }
 }
