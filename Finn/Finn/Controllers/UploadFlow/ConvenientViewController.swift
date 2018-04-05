@@ -14,7 +14,8 @@ class ConvenientViewController: UIViewController {
   @IBAction func backToIntro(_ sender: Any){
     self.navigationController?.popToRootViewController(animated: true)
   }
-  
+  //MARK: IBOutlets
+  @IBOutlet weak var tableView: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -37,4 +38,26 @@ class ConvenientViewController: UIViewController {
    }
    */
   
+}
+//MARK: UITableViewDelegate
+extension ConvenientViewController: UITableViewDelegate{
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 2
+  }
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if section == 1{
+      return 4
+    }else {
+      return 3
+    }
+  }
+}
+
+extension ConvenientViewController: UITableViewDataSource{
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    
+    return cell
+  }
+ 
 }
