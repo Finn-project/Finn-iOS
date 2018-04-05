@@ -28,7 +28,18 @@ class SignUpEmailPhoneViewController: UIViewController {
     emailTF.borderBottom(height: 1.0, color: UIColor.white)
     phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
     addKeyboardObserver()
+    print(signUpData)
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print(signUpData)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    NotificationCenter.default.removeObserver(self)
+  }
+  
 }
 
 extension SignUpEmailPhoneViewController {

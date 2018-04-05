@@ -10,6 +10,8 @@ import UIKit
 
 class BecomeHostViewController: UIViewController {
   
+  
+  //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
     

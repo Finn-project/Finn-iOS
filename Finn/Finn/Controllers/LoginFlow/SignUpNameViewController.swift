@@ -10,6 +10,7 @@ import UIKit
 
 class SignUpNameViewController: UIViewController {
   
+  var signUpData: [String: Any] = [:]
   
   @IBOutlet weak var firstNameTF: UITextField!
   @IBOutlet weak var lastNameTF: UITextField!
@@ -20,14 +21,25 @@ class SignUpNameViewController: UIViewController {
   @IBAction func removeKeyboard(_ sender: Any) {
     firstNameTF.resignFirstResponder()
     lastNameTF.resignFirstResponder()
-    
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.updateFocusIfNeeded()
     firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
     lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
     addKeyboardObserver()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    NotificationCenter.default.removeObserver(self)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let emailVC = segue.destination as? SignUpEmailPhoneViewController else {return }
+    nameData()
+    emailVC.signUpData = signUpData
   }
 }
 
@@ -41,6 +53,7 @@ extension UITextField {
     self.layer.addSublayer(border)
   }
 }
+
 //MARK: - extension: UIButton
 extension UIButton {
   func btnCustom() {
@@ -57,6 +70,14 @@ extension UIButton {
 
 extension SignUpNameViewController {
   
+  private func nameData() {
+    guard let firstName = firstNameTF.text else { return print("firstName: nil") }
+    signUpData.updateValue(firstNameTF.text, forKey: "first_name")
+    guard let lastName = lastNameTF.text else { return print("lastName: nil") }
+    signUpData.updateValue(lastNameTF.text, forKey: "last_name")
+  }
+  
+  //MARK: keyboardNotification
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
       [weak self] in
@@ -98,5 +119,4 @@ extension SignUpNameViewController: UITextFieldDelegate {
     }
     return true
   }
-  
 }
