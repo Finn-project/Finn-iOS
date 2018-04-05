@@ -10,9 +10,9 @@ import UIKit
 
 class ProfileDetailViewController: UIViewController {
   
+  //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
 }
