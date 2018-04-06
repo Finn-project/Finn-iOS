@@ -54,7 +54,7 @@ extension ProfileTabViewController {
     if let target = targetVC as? SettingViewController {
       target.userProfile = userProfile
     } else if let target = targetVC as? ProfileDetailViewController {
-      // never passes nil to profileDetailView
+      // cannot pass nil to profileDetailView, UI doesn't allow it
       target.userProfile = userProfile
     } else if let target = targetVC as? BecomeHostViewController {
       target.userProfile = userProfile
@@ -75,9 +75,9 @@ extension ProfileTabViewController {
   }
   
   func changeProfileToLogoutState() {
-    nameLabel.text = "로그인 해주세요!"
+    nameLabel.text = "회원이신가요?"
     
-    //draw profile image to default img
+    //draw default profile image
   }
   
   func changeButtonToLoginState() {

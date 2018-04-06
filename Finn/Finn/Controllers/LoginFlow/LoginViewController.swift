@@ -45,14 +45,18 @@ extension LoginViewController {
   }
   
   @IBAction func doLogin() {
-    guard let email = loginEmailTF.text else {
-      //perform shaking animation here
-      return
+    guard let email = loginEmailTF.text,
+      email != "",
+      email.contains("@") == true else {
+        loginEmailTF.shake()
+        return
     }
-    
-    guard let password = loginPWTF.text else {
-      //perform shaking animation here
-      return
+    print(email)
+    guard let password = loginPWTF.text,
+      password != "",
+      password.count > 8 else {
+        loginPWTF.shake()
+        return
     }
     
     //prepare parameters
@@ -85,13 +89,16 @@ extension LoginViewController {
           }
         case .failure(let error):
           print("login: post failed, \(error.localizedDescription)")
+          //MARK:- really auth failed!!
         }
     }
   }
   
 }
 
-//MARK:- animation with keyboard
+////MARK:- shakyTextfield animations -> moved to Views > animations.swift
+
+//MARK:- keyboard handling
 extension LoginViewController {
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
