@@ -8,7 +8,37 @@
 
 import Foundation
 
-let currentUserKey = "CurrentUser"
+let currentUserDictKey = "CurrentUser"
+
+//MARK:- class only used in ProfileTabs
+class UserProfile {
+  
+  var token: String = ""
+  var userName: String = ""
+  var email: String = ""
+  var firstName: String = ""
+  var lastName: String = ""
+  var profileImg: String = ""
+  var phoneNumber: String = ""
+  
+  /// Only Called in Profile > Setting > Logout
+  /// In setting, User instance exists
+  func resetUserDefaults() {
+    var info: [String: Any] = [:]
+    
+    info.updateValue("0000", forKey: "userName")
+    info.updateValue("0000", forKey: "email")
+    info.updateValue("0000", forKey: "phoneNumber")
+    info.updateValue("0000", forKey: "firstName")
+    info.updateValue("0000", forKey: "lastName")
+    info.updateValue("0000", forKey: "profileImg")
+    
+    info.updateValue("0000", forKey: "token")
+    
+    UserDefaults.standard.set(info, forKey: currentUserDictKey)
+  }
+  
+}
 
 //MARK:- retrieved UserData from server, including token
 class User: Codable {
@@ -26,35 +56,22 @@ class User: Codable {
   func saveToUserDefaults() {
     var info: [String: Any] = [:]
     
-    info.updateValue(self.userInfo.pk, forKey: "pk")
     info.updateValue(self.userInfo.userName, forKey: "userName")
     info.updateValue(self.userInfo.email, forKey: "email")
     info.updateValue(self.userInfo.phoneNumber, forKey: "phoneNumber")
     info.updateValue(self.userInfo.firstName, forKey: "firstName")
     info.updateValue(self.userInfo.lastName, forKey: "lastName")
-    info.updateValue(self.userInfo.profileImg, forKey: "profileImg")
+    
+    if let profileImg = self.userInfo.profileImg {
+      info.updateValue(profileImg, forKey: "profileImg")
+    } else {
+      // MARK: default img required
+      info.updateValue("0000", forKey: "profileImg")
+    }
     
     info.updateValue(self.token, forKey: "token")
     
-    UserDefaults.standard.set(info, forKey: currentUserKey)
-  }
-  
-  /// Only Called in Profile > Setting > Logout
-  /// In setting, User instance exists
-  func resetUserDefaults() {
-    var info: [String: Any] = [:]
-    
-    info.updateValue(0, forKey: "pk")
-    info.updateValue("0000", forKey: "userName")
-    info.updateValue("0000", forKey: "email")
-    info.updateValue("0000", forKey: "phoneNumber")
-    info.updateValue("0000", forKey: "firstName")
-    info.updateValue("0000", forKey: "lastName")
-    info.updateValue("0000", forKey: "profileImg")
-    
-    info.updateValue("0000", forKey: "token")
-    
-    UserDefaults.standard.set(info, forKey: currentUserKey)
+    UserDefaults.standard.set(info, forKey: currentUserDictKey)
   }
   
 // let username = UserDefaults.standard.value(forKey: standardIDKey) as? String,
@@ -62,7 +79,7 @@ class User: Codable {
   /// Called in any views
   /// - Returns: currentUser info dictionary
   class func loadTokenFromUserDefaults() -> String! {
-    if let target = UserDefaults.standard.dictionary(forKey: currentUserKey),
+    if let target = UserDefaults.standard.dictionary(forKey: currentUserDictKey),
       let token = target["token"] as? String,
       token != "0000" {
       return token
@@ -74,7 +91,7 @@ class User: Codable {
   /// by token value
   /// - Returns: true or false
   class func checkCurrentUser() -> Bool {
-    if let target = UserDefaults.standard.dictionary(forKey: currentUserKey),
+    if let target = UserDefaults.standard.dictionary(forKey: currentUserDictKey),
       let token = target["token"] as? String,
       token != "0000" {
       return true
@@ -82,17 +99,30 @@ class User: Codable {
     return false
   }
   
-  
-  //Used in profile tab
-  class func loadProfileInfoFromUserDefaults() -> [String: String] {
-    var info: [String: String] = [:]
+  class func getUserProfileFromUserDefaults() -> UserProfile? {
     
-    return info
+    //MARK: Refactor conditional statement here
+    if self.checkCurrentUser() {
+      guard let dict = UserDefaults.standard.dictionary(forKey: currentUserDictKey) else { return nil }
+      
+      let targetUserProfile = UserProfile()
+      
+      targetUserProfile.token = dict["token"] as! String
+      targetUserProfile.userName = dict["userName"] as! String
+      targetUserProfile.phoneNumber = dict["phoneNumber"] as! String
+      targetUserProfile.firstName = dict["firstName"] as! String
+      targetUserProfile.lastName = dict["lastName"] as! String
+      targetUserProfile.profileImg = dict["profileImg"] as! String
+      targetUserProfile.email = dict["email"] as! String
+      
+      return targetUserProfile
+    }
+    return nil
   }
   
 }
 
-//MARK:- clientSide user info, includes userDefaults helper functions
+//MARK:- userinfo from server
 class UserInfo: Codable {
   var pk: Int = 0
   var userName: String = "0000"
