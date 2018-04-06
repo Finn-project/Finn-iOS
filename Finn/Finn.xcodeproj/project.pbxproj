@@ -13,6 +13,8 @@
 		1E8C8DCD2072009300F4F673 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCB2072009300F4F673 /* MainFlow.storyboard */; };
 		1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCE2072009400F4F673 /* Assets.xcassets */; };
 		1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */; };
+		1E9E0B8820773FDB0035486A /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E0B8720773FDB0035486A /* Animations.swift */; };
+		1E9E0B8A20773FEC0035486A /* DrawableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9E0B8920773FEC0035486A /* DrawableExtensions.swift */; };
 		1EA0DEA02073652300971DCB /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0DE9F2073652300971DCB /* ProfileDetailViewController.swift */; };
 		1EA0DEA22073653800971DCB /* BecomeHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */; };
 		1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0DEA42073698800971DCB /* SettingViewController.swift */; };
@@ -50,6 +52,8 @@
 		1E8C8DCE2072009400F4F673 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E8C8DD12072009400F4F673 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E8C8DD32072009400F4F673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E9E0B8720773FDB0035486A /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		1E9E0B8920773FEC0035486A /* DrawableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableExtensions.swift; sourceTree = "<group>"; };
 		1EA0DE9F2073652300971DCB /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BecomeHostViewController.swift; sourceTree = "<group>"; };
 		1EA0DEA42073698800971DCB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		1EC0583D207259A3005D24E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E9E0B8920773FEC0035486A /* DrawableExtensions.swift */,
+				1E9E0B8720773FDB0035486A /* Animations.swift */,
 				1E8C8DD02072009400F4F673 /* LaunchScreen.storyboard */,
 				1E8C8DCB2072009300F4F673 /* MainFlow.storyboard */,
 				1EC05836207258C9005D24E0 /* LoginFlow.storyboard */,
@@ -171,9 +177,9 @@
 		1EC0583F20725A2D005D24E0 /* LoginFlow */ = {
 			isa = PBXGroup;
 			children = (
+				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
 				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
 				98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */,
-				98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */,
 				1EB6A93C2074795A00D000EF /* SignUpEmailPhoneViewController.swift */,
 				98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */,
 			);
@@ -360,6 +366,8 @@
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
 				1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */,
 				1EA0DEA02073652300971DCB /* ProfileDetailViewController.swift in Sources */,
+				1E9E0B8A20773FEC0035486A /* DrawableExtensions.swift in Sources */,
+				1E9E0B8820773FDB0035486A /* Animations.swift in Sources */,
 				351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */,
 				1E1DE65620771FF90082F8ED /* ProfileEditViewController.swift in Sources */,
 				351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */,

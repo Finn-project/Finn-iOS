@@ -14,6 +14,8 @@ enum Network {
   enum Auth {
     static let signUpURL: String = Network.hostURL + "/user/"
     static let loginURL: String = Network.hostURL + "/user/login/"
+    static let fbLoginURL: String = Network.hostURL + "/user/facebook-login/"
+    static let logoutURL: String = Network.hostURL + "/user/logout/"
   }
 }
 
