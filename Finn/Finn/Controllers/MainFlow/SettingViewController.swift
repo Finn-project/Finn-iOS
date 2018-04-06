@@ -36,13 +36,24 @@ class SettingViewController: UIViewController {
 extension SettingViewController {
   
   @IBAction func logoutTapped() {
-//    
-//    var requestHeader: HttpHeaders = [:]
-//    
-//    Alamofire.request(Network.Auth.logoutURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-    
-    userProfile.resetUserDefaults()
-    self.navigationController?.popViewController(animated: true)
+  
+    var requestHeader: HTTPHeaders = [:]
+    requestHeader.updateValue("Token " + User.loadTokenFromUserDefaults()!, forKey: "Authorization")
+
+    Alamofire
+      .request(Network.Auth.logoutURL, method: .post, encoding: JSONEncoding.default, headers: requestHeader)
+      .responseJSON { (response) in
+      switch response.result {
+      case .success:
+          if let data = response.data, let text = String(data: data, encoding: .utf8) {
+            print(text) // possible modal??
+            self.userProfile.resetUserDefaults()
+            self.navigationController?.popViewController(animated: true)
+          }
+      case .failure(let error):
+        print("logout post failed : \(error.localizedDescription)")
+      }
+    }
   }
   
   @IBAction func readDisclaimer() {
