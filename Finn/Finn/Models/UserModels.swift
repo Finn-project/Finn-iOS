@@ -57,10 +57,16 @@ class User: Codable {
     var info: [String: Any] = [:]
     
     info.updateValue(self.userInfo.userName, forKey: "userName")
-    info.updateValue(self.userInfo.email, forKey: "email")
     info.updateValue(self.userInfo.phoneNumber, forKey: "phoneNumber")
     info.updateValue(self.userInfo.firstName, forKey: "firstName")
     info.updateValue(self.userInfo.lastName, forKey: "lastName")
+    
+    //fb login returns nil in email Field
+    if let tempEmail = self.userInfo.email {
+      info.updateValue(tempEmail, forKey: "email")
+    } else {
+      info.updateValue("0000", forKey: "email")
+    }
     
     if let profileImg = self.userInfo.profileImg {
       info.updateValue(profileImg, forKey: "profileImg")
@@ -126,11 +132,11 @@ class User: Codable {
 class UserInfo: Codable {
   var pk: Int = 0
   var userName: String = "0000"
-  var email: String = "0000"
+  var email: String! // facebook login returns nil in email
   var phoneNumber: String = "0000"
   var firstName: String = "0000"
   var lastName: String = "0000"
-  var profileImg: String!
+  var profileImg: String! // all login type returns String!
   var signUpType: String = "0000"
   
   enum CodingKeys: String, CodingKey {

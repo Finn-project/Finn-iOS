@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SettingViewController: UIViewController {
   
@@ -35,6 +36,11 @@ class SettingViewController: UIViewController {
 extension SettingViewController {
   
   @IBAction func logoutTapped() {
+//    
+//    var requestHeader: HttpHeaders = [:]
+//    
+//    Alamofire.request(Network.Auth.logoutURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+    
     userProfile.resetUserDefaults()
     self.navigationController?.popViewController(animated: true)
   }
