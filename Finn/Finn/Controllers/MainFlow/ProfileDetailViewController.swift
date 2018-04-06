@@ -10,9 +10,18 @@ import UIKit
 
 class ProfileDetailViewController: UIViewController {
   
+  //MARK:- data property
+  var userProfile: UserProfile!
+  
   //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
   }
   
+}
+
+//MARK:- IBActions
+extension ProfileDetailViewController {
+  @IBAction func rewindFromEditView(_ sender: UIStoryboardSegue) {
+  }
 }
