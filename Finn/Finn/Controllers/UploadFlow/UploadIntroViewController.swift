@@ -38,3 +38,13 @@ class UploadIntroViewController: UIViewController {
     */
 
 }
+//MARK: Textfield Delegate
+
+extension UploadIntroViewController: UITextFieldDelegate{
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+   
+    return true
+  }
+  
+}
