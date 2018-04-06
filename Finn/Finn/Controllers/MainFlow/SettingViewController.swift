@@ -10,10 +10,23 @@ import UIKit
 
 class SettingViewController: UIViewController {
   
+  //MARK:- IBOutlets
+  @IBOutlet weak var logoutBtn: UIButton!
+  
+  //MARK:- data property
+  var userProfile: UserProfile!
+  
   //MARK:- LifeCycles
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
+    if let _ = userProfile {
+      drawButtonsToLoginState()
+    }
   }
 
 }
@@ -22,6 +35,19 @@ class SettingViewController: UIViewController {
 extension SettingViewController {
   
   @IBAction func logoutTapped() {
-    
+    userProfile.resetUserDefaults()
+    self.navigationController?.popViewController(animated: true)
+  }
+  
+  @IBAction func readDisclaimer() {
+    // link to Disclaimer!
+  }
+}
+
+//MARK:- drawing functions
+extension SettingViewController {
+  
+  func drawButtonsToLoginState() {
+    logoutBtn.isHidden = false
   }
 }
