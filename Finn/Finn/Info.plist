@@ -19,10 +19,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb556722268030664</string>
 				<string>kakao4f789a071361a5d3a593548965a06e39</string>
 			</array>
 		</dict>
@@ -31,6 +30,10 @@
 	<string>1</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>4f789a071361a5d3a593548965a06e39</string>
+	<key>FacebookAppID</key>
+	<string>556722268030664</string>
+	<key>FacebookDisplayName</key>
+	<string>FinnProject</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakao + Native App Key</string>
@@ -38,6 +41,10 @@
 		<string>storykompassauth</string>
 		<string>kakaolink</string>
 		<string>storylink</string>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
