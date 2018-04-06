@@ -7,21 +7,26 @@
 //
 
 import UIKit
-import MapKit
+import MapKit //지오코딩 ->(구글맵 주소->위도경도알아내기)
 
 class RoomAddressViewController: UIViewController {
-
-  var matchinItems: [MKMapItem] = [MKMapItem]()
+  
+  var matchingItems: [MKMapItem] = [MKMapItem]()
   //MARK: IBOutlets
   @IBOutlet weak var inputAddressTf: UITextField!
   @IBOutlet weak var mapView: MKMapView!
   @IBAction func textFieldReturn(_ sender: Any){
     resignFirstResponder()
-//    mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
     self.performSearch()
+
+    
+  }
+  @IBAction func removeAnnotation(_ sender: Any){
+//    mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
+    
   }
   func performSearch(){
-    matchinItems.removeAll()
+    matchingItems.removeAll()
     let request = MKLocalSearchRequest()
     request.naturalLanguageQuery = inputAddressTf.text
     request.region = mapView.region
@@ -41,11 +46,12 @@ class RoomAddressViewController: UIViewController {
           if item.phoneNumber != nil{
             print("Phone = \(item.phoneNumber!)")
           }
-          self.matchinItems.append(item as MKMapItem)
+          self.matchingItems.append(item as MKMapItem)
           let annotation = MKPointAnnotation()
           annotation.coordinate = item.placemark.coordinate
           annotation.title = item.name
           annotation.subtitle = item.phoneNumber
+          
           self.mapView.addAnnotation(annotation)
         }
       }
@@ -54,7 +60,9 @@ class RoomAddressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       inputAddressTf.becomeFirstResponder()
-        // Do any additional setup after loading the view.
+      var cam = mapView.camera
+      cam.pitch = 0
+      // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
