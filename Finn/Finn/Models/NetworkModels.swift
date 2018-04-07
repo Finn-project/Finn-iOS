@@ -8,10 +8,15 @@
 
 import Foundation
 
-let hostURL: String = "https://himanmen.com"
-let signUpURL: String = hostURL + "/user/"
-let loginURL: String = hostURL + "/user/login/"
+enum Network {
+  static let hostURL: String = "https://himanmen.com"
+  
+  enum Auth {
+    static let signUpURL: String = Network.hostURL + "/user/"
+    static let loginURL: String = Network.hostURL + "/user/login/"
+    static let fbLoginURL: String = Network.hostURL + "/user/facebook-login/"
+    static let logoutURL: String = Network.hostURL + "/user/logout/"
+  }
+}
 
-//MARK: possible error types?
 
-//MARK: api request body keys

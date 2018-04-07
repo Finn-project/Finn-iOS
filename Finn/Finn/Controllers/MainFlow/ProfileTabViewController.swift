@@ -20,8 +20,8 @@ class ProfileTabViewController: UIViewController {
   @IBOutlet weak var becomeHostBtn: UIButton!
   @IBOutlet weak var settingBtn: UIButton!
   
-  //MARK:- Data Properties
-  var user: User!
+  //MARK:- Data Property
+  var userProfile: UserProfile?
   
   //MARK:- LifeCycles
   override func viewDidLoad() {
@@ -30,11 +30,15 @@ class ProfileTabViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
-    //checks login status
+
     if User.checkCurrentUser() {
-        changeProfile()
-        changeButtonToLoginStatus()
+      userProfile = User.getUserProfileFromUserDefaults()
+      changeProfileToLoginState()
+      changeButtonToLoginState()
+    } else {
+      self.userProfile = nil
+      changeProfileToLogoutState()
+      changeButtonToLogoutState()
     }
   }
   
@@ -42,33 +46,47 @@ class ProfileTabViewController: UIViewController {
 
 //MARK:- Segue support
 extension ProfileTabViewController {
-  
   // turn Off all tabbar in nextViews
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let targetVC = segue.destination
     targetVC.hidesBottomBarWhenPushed = true
+    
+    if let target = targetVC as? SettingViewController {
+      target.userProfile = userProfile
+    } else if let target = targetVC as? ProfileDetailViewController {
+      // cannot pass nil to profileDetailView, UI doesn't allow it
+      target.userProfile = userProfile
+    } else if let target = targetVC as? BecomeHostViewController {
+      target.userProfile = userProfile
+    }
   }
 }
 
-//MARK:- helper functions
+//MARK:- data drawing functions
 extension ProfileTabViewController {
   
-  func changeProfile() {
-    //get additional info userdefaults
-    //redraw profiles, baseValues are place holder
+  func changeProfileToLoginState() {
+    guard let profile = self.userProfile else { return }
+    
+    let fullName = profile.lastName + " " + profile.firstName
+    nameLabel.text = fullName
+    
+    //draw personal profile image
   }
   
-  func changeButtonToLoginStatus() {
+  func changeProfileToLogoutState() {
+    nameLabel.text = "회원이신가요?"
+    
+    //draw default profile image
+  }
+  
+  func changeButtonToLoginState() {
     profileDetailBtn.isHidden = false
-    toLoginFlowBtn.isEnabled = false
-    
-    becomeHostBtn.isEnabled = true
+    toLoginFlowBtn.isHidden = true
   }
   
-  func changeButtonToLogoutStatus() {
+  func changeButtonToLogoutState() {
     profileDetailBtn.isHidden = true
-    toLoginFlowBtn.isEnabled = true
-    
-    becomeHostBtn.isEnabled = false
+    toLoginFlowBtn.isHidden = false
   }
 }

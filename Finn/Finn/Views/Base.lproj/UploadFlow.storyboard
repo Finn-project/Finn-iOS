@@ -809,10 +809,27 @@
                                 <rect key="frame" x="24" y="188" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="textFieldReturn:" destination="rVO-wu-enI" eventType="editingDidEndOnExit" id="qkV-QY-GIa"/>
+                                    <outlet property="delegate" destination="rVO-wu-enI" id="Ocd-8O-Aoy"/>
+                                </connections>
                             </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XBi-HR-sRJ">
+                                <rect key="frame" x="0.0" y="263" width="375" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hq1-Af-yAQ">
+                                <rect key="frame" x="308" y="137" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="delete"/>
+                                <connections>
+                                    <action selector="removeAnnotation:" destination="rVO-wu-enI" eventType="touchUpInside" id="EHh-lf-xRT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Zpz-W6-ADG" firstAttribute="trailing" secondItem="woQ-n7-WQa" secondAttribute="trailing" constant="24" id="2F3-Ww-JUh"/>
                             <constraint firstItem="fSU-Pr-53z" firstAttribute="leading" secondItem="Vt0-Rc-Mju" secondAttribute="leading" id="4IH-jk-qJ7"/>
@@ -828,14 +845,23 @@
                             <constraint firstItem="woQ-n7-WQa" firstAttribute="leading" secondItem="Zpz-W6-ADG" secondAttribute="leading" constant="24" id="nqh-Ej-mFr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zpz-W6-ADG"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sBx-FZ-EV9" appends="YES" id="5PV-P2-C55"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="inputAddressTf" destination="fSU-Pr-53z" id="15n-2Q-kSw"/>
+                        <outlet property="mapView" destination="XBi-HR-sRJ" id="lY8-xn-Mf7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIa-km-uI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sBx-FZ-EV9">
+                    <connections>
+                        <action selector="removeKeyboard:" destination="rVO-wu-enI" id="Sr6-O9-m5Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3884" y="125"/>
+            <point key="canvasLocation" x="3884" y="124.58770614692655"/>
         </scene>
         <!--Address On Map View Controller-->
         <scene sceneID="ury-zW-oPB">

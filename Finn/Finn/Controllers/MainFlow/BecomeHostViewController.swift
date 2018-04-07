@@ -10,6 +10,8 @@ import UIKit
 
 class BecomeHostViewController: UIViewController {
   
+  //MARK:- data property
+  var userProfile: UserProfile!
   
   //MARK:- LifeCycles
   override func viewDidLoad() {
