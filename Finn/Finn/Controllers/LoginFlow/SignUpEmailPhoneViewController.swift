@@ -28,11 +28,9 @@ class SignUpEmailPhoneViewController: UIViewController {
     emailTF.borderBottom(height: 1.0, color: UIColor.white)
     phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
     addKeyboardObserver()
-    print(signUpData)
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    print(signUpData)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +41,7 @@ class SignUpEmailPhoneViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let passwordVC = segue.destination as? SignUpPassWordViewController else {return }
     emailPhoneData()
+    print(signUpData)
     passwordVC.signUpData = signUpData
   }
   
@@ -52,9 +51,9 @@ extension SignUpEmailPhoneViewController {
   
   private func emailPhoneData() {
     guard let email = emailTF.text else { return print("emailTF: nil") }
-    signUpData.updateValue(emailTF.text, forKey: "email")
+    signUpData.updateValue(emailTF.text!, forKey: "email")
     guard let phone = phoneNumTF.text else { return print("phoneNumTF: nil") }
-    signUpData.updateValue(phoneNumTF.text, forKey: "phone_num")
+    signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   
   private func addKeyboardObserver() {

@@ -72,10 +72,10 @@ extension SignUpNameViewController {
   
   //MARK: text update data
   private func nameData() {
-    guard let firstName = firstNameTF.text else { return print("firstName: nil") }
-    signUpData.updateValue(firstNameTF.text, forKey: "first_name")
-    guard let lastName = lastNameTF.text else { return print("lastName: nil") }
-    signUpData.updateValue(lastNameTF.text, forKey: "last_name")
+    guard let firstName = firstNameTF.text else { return }
+    signUpData.updateValue(firstNameTF.text!, forKey: "first_name")
+    guard let lastName = lastNameTF.text else { return }
+    signUpData.updateValue(lastNameTF.text!, forKey: "last_name")
   }
   
   //MARK: keyboardNotification
