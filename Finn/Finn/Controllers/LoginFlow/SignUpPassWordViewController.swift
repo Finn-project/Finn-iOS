@@ -64,14 +64,14 @@ extension SignUpPassWordViewController {
         }
     }
   }
-
+  
   private func passwordData() {
     guard let password = passWordTF.text else { return print("passwordTF: nil") }
     signUpData.updateValue(passWordTF.text!, forKey: "password")
     guard let checkPassword = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
     signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
   }
-  
+  //MARK: keyboardNotification
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
       [weak self] in
