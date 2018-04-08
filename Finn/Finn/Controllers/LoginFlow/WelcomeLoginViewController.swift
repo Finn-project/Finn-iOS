@@ -31,6 +31,9 @@ extension WelcomeLoginViewController {
   
   @IBAction func facebookLoginAction(_ sender: Any) {
     let fbLoginManager = LoginManager()
+    //removes login record on facebook server
+    fbLoginManager.logOut()
+    
     fbLoginManager.logIn(readPermissions: [.publicProfile], viewController: self) {
       (fbLoginResult) in
       switch fbLoginResult {

@@ -18,11 +18,14 @@ class SignUpNameViewController: UIViewController {
   @IBOutlet weak var nextBtn: UIButton!
   
   //MARK: - Gesture
+  
+  //MARK: IBAction
   @IBAction func removeKeyboard(_ sender: Any) {
     firstNameTF.resignFirstResponder()
     lastNameTF.resignFirstResponder()
   }
   
+  //MARK:- LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     view.updateFocusIfNeeded()
@@ -31,11 +34,12 @@ class SignUpNameViewController: UIViewController {
     addKeyboardObserver()
   }
   
+  //MARK:- removeObserver
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
   }
-  
+  //MARK:- prepare
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let emailVC = segue.destination as? SignUpEmailPhoneViewController else {return }
     nameData()
@@ -44,7 +48,9 @@ class SignUpNameViewController: UIViewController {
 }
 
 
-//MARK: UITextField borderBottom
+  //MARK:- extension
+
+//MARK: UITextField
 extension UITextField {
   func borderBottom(height: CGFloat, color: UIColor) {
     let border = CALayer()
@@ -54,7 +60,7 @@ extension UITextField {
   }
 }
 
-//MARK: - extension: UIButton
+//MARK: UIButton
 extension UIButton {
   func btnCustom() {
     let btn = CALayer()
@@ -66,16 +72,16 @@ extension UIButton {
   }
 }
 
-//MARK: - extension: SignUpViewController
+//MARK: SignUpViewController
 
 extension SignUpNameViewController {
   
-  //MARK: text update data
+  //MARK: text updateValue method
   private func nameData() {
-    guard let firstName = firstNameTF.text else { return print("firstName: nil") }
-    signUpData.updateValue(firstNameTF.text, forKey: "first_name")
-    guard let lastName = lastNameTF.text else { return print("lastName: nil") }
-    signUpData.updateValue(lastNameTF.text, forKey: "last_name")
+    guard let firstName = firstNameTF.text, firstName != "" else { return firstNameTF.shake()}
+    signUpData.updateValue(firstNameTF.text!, forKey: "first_name")
+    guard let lastName = lastNameTF.text, lastName != "" else { return lastNameTF.shake()}
+    signUpData.updateValue(lastNameTF.text!, forKey: "last_name")
   }
   
   //MARK: keyboardNotification
@@ -109,7 +115,7 @@ extension SignUpNameViewController {
     }
   }
 }
-
+//MARK:- UITextFieldDelegate
 extension SignUpNameViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if firstNameTF.text == "" {
