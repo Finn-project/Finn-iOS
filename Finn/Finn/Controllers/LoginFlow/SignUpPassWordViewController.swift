@@ -23,7 +23,7 @@ class SignUpPassWordViewController: UIViewController {
   }
   @IBAction func signUpAction(_ sender: Any) {
     passwordData()
-    print("signUpDataTotal:\(signUpData)")
+    dataInfo()
     self.dismiss(animated: true, completion: nil)
   }
   
@@ -42,17 +42,36 @@ class SignUpPassWordViewController: UIViewController {
 
 extension SignUpPassWordViewController {
   
-//  private func doSignUp() {
-//    let params
-//  }
+  private func dataInfo() {
+    let params: Parameters = [
+      "email" : signUpData["email"]!,
+      "password" : signUpData["password"]!,
+      "confirm_password" : signUpData["confirm_password"]!,
+      "first_name" : signUpData["first_name"]!,
+      "last_name" : signUpData["last_name"]!,
+      "phone_num" : signUpData["phone_num"]!
+    ]
+    print("params:\(params)")
+    Alamofire
+      .request(Network.Auth.signUpURL, method: .post, parameters: params)
+      .validate()
+      .responseData { (response) in
+        switch response.result {
+        case .success(let value):
+          print("value: \(value)")
+        case.failure(let error):
+          print("error: \(error)")
+        }
+    }
+  }
   
   private func passwordData() {
     guard let password = passWordTF.text else { return print("passwordTF: nil") }
-    signUpData.updateValue(passWordTF.text, forKey: "password")
+    signUpData.updateValue(passWordTF.text!, forKey: "password")
     guard let checkPassword = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
-    signUpData.updateValue(checkPassWordTF.text, forKey: "confirm_password")
+    signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
   }
-  
+  //MARK: keyboardNotification
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
       [weak self] in
