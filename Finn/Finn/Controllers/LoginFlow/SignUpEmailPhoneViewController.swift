@@ -49,9 +49,9 @@ class SignUpEmailPhoneViewController: UIViewController {
 extension SignUpEmailPhoneViewController {
   //MARK: text updateValue method
   private func emailPhoneData() {
-    guard let email = emailTF.text, email != "", email.contains("@") == true else { return print("emailTF: nil") }
-    signUpData.updateValue(emailTF.text!, forKey: "email")
-    guard let phone = phoneNumTF.text, phone != "", phone.contains("@") == true else { return print("phoneNumTF: nil") }
+    guard let email = emailTF.text else { return print("emailTF: nil") }
+    signUpData.updateValue(emailTF.text!, forKey: "username")
+    guard let phone = phoneNumTF.text else { return print("phoneNumTF: nil") }
     signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   //MARK: keyboardNotification
