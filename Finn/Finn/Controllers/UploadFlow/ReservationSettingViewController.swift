@@ -10,9 +10,12 @@ import UIKit
 
 class ReservationSettingViewController: UIViewController {
 
+  @IBOutlet weak var setPriceTf:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+      
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,4 +34,5 @@ class ReservationSettingViewController: UIViewController {
     }
     */
 
+  
 }
