@@ -44,7 +44,7 @@ extension SignUpPassWordViewController {
   
   private func dataInfo() {
     let params: Parameters = [
-      "email" : signUpData["email"]!,
+      "username" : signUpData["username"]!,
       "password" : signUpData["password"]!,
       "confirm_password" : signUpData["confirm_password"]!,
       "first_name" : signUpData["first_name"]!,
