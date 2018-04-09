@@ -20,6 +20,9 @@ class UserProfile {
   var lastName: String = ""
   var profileImg: String = ""
   var phoneNumber: String = ""
+  var isHost: Bool = false
+  var isFacebookUser: Bool = false
+  var isEmailUser: Bool = false
   
   /// Only Called in Profile > Setting > Logout
   /// In setting, User instance exists
@@ -32,6 +35,9 @@ class UserProfile {
     info.updateValue("0000", forKey: "firstName")
     info.updateValue("0000", forKey: "lastName")
     info.updateValue("0000", forKey: "profileImg")
+    info.updateValue(false, forKey: "isHost")
+    info.updateValue(false, forKey: "isEmailUser")
+    info.updateValue(false, forKey: "isFacebookUser")
     
     info.updateValue("0000", forKey: "token")
     
@@ -60,6 +66,9 @@ class User: Codable {
     info.updateValue(self.userInfo.phoneNumber, forKey: "phoneNumber")
     info.updateValue(self.userInfo.firstName, forKey: "firstName")
     info.updateValue(self.userInfo.lastName, forKey: "lastName")
+    info.updateValue(self.userInfo.isHost, forKey: "isHost")
+    info.updateValue(self.userInfo.isEmailUser, forKey: "isEmailUser")
+    info.updateValue(self.userInfo.isFacebookUser, forKey: "isFacebookUser")
     
     //fb login returns nil in email Field
     if let tempEmail = self.userInfo.email {
@@ -121,6 +130,10 @@ class User: Codable {
       targetUserProfile.profileImg = dict["profileImg"] as! String
       targetUserProfile.email = dict["email"] as! String
       
+      targetUserProfile.isHost = dict["isHost"] as! Bool
+      targetUserProfile.isEmailUser = dict["isEmailUser"] as! Bool
+      targetUserProfile.isFacebookUser = dict["isFacebookUser"] as! Bool
+      
       return targetUserProfile
     }
     return nil
@@ -137,7 +150,9 @@ class UserInfo: Codable {
   var firstName: String = "0000"
   var lastName: String = "0000"
   var profileImg: String! // all login type returns String!
-  var signUpType: String = "0000"
+  var isHost: Bool = false
+  var isEmailUser: Bool = false
+  var isFacebookUser: Bool = false
   
   enum CodingKeys: String, CodingKey {
     case pk = "id"
@@ -147,6 +162,8 @@ class UserInfo: Codable {
     case firstName = "first_name"
     case lastName = "last_name"
     case profileImg = "img_profile"
-    case signUpType = "signup_type"
+    case isHost = "is_host"
+    case isEmailUser = "is_email_user"
+    case isFacebookUser = "is_facebook_user"
   }
 }
