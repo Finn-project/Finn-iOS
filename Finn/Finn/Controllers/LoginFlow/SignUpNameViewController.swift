@@ -10,36 +10,35 @@ import UIKit
 
 class SignUpNameViewController: UIViewController {
   
-  var signUpData: [String: Any] = [:]
-  
+  //MARK:- IBOutlets
   @IBOutlet weak var firstNameTF: UITextField!
   @IBOutlet weak var lastNameTF: UITextField!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   @IBOutlet weak var nextBtn: UIButton!
   
-  //MARK: - Gesture
-  
-  //MARK: IBAction
-  @IBAction func removeKeyboard(_ sender: Any) {
-    firstNameTF.resignFirstResponder()
-    lastNameTF.resignFirstResponder()
-  }
+  //MARK:- Internal Properties
+  var signUpData: [String: Any] = [:]
   
   //MARK:- LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     view.updateFocusIfNeeded()
-    firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
-    lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
     addKeyboardObserver()
   }
   
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
+    lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
+  }
+
   //MARK:- removeObserver
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
   }
-  //MARK:- prepare
+  
+  //MARK:- segue supports
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let emailVC = segue.destination as? SignUpEmailPhoneViewController else {return }
     nameData()
@@ -47,36 +46,17 @@ class SignUpNameViewController: UIViewController {
   }
 }
 
-
-  //MARK:- extension
-
-//MARK: UITextField
-extension UITextField {
-  func borderBottom(height: CGFloat, color: UIColor) {
-    let border = CALayer()
-    border.frame = CGRect(x: 0, y: self.frame.height-height, width: self.frame.width, height: height)
-    border.backgroundColor = color.cgColor
-    self.layer.addSublayer(border)
-  }
-}
-
-//MARK: UIButton
-extension UIButton {
-  func btnCustom() {
-    let btn = CALayer()
-    btn.cornerRadius = self.frame.width / 2
-    btn.borderWidth = 2
-    btn.borderColor = UIColor.black.cgColor
-    btn.backgroundColor = UIColor.white.cgColor
-    self.layer.addSublayer(btn)
-  }
-}
-
-//MARK: SignUpViewController
-
+  //MARK: text updateValue method
 extension SignUpNameViewController {
   
-  //MARK: text updateValue method
+  //MARK: IBAction
+  @IBAction func removeKeyboard(_ sender: Any) {
+    firstNameTF.resignFirstResponder()
+    lastNameTF.resignFirstResponder()
+  }
+
+  
+  //MARK: Data Receive
   private func nameData() {
     guard let firstName = firstNameTF.text, firstName != "" else { return firstNameTF.shake()}
     signUpData.updateValue(firstNameTF.text!, forKey: "first_name")
