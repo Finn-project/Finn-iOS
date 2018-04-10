@@ -18,25 +18,24 @@ class SignUpEmailPhoneViewController: UIViewController {
   @IBOutlet weak var phoneNumTF: UITextField!
   @IBOutlet weak var emailTitle: UILabel!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
-  //MARK:- IBAction
-  //MARK: Gesture
-  @IBAction func removeKeyboard(_ sender: Any) {
-    emailTF.resignFirstResponder()
-    phoneNumTF.resignFirstResponder()
-  }
   //MARK:- LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    emailTF.borderBottom(height: 1.0, color: UIColor.white)
-    phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
     addKeyboardObserver()
   }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    emailTF.borderBottom(height: 1.0, color: UIColor.white)
+    phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
+  }
+  
   //MARK:- removeObserver
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
   }
-  //MARK:- prepare
+  //MARK:- segue supports
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let passwordVC = segue.destination as? SignUpPassWordViewController else {return }
     emailPhoneData()
@@ -45,13 +44,17 @@ class SignUpEmailPhoneViewController: UIViewController {
   }
 }
 
-//MARK:- extension
 extension SignUpEmailPhoneViewController {
-  //MARK: text updateValue method
+  //MARK:- IBAction
+  @IBAction func removeKeyboard(_ sender: Any) {
+    emailTF.resignFirstResponder()
+    phoneNumTF.resignFirstResponder()
+  }
+  //MARK: Data Receive
   private func emailPhoneData() {
-    guard let email = emailTF.text else { return print("emailTF: nil") }
+    guard let _ = emailTF.text else { return print("emailTF: nil") }
     signUpData.updateValue(emailTF.text!, forKey: "username")
-    guard let phone = phoneNumTF.text else { return print("phoneNumTF: nil") }
+    guard let _ = phoneNumTF.text else { return print("phoneNumTF: nil") }
     signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   //MARK: keyboardNotification
@@ -71,7 +74,7 @@ extension SignUpEmailPhoneViewController {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: .main) {
       [weak self] in
       guard let userInfo = $0.userInfo,
-        let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+        let _ = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
         else { return }
@@ -82,7 +85,7 @@ extension SignUpEmailPhoneViewController {
     }
   }
 }
-//MARK: - extension: SignUpEmailPasswordViewController
+
 extension SignUpEmailPhoneViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if emailTF.text == "" {
