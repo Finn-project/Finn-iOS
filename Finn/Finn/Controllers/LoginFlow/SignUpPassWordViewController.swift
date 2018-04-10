@@ -11,17 +11,14 @@ import Alamofire
 
 class SignUpPassWordViewController: UIViewController {
   
-  //MARK
+  //MARK:- IBOutlet
   @IBOutlet weak var passWordTF: UITextField!
   @IBOutlet weak var checkPassWordTF: UITextField!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   
+  //MARK:- Internal Properties
   var signUpData: [String: Any] = [:]
-  @IBAction func signUpAction(_ sender: Any) {
-    passwordData()
-    dataInfo()
-    self.dismiss(animated: true, completion: nil)
-  }
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,11 +40,18 @@ class SignUpPassWordViewController: UIViewController {
 
 extension SignUpPassWordViewController {
   
+  //MARK:- IBAction
+  @IBAction func signUpAction(_ sender: Any) {
+    passwordData()
+    dataInfo()
+    self.dismiss(animated: true, completion: nil)
+  }
   @IBAction func removeKeyboard(_ sender: Any) {
     passWordTF.resignFirstResponder()
     checkPassWordTF.resignFirstResponder()
   }
   
+  //MARK: Alamofire
   private func dataInfo() {
     let params: Parameters = [
       "username" : signUpData["username"]!,
@@ -71,6 +75,7 @@ extension SignUpPassWordViewController {
     }
   }
   
+  //MARK: Data Receive
   private func passwordData() {
     guard let _ = passWordTF.text else { return print("passwordTF: nil") }
     signUpData.updateValue(passWordTF.text!, forKey: "password")
@@ -110,6 +115,7 @@ extension SignUpPassWordViewController {
 }
 
 extension SignUpPassWordViewController: UITextFieldDelegate {
+  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if passWordTF.text == "" {
       passWordTF.becomeFirstResponder()
@@ -119,4 +125,14 @@ extension SignUpPassWordViewController: UITextFieldDelegate {
     }
     return true
   }
+  
+  //MARK: text Count limit
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let text = textField.text ?? ""
+    let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
+    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    guard replacedText.count < 20 else { return false }
+    return true
+  }
+  
 }
