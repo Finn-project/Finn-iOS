@@ -45,8 +45,9 @@ extension SettingViewController {
       .responseJSON { (response) in
       switch response.result {
       case .success:
-          if let data = response.data, let text = String(data: data, encoding: .utf8) {
-            print(text) // possible modal??
+        if let _ = response.data {
+//            let text = String(data: data, encoding: .utf8) {
+//              print(text) // possible modal??
             self.userProfile.resetUserDefaults()
             self.navigationController?.popViewController(animated: true)
           }
@@ -57,7 +58,7 @@ extension SettingViewController {
   }
   
   @IBAction func readDisclaimer() {
-    // link to Disclaimer!
+    // link to Disclaimer! maybe an easter egg for us
   }
 }
 

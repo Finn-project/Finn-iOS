@@ -9,11 +9,11 @@
 import Foundation
 
 //MARK:- retrieved house data from server
-class HouseWrapper: Codable {
+class House: Codable {
   
 }
 
 //MARK:- client side house models
-class House: Codable {
+class HouseInfo: Codable {
   
 }

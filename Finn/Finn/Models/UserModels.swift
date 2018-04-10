@@ -20,6 +20,7 @@ class UserProfile {
   var lastName: String = ""
   var profileImg: String = ""
   var phoneNumber: String = ""
+  
   var isHost: Bool = false
   var isFacebookUser: Bool = false
   var isEmailUser: Bool = false
@@ -35,6 +36,7 @@ class UserProfile {
     info.updateValue("0000", forKey: "firstName")
     info.updateValue("0000", forKey: "lastName")
     info.updateValue("0000", forKey: "profileImg")
+    
     info.updateValue(false, forKey: "isHost")
     info.updateValue(false, forKey: "isEmailUser")
     info.updateValue(false, forKey: "isFacebookUser")
@@ -88,8 +90,6 @@ class User: Codable {
     
     UserDefaults.standard.set(info, forKey: currentUserDictKey)
   }
-  
-// let username = UserDefaults.standard.value(forKey: standardIDKey) as? String,
   
   /// Called in any views
   /// - Returns: currentUser info dictionary
@@ -155,7 +155,7 @@ class UserInfo: Codable {
   var isFacebookUser: Bool = false
   
   enum CodingKeys: String, CodingKey {
-    case pk = "id"
+    case pk
     case userName = "username"
     case phoneNumber = "phone_num"
     case email

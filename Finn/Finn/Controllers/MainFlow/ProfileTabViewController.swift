@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ProfileTabViewController: UIViewController {
   
@@ -62,7 +63,7 @@ extension ProfileTabViewController {
   }
 }
 
-//MARK:- data drawing functions
+//MARK:- data state drawing functions
 extension ProfileTabViewController {
   
   func changeProfileToLoginState() {
@@ -71,13 +72,19 @@ extension ProfileTabViewController {
     let fullName = profile.lastName + " " + profile.firstName
     nameLabel.text = fullName
     
-    //draw personal profile image
+    // draw profileImage if needed
+    let profileImageURL = profile.profileImg
+    if profileImageURL != "0000" {
+      drawProfileImgFromServer(url: profileImageURL)
+    } else {
+      profileImgView.image = #imageLiteral(resourceName: "tempCat")
+    }
+   
   }
   
   func changeProfileToLogoutState() {
     nameLabel.text = "회원이신가요?"
-    
-    //draw default profile image
+    profileImgView.image = #imageLiteral(resourceName: "tempCat")
   }
   
   func changeButtonToLoginState() {
@@ -88,5 +95,18 @@ extension ProfileTabViewController {
   func changeButtonToLogoutState() {
     profileDetailBtn.isHidden = true
     toLoginFlowBtn.isHidden = false
+  }
+}
+
+//MARK:- networking
+extension ProfileTabViewController {
+  func drawProfileImgFromServer(url: String) {
+    
+    Alamofire
+      .request(url, method: .get)
+      .response {
+        (response) in
+        self.profileImgView.image = UIImage(data: response.data!, scale: 1)
+    }
   }
 }
