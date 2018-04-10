@@ -11,16 +11,12 @@ import Alamofire
 
 class SignUpPassWordViewController: UIViewController {
   
-  var signUpData: [String: Any] = [:]
-  
+  //MARK
   @IBOutlet weak var passWordTF: UITextField!
   @IBOutlet weak var checkPassWordTF: UITextField!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   
-  @IBAction func removeKeyboard(_ sender: Any) {
-    passWordTF.resignFirstResponder()
-    checkPassWordTF.resignFirstResponder()
-  }
+  var signUpData: [String: Any] = [:]
   @IBAction func signUpAction(_ sender: Any) {
     passwordData()
     dataInfo()
@@ -29,9 +25,14 @@ class SignUpPassWordViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    addKeyboardObserver()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     passWordTF.borderBottom(height: 1.0, color: .white)
     checkPassWordTF.borderBottom(height: 1.0, color: .white)
-    addKeyboardObserver()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -41,6 +42,11 @@ class SignUpPassWordViewController: UIViewController {
 }
 
 extension SignUpPassWordViewController {
+  
+  @IBAction func removeKeyboard(_ sender: Any) {
+    passWordTF.resignFirstResponder()
+    checkPassWordTF.resignFirstResponder()
+  }
   
   private func dataInfo() {
     let params: Parameters = [
@@ -66,9 +72,9 @@ extension SignUpPassWordViewController {
   }
   
   private func passwordData() {
-    guard let password = passWordTF.text else { return print("passwordTF: nil") }
+    guard let _ = passWordTF.text else { return print("passwordTF: nil") }
     signUpData.updateValue(passWordTF.text!, forKey: "password")
-    guard let checkPassword = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
+    guard let _ = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
     signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
   }
   //MARK: keyboardNotification
@@ -90,7 +96,7 @@ extension SignUpPassWordViewController {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: .main) {
       [weak self] in
       guard let userInfo = $0.userInfo,
-        let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+        let _ = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
         else { return }
