@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,17 +22,17 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rG-pL-Bv2">
                                 <rect key="frame" x="24" y="232.5" width="327" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="iMD-2P-Xss"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="회원이신가요?"/>
+                                <state key="normal" title="회원이신가요?">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -40,17 +41,17 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvx-Dc-x6r">
                                 <rect key="frame" x="24" y="306.5" width="327" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="w1J-MM-0Bz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="호스트가 되어보세요"/>
+                                <state key="normal" title="호스트가 되어보세요">
+                                    <color key="titleColor" red="1" green="0.99804422130000003" blue="0.99021067490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -59,17 +60,17 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ut-pR-SKd">
                                 <rect key="frame" x="24" y="380.5" width="327" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="KHz-FC-s4e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="환경설정"/>
+                                <state key="normal" title="환경설정">
+                                    <color key="titleColor" red="1" green="0.99804422130000003" blue="0.99021067490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -99,6 +100,7 @@
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8x-wd-qAA">
                                 <rect key="frame" x="24" y="232.5" width="327" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="0Zc-Zg-jVD"/>
                                 </constraints>
@@ -106,7 +108,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="프로필 확인 및 수정">
                                             <attributes>
-                                                <color key="NSColor" red="0.20000000000000001" green="0.47843137254901963" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -116,9 +118,6 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -161,6 +160,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSw-dZ-cxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2544.8000000000002" y="2102.698650674663"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="ftq-GD-jdG">
+            <objects>
+                <viewController id="QsI-hh-jcL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UTG-U1-2op">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently Working" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Cg-cD-HB7">
+                                <rect key="frame" x="118" y="323" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Cg-cD-HB7" firstAttribute="centerX" secondItem="UTG-U1-2op" secondAttribute="centerX" id="6Ux-0l-S75"/>
+                            <constraint firstItem="3Cg-cD-HB7" firstAttribute="centerY" secondItem="UTG-U1-2op" secondAttribute="centerY" id="PTL-JD-7Ba"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8hd-VC-hQc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messagesTab24px" id="5lZ-Fk-1VE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evn-Wg-eLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="1254"/>
         </scene>
         <!--Profile Detail View Controller-->
         <scene sceneID="M0e-kL-iHU">
@@ -240,8 +267,18 @@
                                     <segue destination="STD-bn-i9c" kind="unwind" unwindAction="rewindFromEditView:" id="zKe-2p-p5c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Page will be deleted Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8I-Dq-07f">
+                                <rect key="frame" x="70.5" y="283" width="234" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S8I-Dq-07f" firstAttribute="centerX" secondItem="Udb-ZZ-byl" secondAttribute="centerX" id="2fT-xv-P7I"/>
+                            <constraint firstItem="S8I-Dq-07f" firstAttribute="centerY" secondItem="Udb-ZZ-byl" secondAttribute="centerY" constant="-40" id="GLO-9v-unv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vkI-xQ-dfJ"/>
                     </view>
                 </viewController>
@@ -250,7 +287,7 @@
             </objects>
             <point key="canvasLocation" x="4108" y="1853"/>
         </scene>
-        <!--Search Tab View Controller-->
+        <!--Explore-->
         <scene sceneID="5Ij-Bh-PkK">
             <objects>
                 <viewController storyboardIdentifier="BoardViewController" id="aSJ-Fy-rq9" customClass="SearchTabViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
@@ -293,7 +330,7 @@
                             <outletCollection property="gestureRecognizers" destination="xRb-Ev-hfb" appends="YES" id="YLa-Vq-fHa"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="CUf-Zf-FZg"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="exploreTab24px" id="CUf-Zf-FZg"/>
                     <connections>
                         <outlet property="searchBar" destination="aGL-TA-7tS" id="9Xm-dJ-u7a"/>
                     </connections>
@@ -305,7 +342,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1768.8" y="921.58920539730138"/>
+            <point key="canvasLocation" x="1769" y="495"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AIe-bj-guZ">
@@ -315,10 +352,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="ThemeColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="aSJ-Fy-rq9" kind="relationship" relationship="viewControllers" id="Fbo-4K-SHB"/>
-                        <segue destination="EgZ-m2-dhb" kind="relationship" relationship="viewControllers" id="wZv-M9-pWJ"/>
+                        <segue destination="QsI-hh-jcL" kind="relationship" relationship="viewControllers" id="HOH-uF-ejw"/>
+                        <segue destination="EgZ-m2-dhb" kind="relationship" relationship="viewControllers" id="dzc-Sj-wVJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOK-la-OTy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +382,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wE1-C9-VGb">
                                 <rect key="frame" x="24" y="467.5" width="327" height="42"/>
-                                <color key="backgroundColor" red="1" green="0.54222456724222323" blue="0.43461789859523003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="1up-rF-1f0"/>
                                 </constraints>
@@ -358,6 +397,11 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="ajv-0h-jar" kind="presentation" id="JWk-eK-7ai"/>
                                 </connections>
@@ -442,9 +486,6 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
@@ -464,16 +505,16 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wK-Gk-1Bb">
                                 <rect key="frame" x="24" y="280" width="327" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="hBF-bT-sYc"/>
                                 </constraints>
-                                <state key="normal" title="서비스 약관"/>
+                                <state key="normal" title="서비스 약관">
+                                    <color key="titleColor" red="1" green="0.99804422130000003" blue="0.99021067490000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -519,7 +560,7 @@
         <scene sceneID="3ug-HE-sVb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EgZ-m2-dhb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Zgh-JO-UjZ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileTab24px" id="Zgh-JO-UjZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fPa-SF-26o">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -538,7 +579,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="exploreTab24px" width="24" height="24"/>
+        <image name="messagesTab24px" width="24" height="24"/>
+        <image name="profileTab24px" width="24" height="24"/>
         <image name="tempCat" width="649" height="556"/>
         <image name="tempHostBackground" width="774" height="571"/>
+        <namedColor name="ThemeColor">
+            <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

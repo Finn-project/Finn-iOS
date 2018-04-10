@@ -22,16 +22,18 @@ class LoginViewController: UIViewController {
   //MARK: LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    //drawing textFields
-    loginEmailTF.borderBottom(height: 1.0, color: UIColor.white)
-    loginPWTF.borderBottom(height: 1.0, color: UIColor.white)
-    
     addKeyboardObserver()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    //drawing textFields
+    loginEmailTF.borderBottom(height: 1.0, color: UIColor.white)
+    loginPWTF.borderBottom(height: 1.0, color: UIColor.white)
   }
 }
 
@@ -47,7 +49,8 @@ extension LoginViewController {
   @IBAction func doLogin() {
     guard let email = loginEmailTF.text,
       email != "",
-      email.contains("@") == true else {
+      email.contains("@") == true,
+      email.contains(".") == true else {
         loginEmailTF.shake()
         return
     }
@@ -67,6 +70,7 @@ extension LoginViewController {
     // start Networking
     Alamofire
       .request(Network.Auth.loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+      .validate()
       .responseJSON { (response) in
         switch response.result {
         case .success:
@@ -88,8 +92,10 @@ extension LoginViewController {
             }
           }
         case .failure(let error):
-          print("login: post failed, \(error.localizedDescription)")
-          //MARK:- really auth failed!!
+          print("login: auth failed, \(error.localizedDescription)")
+          // email pw misamtch happened on server
+          self.loginPWTF.shake()
+          self.loginEmailTF.shake()
         }
     }
   }
