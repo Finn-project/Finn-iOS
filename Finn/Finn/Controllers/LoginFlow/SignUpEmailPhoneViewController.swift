@@ -10,7 +10,7 @@ import UIKit
 
 class SignUpEmailPhoneViewController: UIViewController {
   
-
+  
   //MARK:- IBOutlet
   @IBOutlet weak var emailTF: UITextField!
   @IBOutlet weak var phoneNumTF: UITextField!
@@ -55,13 +55,14 @@ extension SignUpEmailPhoneViewController {
   //MARK: Data Receive
   private func emailPhoneData() {
     guard let email = emailTF.text,
-    email != "",
-    email.contains("@") == true,
-    email.contains(".") == true
-    else { return print("emailTF: nil") }
+      email != "",
+      email.contains("@") == true,
+      email.contains(".") == true
+      else { return emailTF.shake() }
     signUpData.updateValue(emailTF.text!, forKey: "username")
     guard let phoneNum = phoneNumTF.text,
-    phoneNum != "" else { return print("phoneNumTF: nil") }
+      phoneNum != ""
+      else { return phoneNumTF.shake() }
     signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   //MARK: keyboardNotification
@@ -108,7 +109,7 @@ extension SignUpEmailPhoneViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let text = textField.text ?? ""
     let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
-    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    let _ = [NSAttributedStringKey.font: textField.font!]
     guard replacedText.count < 30 else { return false }
     return true
   }
