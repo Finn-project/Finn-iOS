@@ -2,7 +2,7 @@
 //  HouseModel.swift
 //  Finn
 //
-//  Created by 김성종 on 2018. 4. 4..
+//  Created by 최현호 on 2018. 4. 4..
 //  Copyright © 2018년 Willicious-k. All rights reserved.
 //
 
@@ -11,26 +11,26 @@ import Foundation
 //MARK:- retrieved house data from server
 class House: Codable {
   var pk: Int = 0
-  var houseBasicInfo: HouseBasicInfo
-  var houseDeco: HouseDeco
-  var houseDetail: HouseDetail
+  var houseInfoStepOne: HouseInfoStepOne
+  var houseInfoStepTwo: HouseInfoStepTwo
+  var houseInfoStepThree: HouseInfoStepThree
   var host: UserInfo
-  var createdHouseDate: Int = 0
-  var modifiedHouseDate: Int = 0
+  var createdDate: Int = 0
+  var modifiedDate: Int = 0
   
-  enum Codingkeys: String, CodingKey{
+  enum Codingkeys: String, CodingKey {
     case pk
-    case createdHouseDate = "created_date"
-    case modifiedHouseDate = "modified_date"
+    case createdDate = "created_date"
+    case modifiedDate = "modified_date"
   }
 }
 //MARK:- UploadFlow Step 1.
-class HouseBasicInfo: Codable{
+class HouseInfoStepOne: Codable {
   var houseType: String = "0000"
   var roomCount: Int = 0
   var bedCount: Int = 0
   var bathroomCount: Int = 0
-  var numberOfPerson: Int = 0
+  var peopleCount: Int = 0
   var country: String = "0000"
   var address: Address
   var amenities: [Amenities] = []
@@ -41,7 +41,7 @@ class HouseBasicInfo: Codable{
     case roomCount = "room"
     case bedCount = "bed"
     case bathroomCount = "bathroom"
-    case numberOfPerson = "personnel"
+    case peopleCount = "personnel"
     case coutry
     
   }
@@ -55,6 +55,7 @@ class Address: Codable {
   var secondDetailAddress: String = "0000"
   var latitude: Double = 0.0
   var longitude: Double = 0.0
+  
   enum Codingkeys: String, CodingKey {
     case city
     case district
@@ -73,6 +74,7 @@ class Amenities: Codable {
   var coffeepot: String = "0000"
   var computer: String = "0000"
   var airCleaner: String = "0000"
+  
   enum Codingkeys: Int, CodingKey {
     case tv = 1
     case airConditioner = 2
@@ -100,16 +102,18 @@ class Facilities: Codable {
   }
 }
 //MARK:- UploadFlow Step 2.
-class HouseDeco: Codable {
+class HouseInfoStepTwo: Codable {
   var houseName: String = "0000"
+  //images
   var houseDescription: String = "0000"
+  
   enum Codingkeys: String, CodingKey {
     case houseName = "name"
     case houseDescription = "description"
   }
 }
 //MARK:- UploadFlow Step 3.
-class HouseDetail: Codable {
+class HouseInfoStepThree: Codable {
   var minCheckInDays: Int = 0
   var maxCheckInDays: Int = 0
   var maxCheckInRange: Int = 0
@@ -121,12 +125,6 @@ class HouseDetail: Codable {
     case maxCheckInRange = "maximum_check_in_range"
     case accommodationFee = "price_per_night"
   }
-}
-
-//MARK:- client side house models
-class HouseInfo: Codable {
-
-  
 }
 
 
