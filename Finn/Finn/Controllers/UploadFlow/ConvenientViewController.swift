@@ -55,8 +55,8 @@ extension ConvenientViewController: UITableViewDelegate{
 }
 
 //MARK: amenity goods & amenity Facilities
-let amenityGoods: [String] = ["전자렌지", "냉장고", "컴퓨터", "에어컨"]
-let amenities: [String] = ["엘리베이터", "에스컬레이터", "세탁기"]
+let amenities: [String] = ["TV", "에어컨", "커피포트", "컴퓨터", "공기청정기"]
+let facilities: [String] = ["수영장", "엘리베이터", "세탁소","노래방", "오락실", "온천"]
 //MARK: UITableViewDataSource
 extension ConvenientViewController: UITableViewDataSource{
   
@@ -64,9 +64,9 @@ extension ConvenientViewController: UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     if indexPath.section == 0 {
-      cell.textLabel?.text = amenityGoods[indexPath.row]
-    }else{
       cell.textLabel?.text = amenities[indexPath.row]
+    }else{
+      cell.textLabel?.text = facilities[indexPath.row]
     }
     return cell
   }
