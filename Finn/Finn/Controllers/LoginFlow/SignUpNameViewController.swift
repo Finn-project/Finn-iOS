@@ -16,6 +16,7 @@ class SignUpNameViewController: UIViewController {
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   @IBOutlet weak var nextBtn: UIButton!
   
+  
   //MARK:- Internal Properties
   var signUpData: [String: Any] = [:]
   
@@ -46,7 +47,6 @@ class SignUpNameViewController: UIViewController {
   }
 }
 
-  //MARK: text updateValue method
 extension SignUpNameViewController {
   
   //MARK: IBAction
@@ -97,6 +97,7 @@ extension SignUpNameViewController {
 }
 //MARK:- UITextFieldDelegate
 extension SignUpNameViewController: UITextFieldDelegate {
+  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if firstNameTF.text == "" {
       firstNameTF.becomeFirstResponder()
@@ -104,6 +105,14 @@ extension SignUpNameViewController: UITextFieldDelegate {
       firstNameTF.resignFirstResponder()
       lastNameTF.becomeFirstResponder()
     }
+    return true
+  }
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let text = textField.text ?? ""
+    let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
+    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    guard replacedText.count < 12 else { return false }
     return true
   }
 }
