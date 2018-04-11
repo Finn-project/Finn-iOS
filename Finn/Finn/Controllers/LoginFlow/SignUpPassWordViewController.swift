@@ -22,7 +22,7 @@ class SignUpPassWordViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     addKeyboardObserver()
   }
   
@@ -77,9 +77,12 @@ extension SignUpPassWordViewController {
   
   //MARK: Data Receive
   private func passwordData() {
-    guard let _ = passWordTF.text else { return print("passwordTF: nil") }
+    guard let passWord = passWordTF.text,
+      passWord.count >= 8 else { return passWordTF.shake() }
     signUpData.updateValue(passWordTF.text!, forKey: "password")
-    guard let _ = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
+    guard let checkPassWord = checkPassWordTF.text,
+      passWordTF.text == checkPassWord
+      else { return checkPassWordTF.shake() }
     signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
   }
   //MARK: keyboardNotification
@@ -130,9 +133,8 @@ extension SignUpPassWordViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let text = textField.text ?? ""
     let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
-    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    let _ = [NSAttributedStringKey.font: textField.font!]
     guard replacedText.count < 20 else { return false }
     return true
   }
-  
 }
