@@ -67,10 +67,24 @@ extension SignUpPassWordViewController {
       .validate()
       .responseData { (response) in
         switch response.result {
-        case .success(let value):
-          print("value: \(value)")
-        case.failure(let error):
-          print("error: \(error)")
+        case .success:
+          if let data = response.data {
+            //            , let text = String(data: data, encoding: .utf8) {
+            //            print(text)
+            do {
+              let user = try JSONDecoder().decode(User.self, from: data)
+              user.saveToUserDefaults()
+              
+              if let writtenToken = User.loadTokenFromUserDefaults() {
+                print("signUp: success, writtenToken: \(writtenToken)")
+              }
+              self.dismiss(animated: true, completion: nil)
+            } catch (let error) {
+              print("signUp: decode failed, \(error.localizedDescription)")
+            }
+          }
+        case .failure(let error):
+          print("signUp: auth failed, \(error.localizedDescription)")
         }
     }
   }
