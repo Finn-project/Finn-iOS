@@ -11,9 +11,7 @@ import Foundation
 //MARK:- shaky animation for textFields in LoginFlow
 extension UITextField {
   func shake() {
-    
-    //MARK: sublayer needs to be fixed, should be inserted
-    self.layer.sublayers![0].backgroundColor = UIColor.red.cgColor
+//    self.layer.sublayers![0].backgroundColor = UIColor.red.cgColor
     
     UIView.animateKeyframes(withDuration: 0.2, delay: 0, options: [.autoreverse], animations: {
       
@@ -30,7 +28,7 @@ extension UITextField {
       
     }, completion: { _ in
       self.center.x += 16
-      self.layer.sublayers![0].backgroundColor = UIColor.white.cgColor
+//      self.layer.sublayers![0].backgroundColor = UIColor.red.cgColor
     })
   }
 }

@@ -22,7 +22,7 @@ class SignUpPassWordViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     addKeyboardObserver()
   }
   
@@ -67,19 +67,36 @@ extension SignUpPassWordViewController {
       .validate()
       .responseData { (response) in
         switch response.result {
-        case .success(let value):
-          print("value: \(value)")
-        case.failure(let error):
-          print("error: \(error)")
+        case .success:
+          if let data = response.data {
+            //            , let text = String(data: data, encoding: .utf8) {
+            //            print(text)
+            do {
+              let user = try JSONDecoder().decode(User.self, from: data)
+              user.saveToUserDefaults()
+              
+              if let writtenToken = User.loadTokenFromUserDefaults() {
+                print("signUp: success, writtenToken: \(writtenToken)")
+              }
+              self.dismiss(animated: true, completion: nil)
+            } catch (let error) {
+              print("signUp: decode failed, \(error.localizedDescription)")
+            }
+          }
+        case .failure(let error):
+          print("signUp: auth failed, \(error.localizedDescription)")
         }
     }
   }
   
   //MARK: Data Receive
   private func passwordData() {
-    guard let _ = passWordTF.text else { return print("passwordTF: nil") }
+    guard let passWord = passWordTF.text,
+      passWord.count >= 8 else { return passWordTF.shake() }
     signUpData.updateValue(passWordTF.text!, forKey: "password")
-    guard let _ = checkPassWordTF.text else { return print("checkPassWordTF: nil") }
+    guard let checkPassWord = checkPassWordTF.text,
+      passWordTF.text == checkPassWord
+      else { return checkPassWordTF.shake() }
     signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
   }
   //MARK: keyboardNotification
@@ -130,9 +147,8 @@ extension SignUpPassWordViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let text = textField.text ?? ""
     let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
-    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    let _ = [NSAttributedStringKey.font: textField.font!]
     guard replacedText.count < 20 else { return false }
     return true
   }
-  
 }
