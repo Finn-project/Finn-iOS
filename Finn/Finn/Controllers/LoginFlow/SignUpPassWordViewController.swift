@@ -44,7 +44,7 @@ extension SignUpPassWordViewController {
   @IBAction func signUpAction(_ sender: Any) {
     passwordData()
     dataInfo()
-    self.dismiss(animated: true, completion: nil)
+//    self.dismiss(animated: true, completion: nil)
   }
   @IBAction func removeKeyboard(_ sender: Any) {
     passWordTF.resignFirstResponder()
