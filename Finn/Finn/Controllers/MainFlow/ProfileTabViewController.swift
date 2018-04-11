@@ -77,14 +77,14 @@ extension ProfileTabViewController {
     if profileImageURL != "0000" {
       drawProfileImgFromServer(url: profileImageURL)
     } else {
-      profileImgView.image = #imageLiteral(resourceName: "tempCat")
+      profileImgView.image = #imageLiteral(resourceName: "defaultProfileImg")
     }
    
   }
   
   func changeProfileToLogoutState() {
     nameLabel.text = "회원이신가요?"
-    profileImgView.image = #imageLiteral(resourceName: "tempCat")
+    profileImgView.image = #imageLiteral(resourceName: "defaultProfileImg")
   }
   
   func changeButtonToLoginState() {
@@ -98,7 +98,7 @@ extension ProfileTabViewController {
   }
 }
 
-//MARK:- networking
+//MARK:- networking - need to be saved in cache
 extension ProfileTabViewController {
   func drawProfileImgFromServer(url: String) {
     
