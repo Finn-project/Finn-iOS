@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E1DE65620771FF90082F8ED /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1DE65520771FF90082F8ED /* ProfileEditViewController.swift */; };
 		1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC72072009300F4F673 /* AppDelegate.swift */; };
 		1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */; };
 		1E8C8DCD2072009300F4F673 /* MainFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8C8DCB2072009300F4F673 /* MainFlow.storyboard */; };
@@ -43,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		06FBF5FA90CDBB1779124772 /* Pods-Finn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.release.xcconfig"; sourceTree = "<group>"; };
-		1E1DE65520771FF90082F8ED /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		1E8C8DC42072009300F4F673 /* Finn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8C8DC72072009300F4F673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */,
 				98EFBECB20720B1E002F3A60 /* ProfileTabViewController.swift */,
 				1EA0DE9F2073652300971DCB /* ProfileDetailViewController.swift */,
-				1E1DE65520771FF90082F8ED /* ProfileEditViewController.swift */,
 				1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */,
 				1EA0DEA42073698800971DCB /* SettingViewController.swift */,
 			);
@@ -365,7 +362,6 @@
 				1E9E0B8A20773FEC0035486A /* DrawableExtensions.swift in Sources */,
 				1E9E0B8820773FDB0035486A /* Animations.swift in Sources */,
 				351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */,
-				1E1DE65620771FF90082F8ED /* ProfileEditViewController.swift in Sources */,
 				351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */,
 				98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */,
 				1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */,
