@@ -79,7 +79,8 @@ class User: Codable {
       info.updateValue("0000", forKey: "email")
     }
     
-    if let profileImg = self.userInfo.profileImg {
+    if !self.userInfo.images.isEmpty {
+      let profileImg = self.userInfo.images[0].profileImg
       info.updateValue(profileImg, forKey: "profileImg")
     } else {
       // MARK: default img required
@@ -149,7 +150,7 @@ class UserInfo: Codable {
   var phoneNumber: String = "0000"
   var firstName: String = "0000"
   var lastName: String = "0000"
-  var profileImg: String! // all login type returns String!
+  var images: [ProfileImages] = [] // all login type returns String!
   var isHost: Bool = false
   var isEmailUser: Bool = false
   var isFacebookUser: Bool = false
@@ -161,9 +162,21 @@ class UserInfo: Codable {
     case email
     case firstName = "first_name"
     case lastName = "last_name"
-    case profileImg = "img_profile"
+    case images
     case isHost = "is_host"
     case isEmailUser = "is_email_user"
     case isFacebookUser = "is_facebook_user"
+  }
+}
+
+class ProfileImages: Codable {
+  var profileImg: String = "0000"
+  var profileImg_150: String = "0000"
+  var profileImg_300: String = "0000"
+  
+  enum CodingKeys: String, CodingKey {
+    case profileImg = "img_profile"
+    case profileImg_150 = "img_profile_150"
+    case profileImg_300 = "img_profile_300"
   }
 }

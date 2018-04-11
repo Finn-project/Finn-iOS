@@ -32,7 +32,7 @@ class SignUpNameViewController: UIViewController {
     firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
     lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
   }
-
+  
   //MARK:- removeObserver
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
@@ -54,7 +54,7 @@ extension SignUpNameViewController {
     firstNameTF.resignFirstResponder()
     lastNameTF.resignFirstResponder()
   }
-
+  
   
   //MARK: Data Receive
   private func nameData() {
@@ -83,7 +83,7 @@ extension SignUpNameViewController {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: .main) {
       [weak self] in
       guard let userInfo = $0.userInfo,
-        let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+        let _ = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect,
         let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
         else { return }
@@ -111,7 +111,7 @@ extension SignUpNameViewController: UITextFieldDelegate {
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let text = textField.text ?? ""
     let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
-    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    let _ = [NSAttributedStringKey.font: textField.font!]
     guard replacedText.count < 12 else { return false }
     return true
   }
