@@ -57,7 +57,7 @@ extension LoginViewController {
     
     guard let password = loginPWTF.text,
       password != "",
-      password.count > 8 else {
+      password.count >= 8 else {
         loginPWTF.shake()
         return
     }
