@@ -184,17 +184,41 @@
 		1EC0584020725A42005D24E0 /* UploadFlow */ = {
 			isa = PBXGroup;
 			children = (
+				35241767207DF54F00F5B5E0 /* Step1 */,
+				35241768207DF58D00F5B5E0 /* Step2 */,
+				35241769207DF5B900F5B5E0 /* Step3 */,
 				35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */,
+			);
+			path = UploadFlow;
+			sourceTree = "<group>";
+		};
+		35241767207DF54F00F5B5E0 /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
 				351A0BA32074B76900A288FB /* UploadIntroViewController.swift */,
 				351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */,
 				351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
+		35241768207DF58D00F5B5E0 /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
 				351A0BAD2074B96700A288FB /* RoomImageAddViewController.swift */,
 				351A0BAF2074B98E00A288FB /* RoomImagePreviewViewController.swift */,
 				351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */,
-				351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */,
-				351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */,
 			);
-			path = UploadFlow;
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		35241769207DF5B900F5B5E0 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */,
+				351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */,
+			);
+			path = Step3;
 			sourceTree = "<group>";
 		};
 		44CE1BAFCFCEFA8EFD5088CD /* Pods */ = {
