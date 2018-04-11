@@ -10,14 +10,16 @@ import UIKit
 
 class SignUpEmailPhoneViewController: UIViewController {
   
-  //MARK:- Property
-  var signUpData: [String: Any] = [:]
-  
+
   //MARK:- IBOutlet
   @IBOutlet weak var emailTF: UITextField!
   @IBOutlet weak var phoneNumTF: UITextField!
   @IBOutlet weak var emailTitle: UILabel!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
+  
+  //MARK:- Internal Properties
+  var signUpData: [String: Any] = [:]
+  
   //MARK:- LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,9 +54,14 @@ extension SignUpEmailPhoneViewController {
   }
   //MARK: Data Receive
   private func emailPhoneData() {
-    guard let _ = emailTF.text else { return print("emailTF: nil") }
+    guard let email = emailTF.text,
+    email != "",
+    email.contains("@") == true,
+    email.contains(".") == true
+    else { return print("emailTF: nil") }
     signUpData.updateValue(emailTF.text!, forKey: "username")
-    guard let _ = phoneNumTF.text else { return print("phoneNumTF: nil") }
+    guard let phoneNum = phoneNumTF.text,
+    phoneNum != "" else { return print("phoneNumTF: nil") }
     signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   //MARK: keyboardNotification
@@ -87,6 +94,7 @@ extension SignUpEmailPhoneViewController {
 }
 
 extension SignUpEmailPhoneViewController: UITextFieldDelegate {
+  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if emailTF.text == "" {
       emailTF.becomeFirstResponder()
@@ -96,4 +104,13 @@ extension SignUpEmailPhoneViewController: UITextFieldDelegate {
     }
     return true
   }
+  
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    let text = textField.text ?? ""
+    let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
+    let attrKey = [NSAttributedStringKey.font: textField.font!]
+    guard replacedText.count < 30 else { return false }
+    return true
+  }
 }
+
