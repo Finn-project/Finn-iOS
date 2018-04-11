@@ -44,7 +44,7 @@ extension SignUpPassWordViewController {
   @IBAction func signUpAction(_ sender: Any) {
     passwordData()
     dataInfo()
-//    self.dismiss(animated: true, completion: nil)
+    
   }
   @IBAction func removeKeyboard(_ sender: Any) {
     passWordTF.resignFirstResponder()
@@ -69,12 +69,9 @@ extension SignUpPassWordViewController {
         switch response.result {
         case .success:
           if let data = response.data {
-            //            , let text = String(data: data, encoding: .utf8) {
-            //            print(text)
             do {
               let user = try JSONDecoder().decode(User.self, from: data)
               user.saveToUserDefaults()
-              
               if let writtenToken = User.loadTokenFromUserDefaults() {
                 print("signUp: success, writtenToken: \(writtenToken)")
               }
