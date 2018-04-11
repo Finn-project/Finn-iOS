@@ -39,6 +39,11 @@ class ProfileDetailViewController: UIViewController {
     emailTf.borderBottom(height: 1.0, color: .darkGray)
     phoneNumTf.borderBottom(height: 1.0, color: .darkGray)
     userFullNameTf.borderBottom(height: 1.0, color: .darkGray)
+    
+    userNameTf.isUserInteractionEnabled = false
+    emailTf.isUserInteractionEnabled = false
+    phoneNumTf.isUserInteractionEnabled = false
+    userFullNameTf.isUserInteractionEnabled = false
   }
 }
 
