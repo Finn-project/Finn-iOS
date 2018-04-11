@@ -14,7 +14,7 @@ extension UITextField {
     let border = CALayer()
     border.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: height)
     border.backgroundColor = color.cgColor
-    self.layer.addSublayer(border)
+    self.layer.insertSublayer(border, at: 0)
   }
 }
 
