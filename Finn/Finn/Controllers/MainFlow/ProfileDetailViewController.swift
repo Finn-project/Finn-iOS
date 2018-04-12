@@ -17,13 +17,13 @@ class ProfileDetailViewController: UIViewController {
   //MARK:- IBOutlets
   @IBOutlet weak var lastNameLabel: UILabel!
   @IBOutlet weak var firstNameLabel: UILabel!
-  
   @IBOutlet weak var lastNameTf: UITextField!
   @IBOutlet weak var firstNameTf: UITextField!
-  
   @IBOutlet weak var userNameTf: UITextField!
-  @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var phoneNumTf: UITextField!
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var changePWBtn: UIButton!
+  @IBOutlet weak var changeInfoBtn: UIBarButtonItem!
   
   //MARK:- LifeCycles
   override func viewDidLoad() {
