@@ -75,7 +75,7 @@ extension ProfileTabViewController {
   func changeProfileToLoginState() {
     guard let profile = self.userProfile else { return }
     
-    let fullName = profile.lastName + "  " + profile.firstName
+    let fullName = profile.lastName + " " + profile.firstName
     nameLabel.text = fullName
     
     // draw profileImage if needed
