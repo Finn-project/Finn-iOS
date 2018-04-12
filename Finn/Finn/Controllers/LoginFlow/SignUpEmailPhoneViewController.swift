@@ -13,7 +13,6 @@ class SignUpEmailPhoneViewController: UIViewController {
   
   //MARK:- IBOutlet
   @IBOutlet weak var emailTF: UITextField!
-  @IBOutlet weak var phoneNumTF: UITextField!
   @IBOutlet weak var emailTitle: UILabel!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   
@@ -29,7 +28,6 @@ class SignUpEmailPhoneViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     emailTF.borderBottom(height: 1.0, color: UIColor.white)
-    phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
   }
   
   //MARK:- removeObserver
@@ -50,7 +48,6 @@ extension SignUpEmailPhoneViewController {
   //MARK:- IBAction
   @IBAction func removeKeyboard(_ sender: Any) {
     emailTF.resignFirstResponder()
-    phoneNumTF.resignFirstResponder()
   }
   //MARK: Data Receive
   private func emailPhoneData() {
@@ -60,10 +57,6 @@ extension SignUpEmailPhoneViewController {
       email.contains(".") == true
       else { return emailTF.shake() }
     signUpData.updateValue(emailTF.text!, forKey: "username")
-    guard let phoneNum = phoneNumTF.text,
-      phoneNum != ""
-      else { return phoneNumTF.shake() }
-    signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   //MARK: keyboardNotification
   private func addKeyboardObserver() {
@@ -101,7 +94,6 @@ extension SignUpEmailPhoneViewController: UITextFieldDelegate {
       emailTF.becomeFirstResponder()
     } else {
       emailTF.resignFirstResponder()
-      phoneNumTF.becomeFirstResponder()
     }
     return true
   }

@@ -31,6 +31,7 @@ class ProfileTabViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+//    self.navigationController?.setNavigationBarHidden(true, animated: false)
 
     if User.checkCurrentUser() {
       userProfile = User.getUserProfileFromUserDefaults()
@@ -41,6 +42,11 @@ class ProfileTabViewController: UIViewController {
       changeProfileToLogoutState()
       changeButtonToLogoutState()
     }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+//    self.navigationController?.setNavigationBarHidden(false, animated: false)
   }
   
 }
@@ -69,7 +75,7 @@ extension ProfileTabViewController {
   func changeProfileToLoginState() {
     guard let profile = self.userProfile else { return }
     
-    let fullName = profile.lastName + " " + profile.firstName
+    let fullName = profile.lastName + "  " + profile.firstName
     nameLabel.text = fullName
     
     // draw profileImage if needed
