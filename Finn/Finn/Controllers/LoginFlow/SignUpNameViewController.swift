@@ -27,7 +27,6 @@ class SignUpNameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.updateFocusIfNeeded()
-    
     addKeyboardObserver()
   }
   
@@ -36,6 +35,11 @@ class SignUpNameViewController: UIViewController {
     firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
     lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
     phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.phoneNumberTitle.center.x += 300
   }
   
   //MARK:- removeObserver
@@ -69,7 +73,7 @@ extension SignUpNameViewController {
     guard let lastName = lastNameTF.text, lastName != "" else { return lastNameTF.shake()}
     signUpData.updateValue(lastNameTF.text!, forKey: "last_name")
     guard let phoneNum = phoneNumTF.text, phoneNum != "" else { return phoneNumTF.shake() }
-        signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
+    signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   
   //MARK: keyboardNotification
@@ -105,24 +109,43 @@ extension SignUpNameViewController {
 }
 //MARK:- UITextFieldDelegate
 extension SignUpNameViewController: UITextFieldDelegate {
+  func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    if textField.tag == 1 {
+      UIView.animate(withDuration: 3.0, delay: 0.5, options: [], animations: {
+        self.nameTitle.isHidden = false
+        self.phoneNumberTitle.isHidden = true
+        self.phoneNumberTitle.center.x += self.view.bounds.width
+      })
+    } else if textField.tag == 2 {
+      UIView.animate(withDuration: 3.0, delay: 0.5, options: [], animations: {
+        self.nameTitle.isHidden = false
+        self.phoneNumberTitle.isHidden = true
+        self.phoneNumberTitle.center.x += self.view.bounds.width
+      })
+    } else if textField.tag == 3 {
+      UIView.animate(withDuration: 1.0, delay: 1, options: [], animations: {
+        self.nameTitle.isHidden = true
+        self.phoneNumberTitle.isHidden = false
+        self.phoneNumberTitle.center.x -= 300
+      })
+    }
+    return true
+  }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if firstNameTF.text == "" {
+    if textField.tag == 1 {
       firstNameTF.becomeFirstResponder()
-    } else if (firstNameTF.text != "") && (lastNameTF.text == "") {
-      firstNameTF.resignFirstResponder()
-      lastNameTF.becomeFirstResponder()
-    } else {
-      firstNameTF.resignFirstResponder()
-      lastNameTF.resignFirstResponder()
-      phoneNumTF.becomeFirstResponder()
-      if phoneNumTF.becomeFirstResponder() {
-        nameTitle.isHidden = true
-        phoneNumberTitle.isHidden = false
-      } else {
-        nameTitle.isHidden = false
-        phoneNumberTitle.isHidden = true
+      if firstNameTF.text != "" {
+        firstNameTF.resignFirstResponder()
+        lastNameTF.becomeFirstResponder()
       }
+    } else if textField.tag == 2 {
+      if lastNameTF.text != "" {
+        lastNameTF.resignFirstResponder()
+        phoneNumTF.becomeFirstResponder()
+      }
+    } else {
+      phoneNumTF.resignFirstResponder()
     }
     return true
   }

@@ -294,9 +294,16 @@
                                     <segue destination="zXM-lH-s03" kind="show" id="8mK-aq-xeA"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f66-9g-pVa">
+                                <rect key="frame" x="24" y="122" width="188" height="34"/>
+                                <state key="normal" title="프로필사진 변경하기">
+                                    <color key="titleColor" name="ThemeColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="f66-9g-pVa" firstAttribute="trailing" secondItem="mXd-zy-A2O" secondAttribute="trailing" id="0Ok-67-47q"/>
                             <constraint firstItem="b7O-wg-Ktg" firstAttribute="top" secondItem="93p-Kr-HE2" secondAttribute="bottom" constant="40" id="4ho-YU-pvR"/>
                             <constraint firstItem="thL-92-34i" firstAttribute="trailing" secondItem="dwT-Jf-ogO" secondAttribute="trailing" constant="24" id="5xU-6h-3xO"/>
                             <constraint firstItem="93p-Kr-HE2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mXd-zy-A2O" secondAttribute="trailing" constant="16" id="CYg-J7-0Fz"/>
@@ -304,6 +311,7 @@
                             <constraint firstItem="m3Q-KO-r3j" firstAttribute="centerY" secondItem="93p-Kr-HE2" secondAttribute="centerY" id="DPr-Ll-uG2"/>
                             <constraint firstItem="m3Q-KO-r3j" firstAttribute="leading" secondItem="thL-92-34i" secondAttribute="leading" constant="24" id="FhJ-eF-rVC"/>
                             <constraint firstItem="m3Q-KO-r3j" firstAttribute="top" secondItem="nhi-bt-GXx" secondAttribute="bottom" constant="8" id="IC4-QE-nTv"/>
+                            <constraint firstItem="f66-9g-pVa" firstAttribute="top" secondItem="m3Q-KO-r3j" secondAttribute="bottom" constant="16" id="Ky2-N8-hHe"/>
                             <constraint firstItem="HOG-21-GRD" firstAttribute="top" secondItem="dwT-Jf-ogO" secondAttribute="bottom" constant="24" id="NPZ-LC-o8Y"/>
                             <constraint firstItem="MhM-P0-QrY" firstAttribute="top" secondItem="HOG-21-GRD" secondAttribute="bottom" constant="8" id="Op2-aq-1Xo"/>
                             <constraint firstItem="thL-92-34i" firstAttribute="trailing" secondItem="93p-Kr-HE2" secondAttribute="trailing" constant="24" id="Q1O-Gi-kUG"/>
@@ -322,6 +330,7 @@
                             <constraint firstItem="MhM-P0-QrY" firstAttribute="leading" secondItem="thL-92-34i" secondAttribute="leading" constant="24" id="rng-Xq-bVi"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nhi-bt-GXx" secondAttribute="trailing" constant="20" symbolic="YES" id="tHu-R4-mB0"/>
                             <constraint firstItem="dwT-Jf-ogO" firstAttribute="top" secondItem="b7O-wg-Ktg" secondAttribute="bottom" constant="8" id="ucQ-sx-MFk"/>
+                            <constraint firstItem="f66-9g-pVa" firstAttribute="leading" secondItem="thL-92-34i" secondAttribute="leading" constant="24" id="ukz-3i-Jwb"/>
                             <constraint firstItem="nhi-bt-GXx" firstAttribute="leading" secondItem="thL-92-34i" secondAttribute="leading" constant="24" id="wp1-Xw-wSA"/>
                             <constraint firstItem="knY-pb-bDf" firstAttribute="trailing" secondItem="mXd-zy-A2O" secondAttribute="trailing" id="wuB-ef-Wye"/>
                             <constraint firstItem="thL-92-34i" firstAttribute="trailing" secondItem="MhM-P0-QrY" secondAttribute="trailing" constant="24" id="yaB-2d-yOR"/>
@@ -329,13 +338,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="thL-92-34i"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xtl-Tc-kbH">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="수정하기" id="3qX-yS-sLp"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Xtl-Tc-kbH"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="changeInfoBtn" destination="3qX-yS-sLp" id="VYT-ed-Huf"/>
                         <outlet property="changePWBtn" destination="knY-pb-bDf" id="yj7-Mg-NZ2"/>
+                        <outlet property="changeProfileImg" destination="f66-9g-pVa" id="bzT-gl-F7v"/>
                         <outlet property="firstNameLabel" destination="aLY-Oj-G5j" id="Mdh-kk-DDd"/>
                         <outlet property="firstNameTf" destination="mXd-zy-A2O" id="SZw-Ky-N9p"/>
                         <outlet property="lastNameLabel" destination="nhi-bt-GXx" id="J4X-KU-LWH"/>
@@ -370,7 +377,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5C-vb-okw">
                                 <rect key="frame" x="24" y="219" width="327" height="38"/>
@@ -379,7 +386,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바꿀 비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skz-OV-2DM">
                                 <rect key="frame" x="24" y="190" width="327" height="21"/>
@@ -400,7 +407,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOV-y2-nVp">
                                 <rect key="frame" x="24" y="32" width="172.5" height="29"/>
@@ -421,7 +428,6 @@
                             <constraint firstItem="9sW-JG-nYh" firstAttribute="top" secondItem="bC4-7y-HRb" secondAttribute="bottom" constant="8" id="9LZ-Ct-uuy"/>
                             <constraint firstItem="EOV-y2-nVp" firstAttribute="leading" secondItem="JAZ-8A-Dqm" secondAttribute="leading" constant="24" id="FbS-pE-6Fe"/>
                             <constraint firstItem="9sW-JG-nYh" firstAttribute="leading" secondItem="JAZ-8A-Dqm" secondAttribute="leading" constant="24" id="L3N-qk-ouf"/>
-                            <constraint firstItem="Skz-OV-2DM" firstAttribute="top" secondItem="9sW-JG-nYh" secondAttribute="bottom" constant="24" id="MWh-LQ-C8l"/>
                             <constraint firstItem="EOV-y2-nVp" firstAttribute="top" secondItem="JAZ-8A-Dqm" secondAttribute="top" constant="32" id="QAO-ax-r88"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EOV-y2-nVp" secondAttribute="trailing" constant="20" symbolic="YES" id="VH7-sG-Ta9"/>
                             <constraint firstItem="r5C-vb-okw" firstAttribute="top" secondItem="Skz-OV-2DM" secondAttribute="bottom" constant="8" id="Var-tw-wfb"/>
@@ -435,6 +441,7 @@
                             <constraint firstItem="JAZ-8A-Dqm" firstAttribute="trailing" secondItem="Skz-OV-2DM" secondAttribute="trailing" constant="24" id="q5k-ya-Yil"/>
                             <constraint firstItem="JAZ-8A-Dqm" firstAttribute="trailing" secondItem="bC4-7y-HRb" secondAttribute="trailing" constant="24" id="qIN-YT-oHN"/>
                             <constraint firstItem="Skz-OV-2DM" firstAttribute="leading" secondItem="JAZ-8A-Dqm" secondAttribute="leading" constant="24" id="s0D-7b-Bcc"/>
+                            <constraint firstItem="Skz-OV-2DM" firstAttribute="top" secondItem="9sW-JG-nYh" secondAttribute="bottom" constant="24" id="sZC-En-GzG"/>
                             <constraint firstItem="ogO-p1-6wK" firstAttribute="leading" secondItem="JAZ-8A-Dqm" secondAttribute="leading" constant="24" id="vHK-0h-4wL"/>
                             <constraint firstItem="ogO-p1-6wK" firstAttribute="top" secondItem="GS4-D6-w9x" secondAttribute="bottom" constant="8" id="vde-b1-Dgk"/>
                             <constraint firstItem="JAZ-8A-Dqm" firstAttribute="trailing" secondItem="GS4-D6-w9x" secondAttribute="trailing" constant="24" id="w2f-aa-axk"/>

@@ -23,6 +23,8 @@ class ProfilePasswordChangeViewController: UIViewController {
   @IBOutlet weak var confirmPWLbl: UILabel!
   @IBOutlet weak var confirmPWTf: UITextField!
   
+  let themeColor = UIColor(named: "ThemeColor")!
+  
   //MARK:- internal data
   var isConfirmed: Bool = false {
     didSet {
@@ -44,14 +46,10 @@ class ProfilePasswordChangeViewController: UIViewController {
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    currentPWTf.borderBottom(height: 1.0, color: .lightGray)
-    newPWTf.borderBottom(height: 1.0, color: .lightGray)
-    confirmPWTf.borderBottom(height: 1.0, color: .lightGray)
   }
 }
 
@@ -73,6 +71,8 @@ extension ProfilePasswordChangeViewController {
   func drawInitialState() {
     currentPWLblCenter.constant = -92
     
+    viewTitleLbl.text = "현재 비밀번호 확인"
+    
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "확인하기", style: .plain,
                                                              target: self, action: #selector(self.checkCurrentPassword))
     
@@ -81,12 +81,16 @@ extension ProfilePasswordChangeViewController {
     newPWTf.center.x += view.bounds.width
     confirmPWLbl.center.x += view.bounds.width
     confirmPWTf.center.x += view.bounds.width
+    
+    currentPWTf.drawBottomBorder(backColor: .white, withColor: themeColor)
+    newPWTf.drawBottomBorder(backColor: .white, withColor: themeColor)
+    confirmPWTf.drawBottomBorder(backColor: .white, withColor: themeColor)
   }
   
   func drawConfirmedState() {
-    currentPWLblCenter.constant = -192
-    
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "변경하기", style: .plain,
+
+    viewTitleLbl.text = "비밀번호 변경하기"
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "변경하기", style: .done,
                                                              target: self, action: #selector(self.changePassword))
     
     newPWLbl.isHidden = false
@@ -95,15 +99,24 @@ extension ProfilePasswordChangeViewController {
     confirmPWTf.isHidden = false
     
     //animate here
-    UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
+    UIView.animate(withDuration: 0.33, delay: 0.0, options: [], animations: {
+      self.currentPWLbl.center.y -= 100
+      self.currentPWTf.center.y -= 100
+      
       self.newPWLbl.center.x -= self.view.bounds.width
       self.newPWTf.center.x -= self.view.bounds.width
       self.confirmPWLbl.center.x -= self.view.bounds.width
       self.confirmPWTf.center.x -= self.view.bounds.width
+      
+      self.currentPWTf.layer.shadowColor = UIColor.lightGray.cgColor
     }, completion: nil)
+
+    self.currentPWLblCenter.constant = -192
     
-    currentPWLbl.isHidden = true
-    currentPWTf.isHidden = true
+    currentPWLbl.textColor = .lightGray
+    currentPWTf.textColor = .lightGray
+    currentPWTf.layer.shadowColor = UIColor.lightGray.cgColor
     
+    currentPWTf.isUserInteractionEnabled = false
   }
 }
