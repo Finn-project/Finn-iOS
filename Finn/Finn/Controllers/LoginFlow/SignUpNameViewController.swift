@@ -13,6 +13,9 @@ class SignUpNameViewController: UIViewController {
   //MARK:- IBOutlets
   @IBOutlet weak var firstNameTF: UITextField!
   @IBOutlet weak var lastNameTF: UITextField!
+  @IBOutlet weak var phoneNumTF: UITextField!
+  @IBOutlet weak var nameTitle: UILabel!
+  @IBOutlet weak var phoneNumberTitle: UILabel!
   @IBOutlet weak var keyboardMargin: NSLayoutConstraint!
   @IBOutlet weak var nextBtn: UIButton!
   
@@ -24,6 +27,7 @@ class SignUpNameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.updateFocusIfNeeded()
+    
     addKeyboardObserver()
   }
   
@@ -31,6 +35,7 @@ class SignUpNameViewController: UIViewController {
     super.viewDidLayoutSubviews()
     firstNameTF.borderBottom(height: 1.0, color: UIColor.white)
     lastNameTF.borderBottom(height: 1.0, color: UIColor.white)
+    phoneNumTF.borderBottom(height: 1.0, color: UIColor.white)
   }
   
   //MARK:- removeObserver
@@ -53,6 +58,7 @@ extension SignUpNameViewController {
   @IBAction func removeKeyboard(_ sender: Any) {
     firstNameTF.resignFirstResponder()
     lastNameTF.resignFirstResponder()
+    phoneNumTF.resignFirstResponder()
   }
   
   
@@ -62,6 +68,8 @@ extension SignUpNameViewController {
     signUpData.updateValue(firstNameTF.text!, forKey: "first_name")
     guard let lastName = lastNameTF.text, lastName != "" else { return lastNameTF.shake()}
     signUpData.updateValue(lastNameTF.text!, forKey: "last_name")
+    guard let phoneNum = phoneNumTF.text, phoneNum != "" else { return phoneNumTF.shake() }
+        signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
   }
   
   //MARK: keyboardNotification
@@ -75,7 +83,7 @@ extension SignUpNameViewController {
         else { return }
       
       UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-        self?.keyboardMargin.constant = keyboardFrame.height + 20
+        self?.keyboardMargin.constant = keyboardFrame.height + 5
         self?.view.layoutIfNeeded()
       })
     }
@@ -89,7 +97,7 @@ extension SignUpNameViewController {
         else { return }
       
       UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-        self?.keyboardMargin.constant = 10
+        self?.keyboardMargin.constant = 5
         self?.view.layoutIfNeeded()
       })
     }
@@ -101,9 +109,20 @@ extension SignUpNameViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if firstNameTF.text == "" {
       firstNameTF.becomeFirstResponder()
-    } else {
+    } else if (firstNameTF.text != "") && (lastNameTF.text == "") {
       firstNameTF.resignFirstResponder()
       lastNameTF.becomeFirstResponder()
+    } else {
+      firstNameTF.resignFirstResponder()
+      lastNameTF.resignFirstResponder()
+      phoneNumTF.becomeFirstResponder()
+      if phoneNumTF.becomeFirstResponder() {
+        nameTitle.isHidden = true
+        phoneNumberTitle.isHidden = false
+      } else {
+        nameTitle.isHidden = false
+        phoneNumberTitle.isHidden = true
+      }
     }
     return true
   }
