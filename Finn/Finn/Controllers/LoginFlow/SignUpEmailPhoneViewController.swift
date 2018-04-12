@@ -68,7 +68,7 @@ extension SignUpEmailPhoneViewController {
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
         else { return }
       UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-        self?.keyboardMargin.constant = keyboardFrame.height + 20
+        self?.keyboardMargin.constant = keyboardFrame.height + 5
         self?.view.layoutIfNeeded()
       })
     }
@@ -80,7 +80,7 @@ extension SignUpEmailPhoneViewController {
         let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? UInt
         else { return }
       UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions(rawValue: curve), animations: {
-        self?.keyboardMargin.constant = 10
+        self?.keyboardMargin.constant = 5
         self?.view.layoutIfNeeded()
       })
     }

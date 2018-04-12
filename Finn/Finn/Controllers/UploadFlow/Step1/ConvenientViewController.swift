@@ -47,15 +47,15 @@ extension ConvenientViewController: UITableViewDelegate{
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 0{
-      return 4
+      return 6
     }else {
-      return 3
+      return 6
     }
   }
 }
 
 //MARK: amenity goods & amenity Facilities
-let amenities: [String] = ["TV", "에어컨", "커피포트", "컴퓨터", "공기청정기"]
+let amenities: [String] = ["TV", "에어컨", "전자렌지", "커피포트", "컴퓨터", "공기청정기"]
 let facilities: [String] = ["수영장", "엘리베이터", "세탁소","노래방", "오락실", "온천"]
 //MARK: UITableViewDataSource
 extension ConvenientViewController: UITableViewDataSource{
