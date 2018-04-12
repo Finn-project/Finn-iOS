@@ -13,7 +13,7 @@ extension UITextField {
   func shake() {
 //    self.layer.sublayers![0].backgroundColor = UIColor.red.cgColor
     
-    UIView.animateKeyframes(withDuration: 0.2, delay: 0, options: [.autoreverse], animations: {
+    UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: [.autoreverse], animations: {
       
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25, animations: {
         self.center.x -= 16
