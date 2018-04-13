@@ -327,7 +327,7 @@
                                 <rect key="frame" x="24" y="339.5" width="327" height="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <connections>
                                     <outlet property="delegate" destination="VhF-oD-ro2" id="AXz-iJ-kcx"/>
                                 </connections>
@@ -406,7 +406,7 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNZ-gn-T1P">
+                            <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNZ-gn-T1P">
                                 <rect key="frame" x="20" y="194" width="331" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="6Gj-Wz-Rvz"/>
@@ -439,14 +439,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="가입하기"/>
                                 <connections>
-                                    <segue destination="s2U-HD-Cln" kind="show" id="Qvk-a1-Weg"/>
+                                    <action selector="signUpAction:" destination="Xnt-AK-vtS" eventType="touchUpInside" id="s5Q-1I-Wql"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KD4-UG-bYT">
+                            <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KD4-UG-bYT">
                                 <rect key="frame" x="20" y="267" width="331" height="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Xnt-AK-vtS" id="JWF-l4-O4d"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL6-yB-EnZ">
                                 <rect key="frame" x="24" y="309" width="327" height="21"/>
@@ -454,11 +457,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzN-Hc-ZFa">
+                            <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzN-Hc-ZFa">
                                 <rect key="frame" x="20" y="340" width="331" height="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Xnt-AK-vtS" id="DtN-Pw-Fd7"/>
+                                </connections>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-kS-a2P">
                                 <rect key="frame" x="24" y="96" width="327" height="32.5"/>
@@ -519,9 +525,13 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="checkPassWordTF" destination="XzN-Hc-ZFa" id="3R4-pI-eLT"/>
                         <outlet property="emailTF" destination="lNZ-gn-T1P" id="G0g-dI-eVP"/>
                         <outlet property="emailTitle" destination="Hus-lI-fqL" id="L4W-AQ-tpQ"/>
                         <outlet property="keyboardMargin" destination="hOj-ts-UdV" id="sa0-nY-TMl"/>
+                        <outlet property="passWordSubTitle" destination="6xE-jE-9cM" id="Add-LG-9cJ"/>
+                        <outlet property="passWordTF" destination="KD4-UG-bYT" id="WMV-NK-suU"/>
+                        <outlet property="passWordTitle" destination="HQz-kS-a2P" id="PYU-pu-jZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Er8-ph-k0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,123 +542,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2828" y="562.66866566716647"/>
-        </scene>
-        <!--Sign Up Pass Word View Controller-->
-        <scene sceneID="azh-4a-bKH">
-            <objects>
-                <viewController storyboardIdentifier="SignUpPassWordViewController" id="s2U-HD-Cln" customClass="SignUpPassWordViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q8R-YR-KOO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnr-4f-RPQ">
-                                <rect key="frame" x="24" y="96" width="327" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bn-gW-ewL">
-                                <rect key="frame" x="24" y="139" width="336" height="61"/>
-                                <string key="text">비밀번호는 8자 이상이어야 하며, 
-평범하거나 반복적 또는 연속적이지 않아야 합니다. 
-되도록 길게 비밀번호를 설정해 주세요.</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="awF-m8-xBc">
-                                <rect key="frame" x="24" y="249" width="327" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="QkI-pb-ZrC"/>
-                                </constraints>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="s2U-HD-Cln" id="g7d-6p-3mb"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsa-ra-pIF">
-                                <rect key="frame" x="24" y="220" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CE4-Jj-KkK">
-                                <rect key="frame" x="24" y="312" width="327" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DpY-YS-vnK">
-                                <rect key="frame" x="24" y="341" width="327" height="42"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="s2U-HD-Cln" id="aFv-b4-pCB"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-Yc-EZn">
-                                <rect key="frame" x="303" y="577" width="52" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="wCY-MB-aJf"/>
-                                    <constraint firstAttribute="height" constant="60" id="xyj-Rd-aDp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="가입하기"/>
-                                <connections>
-                                    <action selector="signUpAction:" destination="s2U-HD-Cln" eventType="touchUpInside" id="u34-3O-hyQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" name="ThemeColor"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="lsa-ra-pIF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bn-gW-ewL" secondAttribute="bottom" constant="20" id="0to-4j-tpA"/>
-                            <constraint firstItem="CE4-Jj-KkK" firstAttribute="top" secondItem="awF-m8-xBc" secondAttribute="bottom" constant="21" id="7VY-SF-jxg"/>
-                            <constraint firstItem="CE4-Jj-KkK" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="BWm-PZ-bl7"/>
-                            <constraint firstItem="EOI-Yc-EZn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="q8R-YR-KOO" secondAttribute="leading" constant="20" symbolic="YES" id="CkI-zy-dkt"/>
-                            <constraint firstItem="awF-m8-xBc" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="DHw-VU-wgC"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="awF-m8-xBc" secondAttribute="trailing" constant="24" id="EFq-qX-Ei2"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="gnr-4f-RPQ" secondAttribute="trailing" constant="24" id="J1O-Jg-Yqz"/>
-                            <constraint firstItem="8bn-gW-ewL" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="NZs-lS-o5o"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="8bn-gW-ewL" secondAttribute="trailing" constant="15" id="QI6-Di-y9n"/>
-                            <constraint firstItem="DpY-YS-vnK" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="Rtf-Cm-R6w"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="DpY-YS-vnK" secondAttribute="trailing" constant="24" id="VKB-Ij-S4e"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="EOI-Yc-EZn" secondAttribute="trailing" constant="20" id="VbR-ug-0l6"/>
-                            <constraint firstItem="awF-m8-xBc" firstAttribute="top" secondItem="lsa-ra-pIF" secondAttribute="bottom" constant="8" id="YK9-O4-VHk"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="CE4-Jj-KkK" secondAttribute="trailing" constant="24" id="Yu6-db-psy"/>
-                            <constraint firstItem="awF-m8-xBc" firstAttribute="top" secondItem="7zg-1L-8EJ" secondAttribute="top" constant="185" id="a4J-EB-w0m"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="bottom" secondItem="EOI-Yc-EZn" secondAttribute="bottom" constant="30" id="eIc-Z7-9D9"/>
-                            <constraint firstItem="lsa-ra-pIF" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="fSj-6e-e1w"/>
-                            <constraint firstItem="gnr-4f-RPQ" firstAttribute="top" secondItem="7zg-1L-8EJ" secondAttribute="top" constant="32" id="g0S-QV-hTL"/>
-                            <constraint firstItem="DpY-YS-vnK" firstAttribute="top" secondItem="CE4-Jj-KkK" secondAttribute="bottom" constant="8" id="hFQ-Pc-GDR"/>
-                            <constraint firstItem="EOI-Yc-EZn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7zg-1L-8EJ" secondAttribute="top" constant="220" id="hTs-cO-kCn"/>
-                            <constraint firstItem="7zg-1L-8EJ" firstAttribute="trailing" secondItem="lsa-ra-pIF" secondAttribute="trailing" constant="24" id="k1y-IR-bJY"/>
-                            <constraint firstItem="DpY-YS-vnK" firstAttribute="height" secondItem="awF-m8-xBc" secondAttribute="height" id="lty-zq-uw7"/>
-                            <constraint firstItem="gnr-4f-RPQ" firstAttribute="leading" secondItem="7zg-1L-8EJ" secondAttribute="leading" constant="24" id="rIT-DF-Nn5"/>
-                            <constraint firstItem="8bn-gW-ewL" firstAttribute="top" secondItem="gnr-4f-RPQ" secondAttribute="bottom" constant="10" id="zio-Fc-NWu"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7zg-1L-8EJ"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="BOi-qL-uXJ" appends="YES" id="rBl-LS-m8L"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="checkPassWordTF" destination="DpY-YS-vnK" id="Kdv-En-20a"/>
-                        <outlet property="keyboardMargin" destination="eIc-Z7-9D9" id="Bm9-k7-sKW"/>
-                        <outlet property="passWordTF" destination="awF-m8-xBc" id="QNn-5c-x5Z"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fDZ-tj-taE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="BOi-qL-uXJ">
-                    <connections>
-                        <action selector="removeKeyboard:" destination="s2U-HD-Cln" id="53C-8A-qq3"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="3615" y="563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XBc-yM-1xs">

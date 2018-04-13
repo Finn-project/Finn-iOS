@@ -39,7 +39,7 @@ class SignUpNameViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.phoneNumberTitle.center.x += 300
+    self.phoneNumberTitle.center.x += self.view.bounds.width
   }
   
   //MARK:- removeObserver
@@ -68,9 +68,9 @@ extension SignUpNameViewController {
   
   //MARK: Data Receive
   private func nameData() {
-    guard let firstName = firstNameTF.text, firstName != "" else { return firstNameTF.shake()}
+    guard let firstName = firstNameTF.text, firstName != "" else { return firstNameTF.shake() }
     signUpData.updateValue(firstNameTF.text!, forKey: "first_name")
-    guard let lastName = lastNameTF.text, lastName != "" else { return lastNameTF.shake()}
+    guard let lastName = lastNameTF.text, lastName != "" else { return lastNameTF.shake() }
     signUpData.updateValue(lastNameTF.text!, forKey: "last_name")
     guard let phoneNum = phoneNumTF.text, phoneNum != "" else { return phoneNumTF.shake() }
     signUpData.updateValue(phoneNumTF.text!, forKey: "phone_num")
@@ -111,22 +111,22 @@ extension SignUpNameViewController {
 extension SignUpNameViewController: UITextFieldDelegate {
   func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     if textField.tag == 1 {
-      UIView.animate(withDuration: 3.0, delay: 0.5, options: [], animations: {
+      UIView.animate(withDuration: 1.0, delay: 0, options: [], animations: {
         self.nameTitle.isHidden = false
         self.phoneNumberTitle.isHidden = true
         self.phoneNumberTitle.center.x += self.view.bounds.width
       })
     } else if textField.tag == 2 {
-      UIView.animate(withDuration: 3.0, delay: 0.5, options: [], animations: {
+      UIView.animate(withDuration: 1.0, delay: 0, options: [], animations: {
         self.nameTitle.isHidden = false
         self.phoneNumberTitle.isHidden = true
         self.phoneNumberTitle.center.x += self.view.bounds.width
       })
     } else if textField.tag == 3 {
-      UIView.animate(withDuration: 1.0, delay: 1, options: [], animations: {
+      UIView.animate(withDuration: 0.7, delay: 0, options: [], animations: {
         self.nameTitle.isHidden = true
         self.phoneNumberTitle.isHidden = false
-        self.phoneNumberTitle.center.x -= 300
+        self.phoneNumberTitle.center.x -= self.view.bounds.width
       })
     }
     return true
@@ -154,7 +154,7 @@ extension SignUpNameViewController: UITextFieldDelegate {
     let text = textField.text ?? ""
     let replacedText = (text as NSString).replacingCharacters(in: range, with: string)
     let _ = [NSAttributedStringKey.font: textField.font!]
-    guard replacedText.count < 12 else { return false }
+    guard replacedText.count < 14 else { return false }
     return true
   }
 }
