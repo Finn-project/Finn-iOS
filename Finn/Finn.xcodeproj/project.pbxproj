@@ -34,7 +34,6 @@
 		351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */; };
 		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
-		98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
 		98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */; };
 		98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */; };
@@ -75,7 +74,6 @@
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
-		98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPassWordViewController.swift; sourceTree = "<group>"; };
 		98EFBEC520720AA4002F3A60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				98EFBEC520720AA4002F3A60 /* LoginViewController.swift */,
 				98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */,
 				1EB6A93C2074795A00D000EF /* SignUpEmailPhoneViewController.swift */,
-				98873E93207498BB00C71245 /* SignUpPassWordViewController.swift */,
 			);
 			path = LoginFlow;
 			sourceTree = "<group>";
@@ -376,7 +373,6 @@
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
-				98873E94207498BB00C71245 /* SignUpPassWordViewController.swift in Sources */,
 				351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */,
 				1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */,
 				351A0BAE2074B96700A288FB /* RoomImageAddViewController.swift in Sources */,
