@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit //지오코딩 ->(구글맵 주소->위도경도알아내기)
-
+import CoreLocation
 class RoomAddressViewController: UIViewController {
   
   var matchingItems: [MKMapItem] = [MKMapItem]()
@@ -57,12 +57,39 @@ class RoomAddressViewController: UIViewController {
           let camera = self.mapView.camera
           camera.centerCoordinate = item.placemark.coordinate
           camera.altitude = 500
-          print(annotation.coordinate.latitude)
-          print(annotation.coordinate.longitude)
+//          print(annotation.coordinate.latitude)
+//          print(annotation.coordinate.longitude)
           self.mapView.addAnnotation(annotation)
+          self.geocode(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude, completion: { (placemark, error) in
+           
+            guard let placemark = placemark else {return}
+            
+            print("dong:", placemark.thoroughfare ?? "")
+            print("detailAddress:", placemark.subThoroughfare ?? "")
+            print("district:",     placemark.locality ?? "")
+            print("city:",    placemark.administrativeArea ?? "")
+            //print("zip code:", placemark.postalCode ?? "")
+            print("country:",  placemark.country ?? "")
+            print(annotation.coordinate.latitude)
+            print(annotation.coordinate.longitude)
+            
+            
+          })
+          
         }
       }
     }
+  }
+  //MARK:- reverseGeocode function
+  //
+  ///  Convert latitude&longitude to address
+  ///
+  /// - Parameters:
+  ///   - latitude: Search result latitude
+  ///   - longitude: Search result longitude
+  ///   - completion: reverseGeocodeLocation
+  func geocode(latitude: Double, longitude: Double, completion: @escaping (CLPlacemark?, Error?) -> ())  {
+    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { completion($0?.first, $1) }
   }
     override func viewDidLoad() {
         super.viewDidLoad()

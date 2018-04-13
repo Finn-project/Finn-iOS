@@ -27,10 +27,10 @@ class UploadIntroViewController: UIViewController {
   
   //MARK:- Dummy Data
   let roomTypeData = ["주택", "호텔", "리조트"]
-  let roomCountData = ["1", "2", "3", "4"]
-  let bedCountData = ["4", "5", "6", "7"]
-  let bathCountData = ["11", "22", "33", "44"]
-  let allowedPeopleData = ["11", "21", "31", "41"]
+  let roomCountData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+  let bedCountData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16+"]
+  let bathCountData = ["1", "2", "3", "4", "5", "6", "7", "8"]
+  let allowedPeopleData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16+"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,7 +52,7 @@ class UploadIntroViewController: UIViewController {
     toolBar.tintColor = UIColor.black
     toolBar.sizeToFit()
     
-    let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.doneAct(_:)))
+    let doneButton = UIBarButtonItem(title: "완료", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.doneAct(_:)))
     let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
     
     
@@ -82,7 +82,7 @@ class UploadIntroViewController: UIViewController {
   }
   //MARK:- done Action
   @objc func doneAct(_ sender: Any) {
-    //머리가 안돌아감
+    //머리가 안돌아감, 수정 필요
     roomTypeTf.inputView?.removeFromSuperview()
     roomTypeTf.inputAccessoryView?.removeFromSuperview()
     roomCountTf.inputView?.removeFromSuperview()
