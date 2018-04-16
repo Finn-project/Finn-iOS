@@ -9,31 +9,31 @@
 import UIKit
 
 class UploadFlowMainViewController: UIViewController {
+  var houseModel: HouseInfoForInternal = HouseInfoForInternal()
+  
+  var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
+  
+  
   @IBAction func dismissAct(_ sender: Any){
     self.dismiss(animated: true, completion: nil)
       
   }
-  
+  //MARK:- Internal Property
+  var houseInfoData: [String: Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+      print("mainVC: ", houseInfoData)
         // Do any additional setup after loading the view.
     }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let uploadIntroVC = segue.destination as? UploadIntroViewController else {return}
+    uploadIntroVC.houseInfoData = houseInfoData
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
