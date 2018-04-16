@@ -8,6 +8,69 @@
 
 import Foundation
 
+class HouseInfoForInternal {
+  var pk: Int = 0
+  var houseInfoStepOneForInternal: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
+ //var houseInfoStepTwoForInternal: HouseInfoStepTwoForInternal
+ //var houseInfoStepThreeForInternal: HouseInfoStepThreeForInternal
+  
+  
+}
+class HouseInfoStepOneForInternal {
+  var houseType: String = "0000"
+  var roomCount: Int = 0
+  var bedCount: Int = 0
+  var bathroomCount: Int = 0
+  var peopleCount: Int = 0
+  var country: String = "0000"
+  var address: AddressForInternal = AddressForInternal()
+  var amenities: [AmenitiesForInternal] = []
+  var facilities: [FacilitiesForInternal] = []
+
+}
+class AddressForInternal {
+  var city: String = "0000"
+  var district: String = "0000"
+  var dong: String = "0000"
+  var firstDetailAddress: String = "0000"
+  var secondDetailAddress: String = "0000"
+  var latitude: Double = 0.0
+  var longitude: Double = 0.0
+
+}
+class AmenitiesForInternal {
+  var tv: String = "0000"
+  var airConditioner: String = "0000"
+  var oven: String = "0000"
+  var coffeepot: String = "0000"
+  var computer: String = "0000"
+  var airCleaner: String = "0000"
+
+}
+class FacilitiesForInternal {
+  var pool: String = "0000"
+  var elevator: String = "0000"
+  var laundry: String = "0000"
+  var karaoke: String = "0000"
+  var gameRoom: String = "0000"
+  var hotSpring: String = "0000"
+  
+}
+class HouseInfoStepTwoForInternal {
+  
+}
+class HouseInfoStepThreeForInternal {
+  
+}
+
+
+
+
+
+
+
+
+
 //MARK:- retrieved house data from server
 class House: Codable {
   var pk: Int = 0

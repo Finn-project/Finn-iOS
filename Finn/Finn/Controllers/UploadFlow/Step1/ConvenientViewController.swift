@@ -9,15 +9,42 @@
 import UIKit
 
 class ConvenientViewController: UIViewController {
+  var stepOne = HouseInfoStepOneForInternal()
   
   //MARK: GO TO UploadIntro
   @IBAction func backToIntro(_ sender: Any){
+    var selectedAmenities: [String] = []
+    var selectedFacilities: [String] = []
+//    tableView.indexPathForSelectedRow?.forEach{print($0)}
+    
+//    tableView.indexPathsForSelectedRows?.forEach {
+//      print("(\($0.section), \($0.row))")
+//    }
+    if let array = tableView.indexPathsForSelectedRows {
+      array.forEach { (indexPath) in
+        if (indexPath.section == 0) {
+          selectedAmenities.append( String(indexPath.row) )
+        } else if (indexPath.section == 1) {
+          selectedFacilities.append( String(indexPath.row) )
+        }
+      }
+    }
+    if let rootVC = self.navigationController?.viewControllers[0] as? UploadFlowMainViewController {
+//      rootVC.stepOne = <# whole struct #>
+    }
     self.navigationController?.popToRootViewController(animated: true)
+    
   }
   //MARK: IBOutlets
   @IBOutlet weak var tableView: UITableView!
+  //MARK:- Internal Property
+  var houseInfoData: [String: Any] = [:]
+  var addressforupload = AddressForInternal()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    stepOne.address = addressforupload
+//    stepOne.bathroomCount = houseInfoData[""] as!
     
     // Do any additional setup after loading the view.
   }
@@ -40,7 +67,11 @@ class ConvenientViewController: UIViewController {
   
 }
 //MARK: UITableViewDelegate -> numberOfSections & numberOfRowsInSection
-extension ConvenientViewController: UITableViewDelegate{
+extension ConvenientViewController {
+  
+  
+}
+extension ConvenientViewController: UITableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
@@ -65,8 +96,10 @@ extension ConvenientViewController: UITableViewDataSource{
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     if indexPath.section == 0 {
       cell.textLabel?.text = amenities[indexPath.row]
-    }else{
+      cell.isSelected = false
+    } else {
       cell.textLabel?.text = facilities[indexPath.row]
+      cell.isSelected = false
     }
     return cell
   }
@@ -87,8 +120,10 @@ extension ConvenientViewController: UITableViewDataSource{
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     if cell.accessoryType == .checkmark{
       cell.accessoryType = .none
-    }else{
+      cell.isSelected = false
+    } else {
       cell.accessoryType = .checkmark
+      cell.isSelected = true
     }
   }
 }

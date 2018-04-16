@@ -11,6 +11,8 @@ import UIKit
 class UploadIntroViewController: UIViewController {
   
   
+  
+  
   //MARK:-  IBOultlets
   @IBOutlet weak var roomTypeTf: UITextField!
   @IBOutlet weak var roomCountTf: UITextField!
@@ -26,15 +28,18 @@ class UploadIntroViewController: UIViewController {
   let allowedPeoplePicker = UIPickerView()
   
   //MARK:- Dummy Data
-  let roomTypeData = ["주택", "호텔", "리조트"]
+  let roomTypeData = ["주택", "아파트", "원룸"]
   let roomCountData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   let bedCountData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16+"]
   let bathCountData = ["1", "2", "3", "4", "5", "6", "7", "8"]
   let allowedPeopleData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16+"]
   
+  //MARK:- Internal Property
+  var houseInfoData: [String: Any] = [:]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    print(houseInfoData)
     roomTypePicker.delegate = self
     roomTypePicker.dataSource = self
     roomCountPicker.delegate = self
@@ -95,23 +100,36 @@ class UploadIntroViewController: UIViewController {
     allowedPeopleTf.inputAccessoryView?.removeFromSuperview()
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let roomAddressVC = segue.destination as? RoomAddressViewController else {return}
+    uploadIntroData()
+    roomAddressVC.houseInfoData = houseInfoData
+    
+  }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+
   
 }
+extension UploadIntroViewController {
+  func uploadIntroData(){
+    guard let roomType = roomTypeTf.text else {return}
+    houseInfoData.updateValue(roomType, forKey: "houseType")
+    
+    guard let roomCount: Int = Int(roomCountTf.text!) else {return}
+    houseInfoData.updateValue(roomCount, forKey: "roomCount")
+    guard let bedCount: Int = Int(bedCountTf.text!) else {return}
+    houseInfoData.updateValue(bedCount, forKey: "bedCount")
+    guard let bathCount: Int = Int(bathCountTf.text!) else {return}
+    houseInfoData.updateValue(bathCount, forKey: "bathroomCount")
+    guard let allowedPeople: Int = Int(allowedPeopleTf.text!) else {return}
+    houseInfoData.updateValue(allowedPeople, forKey: "peopleCount")
+  }
+}
+
 //MARK: Textfield Delegate
 extension UploadIntroViewController: UITextFieldDelegate {
   
