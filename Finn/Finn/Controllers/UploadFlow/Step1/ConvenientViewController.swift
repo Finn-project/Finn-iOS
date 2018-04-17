@@ -9,68 +9,91 @@
 import UIKit
 
 class ConvenientViewController: UIViewController {
+  
+  //MARK:- IBOutlets
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var saveBtn: UIButton!
+  
+  //MARK:- Internal property
+  var houseInfoData: [String: Any] = [:]
+  var addressforupload = AddressForInternal()
   var stepOne = HouseInfoStepOneForInternal()
   
-  //MARK: GO TO UploadIntro
+  
+  
+  //MARK:- GO TO UploadIntro
   @IBAction func backToIntro(_ sender: Any){
-    var selectedAmenities: [String] = []
-    var selectedFacilities: [String] = []
-//    tableView.indexPathForSelectedRow?.forEach{print($0)}
-    
-//    tableView.indexPathsForSelectedRows?.forEach {
-//      print("(\($0.section), \($0.row))")
-//    }
+    var selectedAmenities: [Int] = []
+    var selectedFacilities: [Int] = []
+
     if let array = tableView.indexPathsForSelectedRows {
       array.forEach { (indexPath) in
         if (indexPath.section == 0) {
-          selectedAmenities.append( String(indexPath.row) )
+          selectedAmenities.append( indexPath.row + 1 )
+          
+          print("amenities : ", selectedAmenities)
         } else if (indexPath.section == 1) {
-          selectedFacilities.append( String(indexPath.row) )
+          selectedFacilities.append( indexPath.row + 1 )
+          print("facilities : ", selectedFacilities)
         }
       }
     }
     if let rootVC = self.navigationController?.viewControllers[0] as? UploadFlowMainViewController {
-//      rootVC.stepOne = <# whole struct #>
+      stepOneUploadForInternal()
+      stepOne.amenities = selectedAmenities
+      stepOne.facilities = selectedFacilities
+      rootVC.stepOne = self.stepOne
     }
     self.navigationController?.popToRootViewController(animated: true)
     
   }
-  //MARK: IBOutlets
-  @IBOutlet weak var tableView: UITableView!
-  //MARK:- Internal Property
-  var houseInfoData: [String: Any] = [:]
-  var addressforupload = AddressForInternal()
-  
+
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    stepOne.address = addressforupload
-//    stepOne.bathroomCount = houseInfoData[""] as!
     
-    // Do any additional setup after loading the view.
+    btnDisable()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+ 
   
 }
-//MARK: UITableViewDelegate -> numberOfSections & numberOfRowsInSection
+
+//MARK:- ConvenientVC Extension
 extension ConvenientViewController {
-  
+  //MARK: save to Internal
+  func stepOneUploadForInternal() {
+    stepOne.address = addressforupload
+    stepOne.houseType = houseInfoData["houseType"] as! String
+    stepOne.bedCount = houseInfoData["bedCount"] as! Int
+    stepOne.bathroomCount = houseInfoData["bathroomCount"] as! Int
+    stepOne.roomCount = houseInfoData["roomCount"] as! Int
+    stepOne.peopleCount = houseInfoData["peopleCount"] as! Int
+    stepOne.country = houseInfoData["country"] as! String
+  }
+  func btnDisable() {
+    saveBtn.backgroundColor = .white
+    saveBtn.setTitleColor(originColor, for: .normal)
+    saveBtn.layer.borderColor = originColor.cgColor
+    saveBtn.setTitle("저장", for: .normal)
+    saveBtn.layer.borderWidth = 1
+    saveBtn.isEnabled = false
+  }
+  func btnEnable() {
+    saveBtn.backgroundColor = originColor
+    saveBtn.setTitleColor(.white, for: .normal)
+    saveBtn.setTitle("저장", for: .normal)
+    saveBtn.layer.borderWidth = 0
+    saveBtn.isEnabled = true
+  }
   
 }
+
+//MARK:- UITableViewDelegate -> numberOfSections & numberOfRowsInSection
 extension ConvenientViewController: UITableViewDelegate {
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
@@ -85,10 +108,8 @@ extension ConvenientViewController: UITableViewDelegate {
   }
 }
 
-//MARK: amenity goods & amenity Facilities
-let amenities: [String] = ["TV", "에어컨", "전자렌지", "커피포트", "컴퓨터", "공기청정기"]
-let facilities: [String] = ["수영장", "엘리베이터", "세탁소","노래방", "오락실", "온천"]
-//MARK: UITableViewDataSource
+
+//MARK:- UITableViewDataSource
 extension ConvenientViewController: UITableViewDataSource{
   
   //MARK: Setting cell data
@@ -115,7 +136,7 @@ extension ConvenientViewController: UITableViewDataSource{
     
     return title
   }
-  //MARK: When cell did select, accessoryType become checkmark or none
+  //MARK:- When cell did select, accessoryType become checkmark or none
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     if cell.accessoryType == .checkmark{
