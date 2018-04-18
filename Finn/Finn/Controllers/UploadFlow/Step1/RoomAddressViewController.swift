@@ -24,6 +24,7 @@ class RoomAddressViewController: UIViewController {
 //    self.performSearch()
 //  }
   //MARK:- Internal Property
+  var tmpForMapSearch: String = ""
   var houseInfoData: [String: Any] = [:]
   var addressForUpload: AddressForInternal = AddressForInternal()
   var searchFlag: Bool = false {
@@ -136,7 +137,8 @@ class RoomAddressViewController: UIViewController {
   }
     override func viewDidLoad() {
         super.viewDidLoad()
-      inputAddressTf.becomeFirstResponder()
+      
+      
       // Do any additional setup after loading the view.
       print(houseInfoData)
       btnDisable()
@@ -144,9 +146,13 @@ class RoomAddressViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     inputAddressTf.borderBottom(height: 1.0, color: .lightGray)
     
-    
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    inputAddressTf.becomeFirstResponder()
+    inputAddressTf.text = tmpForMapSearch
+  }
   //MARK:-  prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let convenientVC = segue.destination as? ConvenientViewController else { return }
@@ -188,14 +194,22 @@ extension RoomAddressViewController{
   }
 }
 extension RoomAddressViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    if performSearch() {
+//      mapView.removeAnnotations(mapView.annotations)
+////      btnEnable()
+//      return true
+//    }
+//    return false
+//  }
+  func textFieldDidBeginEditing(_ textField: UITextField) {
     if performSearch() {
       mapView.removeAnnotations(mapView.annotations)
-//      btnEnable()
-      return true
+      btnEnable()
+      self.removeKeyboard(self)
     }
-    return false
   }
+  
 }
 
 

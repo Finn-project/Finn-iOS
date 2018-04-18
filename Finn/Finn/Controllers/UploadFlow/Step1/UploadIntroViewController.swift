@@ -123,23 +123,14 @@ class UploadIntroViewController: UIViewController {
       }
     }
     view.endEditing(false)
-//    roomTypeTf.inputView?.removeFromSuperview()
-//    roomTypeTf.inputAccessoryView?.removeFromSuperview()
-//    roomCountTf.inputView?.removeFromSuperview()
-//    roomCountTf.inputAccessoryView?.removeFromSuperview()
-//    bedCountTf.inputView?.removeFromSuperview()
-//    bedCountTf.inputAccessoryView?.removeFromSuperview()
-//    bathCountTf.inputView?.removeFromSuperview()
-//    bathCountTf.inputAccessoryView?.removeFromSuperview()
-//    allowedPeopleTf.inputView?.removeFromSuperview()
-//    allowedPeopleTf.inputAccessoryView?.removeFromSuperview()
+
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let roomAddressVC = segue.destination as? RoomAddressViewController else {return}
+    guard let addressInputVC = segue.destination as? AddressInputViewController else {return}
     uploadIntroData()
     
-    roomAddressVC.houseInfoData = houseInfoData
+    addressInputVC.houseInfoData = houseInfoData
     
   }
   override func didReceiveMemoryWarning() {
@@ -174,27 +165,6 @@ extension UploadIntroViewController {
     
   }
   
-  //MARK:- nilcheck
-  //  func nilCheck() {
-  //    if roomTypeTf.text != nil {
-  //      nilCheckTmp += 1
-  //     print(nilCheckTmp)
-  //    }else if roomCountTf.text != nil {
-  //      nilCheckTmp += 1
-  //      print(nilCheckTmp)
-  //    }else if bedCountTf.text != nil {
-  //      nilCheckTmp += 1
-  //      print(nilCheckTmp)
-  //    }else if bathCountTf.text != nil {
-  //      nilCheckTmp += 1
-  //      print(nilCheckTmp)
-  //    }else if allowedPeopleTf.text != nil {
-  //      nilCheckTmp += 1
-  //      print(nilCheckTmp)
-  //    }
-  //
-  //  }
-
   //MARK:- Change Button status
   func btnStatusChange() {
     if currentCount < totalCount {

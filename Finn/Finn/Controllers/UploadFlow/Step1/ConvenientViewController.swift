@@ -146,5 +146,6 @@ extension ConvenientViewController: UITableViewDataSource{
       cell.accessoryType = .checkmark
       cell.isSelected = true
     }
+    btnEnable()
   }
 }
