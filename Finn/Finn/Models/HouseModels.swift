@@ -8,6 +8,10 @@
 
 import Foundation
 
+//MARK:- amenity goods & amenity Facilities Dummy Data
+let amenities: [String] = ["TV", "에어컨", "전자렌지", "커피포트", "컴퓨터", "공기청정기"]
+let facilities: [String] = ["수영장", "엘리베이터", "세탁소","노래방", "오락실", "온천"]
+
 class HouseInfoForInternal {
   var pk: Int = 0
   var houseInfoStepOneForInternal: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
@@ -24,8 +28,8 @@ class HouseInfoStepOneForInternal {
   var peopleCount: Int = 0
   var country: String = "0000"
   var address: AddressForInternal = AddressForInternal()
-  var amenities: [AmenitiesForInternal] = []
-  var facilities: [FacilitiesForInternal] = []
+  var amenities: [Int] = []
+  var facilities: [Int] = []
 
 }
 class AddressForInternal {
@@ -38,24 +42,7 @@ class AddressForInternal {
   var longitude: Double = 0.0
 
 }
-class AmenitiesForInternal {
-  var tv: String = "0000"
-  var airConditioner: String = "0000"
-  var oven: String = "0000"
-  var coffeepot: String = "0000"
-  var computer: String = "0000"
-  var airCleaner: String = "0000"
 
-}
-class FacilitiesForInternal {
-  var pool: String = "0000"
-  var elevator: String = "0000"
-  var laundry: String = "0000"
-  var karaoke: String = "0000"
-  var gameRoom: String = "0000"
-  var hotSpring: String = "0000"
-  
-}
 class HouseInfoStepTwoForInternal {
   
 }
@@ -87,6 +74,7 @@ class House: Codable {
     case modifiedDate = "modified_date"
   }
 }
+
 //MARK:- UploadFlow Step 1.
 class HouseInfoStepOne: Codable {
   var houseType: String = "0000"
@@ -155,6 +143,7 @@ class Facilities: Codable {
   var karaoke: String = "0000"
   var gameRoom: String = "0000"
   var hotSpring: String = "0000"
+  
   enum Codingkeys: Int, CodingKey {
     case pool = 1
     case elevator = 2
