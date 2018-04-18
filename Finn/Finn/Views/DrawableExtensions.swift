@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+//MARK:- themeColor
+let originColor: UIColor = UIColor.init(named: "ThemeColor")!
 //MARK: UITextField
 extension UITextField {
   func borderBottom(height: CGFloat, color: UIColor) {
@@ -42,4 +43,5 @@ extension UIButton {
     btn.backgroundColor = UIColor.white.cgColor
     self.layer.addSublayer(btn)
   }
+ 
 }
