@@ -9,23 +9,34 @@
 import UIKit
 import MapKit //지오코딩 ->(구글맵 주소->위도경도알아내기)
 import CoreLocation
+
 class RoomAddressViewController: UIViewController {
   
-  var matchingItems: [MKMapItem] = [MKMapItem]()
-  //MARK: IBOutlets
+  @IBOutlet weak var goToConveniVCBtn: UIButton!
+  //MARK:- IBOutlets
   @IBOutlet weak var inputAddressTf: UITextField!
   @IBOutlet weak var mapView: MKMapView!
-  //MARK: IBaction
-  @IBAction func textFieldReturn(_ sender: Any){
-    resignFirstResponder()
-    mapView.removeAnnotations(mapView.annotations)
-    self.performSearch()
-}
+  
+  //MARK:- IBaction
+//  @IBAction func textFieldReturn(_ sender: Any){
+//    resignFirstResponder()
+//    mapView.removeAnnotations(mapView.annotations)
+//    self.performSearch()
+//  }
   //MARK:- Internal Property
   var houseInfoData: [String: Any] = [:]
-  var addressInfoData: [String: Any] = [:]
   var addressForUpload: AddressForInternal = AddressForInternal()
+  var searchFlag: Bool = false {
+    didSet {
+      if searchFlag {
+        btnEnable()
+      } else {
+        btnDisable()
+      }
+    }
+  }
   
+  //MARK:- Temp Property
   var latitude: Double = 0.0
   var longitude: Double = 0.0
   var country: String = ""
@@ -34,8 +45,11 @@ class RoomAddressViewController: UIViewController {
   var subLocality: String = ""
   var subThoroughfare: String = ""
   
-  //MARK: Search action 
-  func performSearch(){
+  //MARK:- property for using mapKit
+  var matchingItems: [MKMapItem] = [MKMapItem]()
+  
+  //MARK:- Search action
+  func performSearch() -> Bool {
     matchingItems.removeAll()
     let request = MKLocalSearchRequest()
     request.naturalLanguageQuery = inputAddressTf.text
@@ -46,8 +60,10 @@ class RoomAddressViewController: UIViewController {
     search.start { (response: MKLocalSearchResponse!, error: Error!) in
       if error != nil{
         print("\(error.localizedDescription)")
+        self.searchFlag = false
       }else if response.mapItems.count == 0{
         print("no matches found")
+        self.searchFlag = false
       }else{
         print("found")
         for item in response.mapItems as [MKMapItem]{
@@ -99,12 +115,13 @@ class RoomAddressViewController: UIViewController {
             self.subThoroughfare = placemark.subThoroughfare ?? ""
             self.latitude = annotation.coordinate.latitude
             self.longitude = annotation.coordinate.longitude
-            
+            self.searchFlag = true
           })
           
         }
       }
     }
+    return true
   }
   //MARK:- reverseGeocode function
   //
@@ -122,16 +139,28 @@ class RoomAddressViewController: UIViewController {
       inputAddressTf.becomeFirstResponder()
       // Do any additional setup after loading the view.
       print(houseInfoData)
+      btnDisable()
     }
+  override func viewDidLayoutSubviews() {
+    inputAddressTf.borderBottom(height: 1.0, color: .lightGray)
+    
+    
+  }
 
-  //MARK:-  prepare
+  //MARK:-  prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let convenientVC = segue.destination as? ConvenientViewController else { return }
+    
+    
+    houseInfoData.updateValue(country, forKey: "country")
     addressForUpload.city = administrativeArea
     addressForUpload.district = locality
     addressForUpload.dong = subLocality
     addressForUpload.firstDetailAddress = subThoroughfare
+    addressForUpload.latitude = latitude
+    addressForUpload.longitude = longitude
     
+    convenientVC.houseInfoData = houseInfoData
     convenientVC.addressforupload = addressForUpload
   }
   
@@ -139,8 +168,33 @@ class RoomAddressViewController: UIViewController {
 }
 //MARK: tap Gesture
 extension RoomAddressViewController{
+  func btnDisable() {
+    goToConveniVCBtn.backgroundColor = .white
+    goToConveniVCBtn.setTitleColor(originColor, for: .normal)
+    goToConveniVCBtn.layer.borderColor = originColor.cgColor
+    goToConveniVCBtn.layer.borderWidth = 1
+    goToConveniVCBtn.isEnabled = false
+  }
+  func btnEnable() {
+    goToConveniVCBtn.backgroundColor = originColor
+    goToConveniVCBtn.setTitleColor(.white, for: .normal)
+    goToConveniVCBtn.layer.borderWidth = 0
+    goToConveniVCBtn.isEnabled = true
+  }
+  
+  
   @IBAction func removeKeyboard(_ sender: Any){
     inputAddressTf.resignFirstResponder()
+  }
+}
+extension RoomAddressViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if performSearch() {
+      mapView.removeAnnotations(mapView.annotations)
+//      btnEnable()
+      return true
+    }
+    return false
   }
 }
 
