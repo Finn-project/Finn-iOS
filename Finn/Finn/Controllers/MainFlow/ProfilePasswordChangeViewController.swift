@@ -56,6 +56,12 @@ class ProfilePasswordChangeViewController: UIViewController {
 //MARK:- Button Selectors
 extension ProfilePasswordChangeViewController {
   
+  @IBAction func wallClicked(_ sender: UITapGestureRecognizer) {
+    currentPWTf.resignFirstResponder()
+    newPWTf.resignFirstResponder()
+    confirmPWTf.resignFirstResponder()
+  }
+  
   @objc func checkCurrentPassword() {
     // do psudo-login to check current password
     isConfirmed = true

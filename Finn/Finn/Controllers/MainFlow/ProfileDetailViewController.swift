@@ -50,6 +50,13 @@ extension ProfileDetailViewController {
   @IBAction func rewindFromEditView(_ sender: UIStoryboardSegue) {
   }
   
+  @IBAction func wallClicked(_ sender: UITapGestureRecognizer) {
+    lastNameTf.resignFirstResponder()
+    firstNameTf.resignFirstResponder()
+    userNameTf.resignFirstResponder()
+    phoneNumTf.resignFirstResponder()
+  }
+  
   @objc func awakeToEdit() {
     drawEditMode()
   }

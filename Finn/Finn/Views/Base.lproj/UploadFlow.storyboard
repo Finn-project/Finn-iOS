@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -303,6 +304,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="stepOneBtn" destination="oKZ-ww-rD6" id="aQm-YU-Jep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-WA-drb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -717,6 +721,7 @@
                         <outlet property="allowedPeopleTf" destination="3il-zy-xZ8" id="BF9-ln-0Bo"/>
                         <outlet property="bathCountTf" destination="NDv-pn-cc0" id="h5V-ZQ-PQS"/>
                         <outlet property="bedCountTf" destination="Vgq-yO-q47" id="O3n-GM-OY1"/>
+                        <outlet property="goToAddressBtn" destination="7Im-vT-YcV" id="9nT-yt-SVe"/>
                         <outlet property="roomCountTf" destination="ayc-ZJ-KTN" id="aE2-4q-xmm"/>
                         <outlet property="roomTypeTf" destination="G96-Bc-Xgj" id="NJx-Wn-Nxf"/>
                     </connections>
@@ -828,13 +833,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-Pr-53z">
-                                <rect key="frame" x="24" y="188" width="327" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-Pr-53z">
+                                <rect key="frame" x="24" y="188" width="327" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                 <connections>
-                                    <action selector="textFieldReturn:" destination="rVO-wu-enI" eventType="editingDidEndOnExit" id="qkV-QY-GIa"/>
                                     <outlet property="delegate" destination="rVO-wu-enI" id="Ocd-8O-Aoy"/>
                                 </connections>
                             </textField>
@@ -865,6 +869,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="goToConveniVCBtn" destination="LCL-rG-beh" id="uiz-rE-DkP"/>
                         <outlet property="inputAddressTf" destination="fSU-Pr-53z" id="15n-2Q-kSw"/>
                         <outlet property="mapView" destination="XBi-HR-sRJ" id="lY8-xn-Mf7"/>
                     </connections>
@@ -893,7 +898,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F18-xb-Jmf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F18-xb-Jmf">
                                 <rect key="frame" x="0.0" y="236" width="375" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -947,6 +952,7 @@
                         <viewLayoutGuide key="safeArea" id="Oxn-Tp-cwD"/>
                     </view>
                     <connections>
+                        <outlet property="saveBtn" destination="wWa-01-D3t" id="R8a-Gv-UFw"/>
                         <outlet property="tableView" destination="F18-xb-Jmf" id="4hw-7N-Cz6"/>
                     </connections>
                 </viewController>
@@ -962,6 +968,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yyc-8q-1WU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="ThemeColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -975,5 +982,8 @@
     </scenes>
     <resources>
         <image name="tempCat" width="649" height="556"/>
+        <namedColor name="ThemeColor">
+            <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
