@@ -22,6 +22,7 @@ class SignUpNameViewController: UIViewController {
   
   //MARK:- Internal Properties
   var signUpData: [String: Any] = [:]
+  let segue: String = "emailAndPassWord"
   
   //MARK:- LifeCycle
   override func viewDidLoad() {
@@ -64,7 +65,17 @@ extension SignUpNameViewController {
     lastNameTF.resignFirstResponder()
     phoneNumTF.resignFirstResponder()
   }
-  
+  @IBAction func nextButton(_ sender: UIButton) {
+     //MARK: TextField error check
+    if firstNameTF.text == "" || lastNameTF.text == "" || phoneNumTF.text == "" {
+      let alertAC = UIAlertController(title: "형식이 올바르지 않습니다. 다시 입력해주세요", message: "", preferredStyle: .alert)
+      let action = UIAlertAction(title: "네", style: .default)
+      alertAC.addAction(action)
+      self.present(alertAC, animated: true, completion: nil)
+    } else {
+      performSegue(withIdentifier: segue, sender: self)
+    }
+  }
   
   //MARK: Data Receive
   private func nameData() {

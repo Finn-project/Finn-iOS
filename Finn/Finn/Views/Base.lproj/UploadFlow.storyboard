@@ -591,7 +591,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="rVO-wu-enI" kind="show" id="wWb-Mh-OPe"/>
+                                    <segue destination="PK4-En-9gr" kind="show" id="zVz-dp-OJw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 형태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-8l-05R">
@@ -795,6 +795,155 @@
             </objects>
             <point key="canvasLocation" x="3793" y="-527"/>
         </scene>
+        <!--Address Input View Controller-->
+        <scene sceneID="Qfj-Tv-7um">
+            <objects>
+                <viewController storyboardIdentifier="AddressInputViewController" id="PK4-En-9gr" customClass="AddressInputViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3h-Cg-Maf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-of-kKy">
+                                <rect key="frame" x="280" y="593" width="71" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="gd7-gI-prb"/>
+                                </constraints>
+                                <state key="normal" title="다음 &gt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="rVO-wu-enI" kind="show" id="AER-lT-4sn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소에 대한 주소 정보를 입력해 주세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-2h-GGm">
+                                <rect key="frame" x="24" y="96" width="327" height="64.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUD-o1-ukn">
+                                <rect key="frame" x="24" y="210" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="대한민국" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7u-9O-Gho">
+                                <rect key="frame" x="24" y="244" width="327" height="29"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceV-K5-Tah">
+                                <rect key="frame" x="24" y="288" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) 서울특별시 *필수" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkX-QL-NKf">
+                                <rect key="frame" x="24" y="332" width="327" height="23"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PK4-En-9gr" id="KGk-wl-tge"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예)서울특별시 송파구 잠실동 19-2 *필수" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWf-Ba-beo">
+                                <rect key="frame" x="24" y="375" width="327" height="23"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PK4-En-9gr" id="kQG-59-4CE"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="예) 111동 111호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBj-lI-pSg">
+                                <rect key="frame" x="24" y="418" width="327" height="23"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PK4-En-9gr" id="ciY-ee-PSx"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="우편번호(선택사항)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srD-gT-ufI">
+                                <rect key="frame" x="24" y="494" width="327" height="23"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PK4-En-9gr" id="n1d-Ir-mmb"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우편번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojg-Sa-Ngr">
+                                <rect key="frame" x="24" y="456" width="327" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ceV-K5-Tah" firstAttribute="leading" secondItem="N7u-9O-Gho" secondAttribute="leading" id="075-5Q-KM9"/>
+                            <constraint firstItem="fkX-QL-NKf" firstAttribute="leading" secondItem="ceV-K5-Tah" secondAttribute="leading" id="20y-WJ-hIr"/>
+                            <constraint firstItem="MAj-LA-F23" firstAttribute="trailing" secondItem="a0d-2h-GGm" secondAttribute="trailing" constant="24" id="64G-74-uLw"/>
+                            <constraint firstItem="MAj-LA-F23" firstAttribute="trailing" secondItem="kSm-of-kKy" secondAttribute="trailing" constant="24" id="8hx-9w-Uug"/>
+                            <constraint firstItem="yUD-o1-ukn" firstAttribute="top" secondItem="a0d-2h-GGm" secondAttribute="bottom" constant="49.5" id="CDq-bi-hDy"/>
+                            <constraint firstItem="jBj-lI-pSg" firstAttribute="top" secondItem="rWf-Ba-beo" secondAttribute="bottom" constant="20" id="J1n-C9-dMW"/>
+                            <constraint firstItem="ojg-Sa-Ngr" firstAttribute="trailing" secondItem="jBj-lI-pSg" secondAttribute="trailing" id="JZX-n4-8C1"/>
+                            <constraint firstItem="ojg-Sa-Ngr" firstAttribute="leading" secondItem="jBj-lI-pSg" secondAttribute="leading" id="KG9-G6-TBD"/>
+                            <constraint firstItem="yUD-o1-ukn" firstAttribute="leading" secondItem="a0d-2h-GGm" secondAttribute="leading" id="Nqm-xa-pmR"/>
+                            <constraint firstItem="rWf-Ba-beo" firstAttribute="leading" secondItem="fkX-QL-NKf" secondAttribute="leading" id="OFe-wY-QAe"/>
+                            <constraint firstItem="N7u-9O-Gho" firstAttribute="trailing" secondItem="yUD-o1-ukn" secondAttribute="trailing" id="RtR-x7-fuF"/>
+                            <constraint firstItem="a0d-2h-GGm" firstAttribute="top" secondItem="MAj-LA-F23" secondAttribute="top" constant="32" id="SMb-0r-PwP"/>
+                            <constraint firstItem="N7u-9O-Gho" firstAttribute="leading" secondItem="yUD-o1-ukn" secondAttribute="leading" id="SQP-kC-cue"/>
+                            <constraint firstItem="jBj-lI-pSg" firstAttribute="leading" secondItem="rWf-Ba-beo" secondAttribute="leading" id="SqQ-1d-Xv6"/>
+                            <constraint firstItem="kSm-of-kKy" firstAttribute="leading" secondItem="MAj-LA-F23" secondAttribute="leading" constant="280" id="Tj6-k7-zhD"/>
+                            <constraint firstItem="ceV-K5-Tah" firstAttribute="trailing" secondItem="N7u-9O-Gho" secondAttribute="trailing" id="Tvj-FI-RBc"/>
+                            <constraint firstItem="fkX-QL-NKf" firstAttribute="top" secondItem="ceV-K5-Tah" secondAttribute="bottom" constant="20" id="U0Q-3f-E6L"/>
+                            <constraint firstItem="ojg-Sa-Ngr" firstAttribute="top" secondItem="jBj-lI-pSg" secondAttribute="bottom" constant="15" id="VV2-bl-8nw"/>
+                            <constraint firstItem="jBj-lI-pSg" firstAttribute="trailing" secondItem="rWf-Ba-beo" secondAttribute="trailing" id="ag2-os-6GR"/>
+                            <constraint firstItem="rWf-Ba-beo" firstAttribute="top" secondItem="fkX-QL-NKf" secondAttribute="bottom" constant="20" id="c0Q-7b-t2O"/>
+                            <constraint firstItem="srD-gT-ufI" firstAttribute="trailing" secondItem="ojg-Sa-Ngr" secondAttribute="trailing" id="cHw-gK-8Kz"/>
+                            <constraint firstItem="yUD-o1-ukn" firstAttribute="trailing" secondItem="a0d-2h-GGm" secondAttribute="trailing" id="eFK-xu-NLv"/>
+                            <constraint firstItem="rWf-Ba-beo" firstAttribute="trailing" secondItem="fkX-QL-NKf" secondAttribute="trailing" id="eVS-Hw-ebz"/>
+                            <constraint firstItem="fkX-QL-NKf" firstAttribute="trailing" secondItem="ceV-K5-Tah" secondAttribute="trailing" id="fuY-8m-HHg"/>
+                            <constraint firstItem="MAj-LA-F23" firstAttribute="bottom" secondItem="kSm-of-kKy" secondAttribute="bottom" constant="32" id="gpY-MN-VLF"/>
+                            <constraint firstItem="srD-gT-ufI" firstAttribute="leading" secondItem="ojg-Sa-Ngr" secondAttribute="leading" id="mVS-IL-pau"/>
+                            <constraint firstItem="N7u-9O-Gho" firstAttribute="top" secondItem="yUD-o1-ukn" secondAttribute="bottom" constant="10" id="nek-od-AMh"/>
+                            <constraint firstItem="a0d-2h-GGm" firstAttribute="leading" secondItem="MAj-LA-F23" secondAttribute="leading" constant="24" id="oRU-yT-MEj"/>
+                            <constraint firstItem="srD-gT-ufI" firstAttribute="top" secondItem="ojg-Sa-Ngr" secondAttribute="bottom" constant="14" id="skU-WU-us9"/>
+                            <constraint firstItem="ceV-K5-Tah" firstAttribute="top" secondItem="N7u-9O-Gho" secondAttribute="bottom" constant="15" id="y9l-XL-Gxt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MAj-LA-F23"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5y2-l5-cu6" appends="YES" id="u3G-XI-reN"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="detailAddressTf" destination="jBj-lI-pSg" id="Vox-uh-lZ2"/>
+                        <outlet property="goToMapBtn" destination="kSm-of-kKy" id="M4j-hZ-Drl"/>
+                        <outlet property="inputAddressTf" destination="rWf-Ba-beo" id="Ewr-7W-Itx"/>
+                        <outlet property="inputCityTf" destination="fkX-QL-NKf" id="QOW-KM-PyZ"/>
+                        <outlet property="zipCodeTf" destination="srD-gT-ufI" id="kUM-VA-8ED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Lw-fD-r8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5y2-l5-cu6">
+                    <connections>
+                        <action selector="removeKeyboard:" destination="PK4-En-9gr" id="rve-1J-ESH"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3935" y="127"/>
+        </scene>
         <!--Room Address View Controller-->
         <scene sceneID="ZzG-Mw-ALd">
             <objects>
@@ -803,7 +952,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소가 어디에 있나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-n7-WQa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소가 위치가 맞나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woQ-n7-WQa">
                                 <rect key="frame" x="24" y="96" width="327" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -827,7 +976,7 @@
                                     <segue destination="w5S-po-29T" kind="show" id="pLj-Nd-fIF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt0-Rc-Mju">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수정을 원하시면 Back을 눌러주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt0-Rc-Mju">
                                 <rect key="frame" x="24" y="159" width="327" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -881,7 +1030,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3884" y="124.58770614692655"/>
+            <point key="canvasLocation" x="4687" y="126"/>
         </scene>
         <!--Convenient View Controller-->
         <scene sceneID="Cyr-O4-7Dc">
@@ -958,7 +1107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDw-9t-yD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4864.8000000000002" y="126.38680659670166"/>
+            <point key="canvasLocation" x="5508" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t1m-3G-lnB">

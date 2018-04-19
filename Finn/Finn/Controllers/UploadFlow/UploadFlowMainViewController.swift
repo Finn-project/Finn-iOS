@@ -56,29 +56,29 @@ class UploadFlowMainViewController: UIViewController {
 //MARK:- extension
 extension UploadFlowMainViewController {
   //MARK:- change button title & Color to done
-  func changeToDoneBtn() {
+  func changeToDoneBtn(btn: UIButton) {
     
-    stepOneBtn.setTitle("입력됨", for: .normal)
-    stepOneBtn.setTitleColor(.white, for: .normal)
-    stepOneBtn.backgroundColor = originColor
+    btn.setTitle("입력됨", for: .normal)
+    btn.setTitleColor(.white, for: .normal)
+    btn.backgroundColor = originColor
    
   }
   
   //MARK:- reset btn status 
-  func resetContinueBtn() {
+  func resetContinueBtn(btn: UIButton) {
     
-    stepOneBtn.setTitle("계속", for: .normal)
-    stepOneBtn.setTitleColor(originColor, for: .normal)
-    stepOneBtn.backgroundColor = .white
-    stepOneBtn.layer.borderWidth = 1
-    stepOneBtn.layer.borderColor = originColor.cgColor
+    btn.setTitle("계속", for: .normal)
+    btn.setTitleColor(originColor, for: .normal)
+    btn.backgroundColor = .white
+    btn.layer.borderWidth = 1
+    btn.layer.borderColor = originColor.cgColor
   }
   
   func btnChange() {
     if stepOne.address.latitude == 0.0 {
-      resetContinueBtn()
+      resetContinueBtn(btn: stepOneBtn)
     }else {
-      changeToDoneBtn()
+      changeToDoneBtn(btn: stepOneBtn)
     }
   }
 }

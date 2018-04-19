@@ -24,6 +24,7 @@ class RoomAddressViewController: UIViewController {
 //    self.performSearch()
 //  }
   //MARK:- Internal Property
+  var tmpForMapSearch: String = ""
   var houseInfoData: [String: Any] = [:]
   var addressForUpload: AddressForInternal = AddressForInternal()
   var searchFlag: Bool = false {
@@ -54,6 +55,7 @@ class RoomAddressViewController: UIViewController {
     let request = MKLocalSearchRequest()
     request.naturalLanguageQuery = inputAddressTf.text
     request.region = mapView.region
+   
     
     
     let search = MKLocalSearch(request: request)
@@ -107,6 +109,7 @@ class RoomAddressViewController: UIViewController {
             print("thoroughfare : ", placemark.thoroughfare ?? "")
             //지번
             print("subThoroughfare : ", placemark.subThoroughfare ?? "")
+            
             print(annotation.coordinate.latitude)
             print(annotation.coordinate.longitude)
             self.administrativeArea = placemark.administrativeArea ?? ""
@@ -116,6 +119,7 @@ class RoomAddressViewController: UIViewController {
             self.latitude = annotation.coordinate.latitude
             self.longitude = annotation.coordinate.longitude
             self.searchFlag = true
+            
           })
           
         }
@@ -136,7 +140,8 @@ class RoomAddressViewController: UIViewController {
   }
     override func viewDidLoad() {
         super.viewDidLoad()
-      inputAddressTf.becomeFirstResponder()
+      
+      
       // Do any additional setup after loading the view.
       print(houseInfoData)
       btnDisable()
@@ -144,9 +149,13 @@ class RoomAddressViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     inputAddressTf.borderBottom(height: 1.0, color: .lightGray)
     
-    
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    inputAddressTf.becomeFirstResponder()
+    inputAddressTf.text = tmpForMapSearch
+  }
   //MARK:-  prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let convenientVC = segue.destination as? ConvenientViewController else { return }
@@ -188,14 +197,22 @@ extension RoomAddressViewController{
   }
 }
 extension RoomAddressViewController: UITextFieldDelegate {
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    if performSearch() {
+//      mapView.removeAnnotations(mapView.annotations)
+////      btnEnable()
+//      return true
+//    }
+//    return false
+//  }
+  func textFieldDidBeginEditing(_ textField: UITextField) {
     if performSearch() {
       mapView.removeAnnotations(mapView.annotations)
-//      btnEnable()
-      return true
+      btnEnable()
+      self.removeKeyboard(self)
     }
-    return false
   }
+  
 }
 
 
