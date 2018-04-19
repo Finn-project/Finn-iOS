@@ -55,6 +55,7 @@ class RoomAddressViewController: UIViewController {
     let request = MKLocalSearchRequest()
     request.naturalLanguageQuery = inputAddressTf.text
     request.region = mapView.region
+   
     
     
     let search = MKLocalSearch(request: request)
@@ -108,6 +109,7 @@ class RoomAddressViewController: UIViewController {
             print("thoroughfare : ", placemark.thoroughfare ?? "")
             //지번
             print("subThoroughfare : ", placemark.subThoroughfare ?? "")
+            
             print(annotation.coordinate.latitude)
             print(annotation.coordinate.longitude)
             self.administrativeArea = placemark.administrativeArea ?? ""
@@ -117,6 +119,7 @@ class RoomAddressViewController: UIViewController {
             self.latitude = annotation.coordinate.latitude
             self.longitude = annotation.coordinate.longitude
             self.searchFlag = true
+            
           })
           
         }

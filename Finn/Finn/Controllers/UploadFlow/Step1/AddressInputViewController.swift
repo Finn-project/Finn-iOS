@@ -22,6 +22,8 @@ class AddressInputViewController: UIViewController {
   @IBOutlet weak var inputCityTf: UITextField!
   @IBOutlet weak var inputAddressTf: UITextField!
   
+  @IBOutlet weak var zipCodeTf: UITextField!
+  @IBOutlet weak var detailAddressTf: UITextField!
   //MARK:- Internal Property
   var houseInfoData: [String: Any] = [:]
   var addressForUpload: AddressForInternal = AddressForInternal()
@@ -41,6 +43,9 @@ class AddressInputViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     inputAddressTf.borderBottom(height: 1.0, color: .lightGray)
     inputCityTf.borderBottom(height: 1.0, color: .lightGray)
+    zipCodeTf.borderBottom(height: 1.0, color: .lightGray)
+    detailAddressTf.borderBottom(height: 1.0, color: .lightGray)
+    btnStatusChange()
   }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let roomAddressVC = segue.destination as? RoomAddressViewController else {return}
@@ -61,6 +66,24 @@ class AddressInputViewController: UIViewController {
     */
 
 }
+//MARK:- extension
+extension AddressInputViewController{
+  func btnStatusChange() {
+    if inputCityTf.text == "" && inputAddressTf.text == "" {
+      goToMapBtn.backgroundColor = .white
+      goToMapBtn.setTitleColor(originColor, for: .normal)
+      goToMapBtn.layer.borderColor = originColor.cgColor
+      goToMapBtn.layer.borderWidth = 1
+      goToMapBtn.isEnabled = false
+    }else if inputCityTf.text != "" && inputAddressTf.text != "" {
+      goToMapBtn.backgroundColor = originColor
+      goToMapBtn.setTitleColor(.white, for: .normal)
+      goToMapBtn.layer.borderWidth = 0
+      goToMapBtn.isEnabled = true
+    }
+  }
+}
+//MARK:- UItextField delegate
 extension AddressInputViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if inputCityTf.text == "" {
@@ -72,3 +95,4 @@ extension AddressInputViewController: UITextFieldDelegate {
     return true
   }
 }
+
