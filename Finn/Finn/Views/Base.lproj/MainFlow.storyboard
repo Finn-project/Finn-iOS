@@ -494,13 +494,13 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Bvi-1x-r7A" userLabel="FooterView">
-                                    <rect key="frame" x="0.0" y="528" width="375" height="64"/>
+                                    <rect key="frame" x="0.0" y="427" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APx-gc-Oez">
                                             <rect key="frame" x="24" y="8" width="327" height="48"/>
                                             <color key="tintColor" name="ThemeColor"/>
-                                            <state key="normal" title="더보기">
+                                            <state key="normal" title="더보기 (2000개 이상)">
                                                 <color key="titleColor" name="ThemeColor"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -519,11 +519,11 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Heading" rowHeight="240" id="DJT-A9-BJA">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="240"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Heading" rowHeight="68" id="DJT-A9-BJA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DJT-A9-BJA" id="x5a-I7-kZ7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqi-eC-FpL">
@@ -546,11 +546,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityIndex" rowHeight="160" id="7c6-Ah-9LY">
-                                        <rect key="frame" x="0.0" y="268" width="375" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityIndex" rowHeight="180" id="7c6-Ah-9LY">
+                                        <rect key="frame" x="0.0" y="96" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7c6-Ah-9LY" id="iuX-b7-GsP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaz-6t-AnJ">
@@ -565,19 +565,49 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-0V-9RO">
+                                                    <rect key="frame" x="0.0" y="53" width="375" height="118.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e69-1n-xlS">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityCell" id="Dne-3e-pIo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </view>
+                                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <size key="customSize" width="50" height="100"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="aSJ-Fy-rq9" id="GIf-0s-OOj"/>
+                                                        <outlet property="delegate" destination="aSJ-Fy-rq9" id="BPZ-Bb-ESM"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xaz-6t-AnJ" secondAttribute="trailing" constant="20" symbolic="YES" id="2aB-wc-hcp"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rda-0V-9RO" secondAttribute="trailing" id="COl-Ur-vsh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rda-0V-9RO" secondAttribute="bottom" constant="8" id="KZ8-On-Mhn"/>
+                                                <constraint firstItem="Rda-0V-9RO" firstAttribute="top" secondItem="xaz-6t-AnJ" secondAttribute="bottom" constant="8" id="Rpj-Su-GYp"/>
                                                 <constraint firstItem="xaz-6t-AnJ" firstAttribute="top" secondItem="iuX-b7-GsP" secondAttribute="top" constant="16" id="UCW-Sx-4Rm"/>
                                                 <constraint firstItem="xaz-6t-AnJ" firstAttribute="leading" secondItem="iuX-b7-GsP" secondAttribute="leading" constant="24" id="VTf-P9-dm9"/>
+                                                <constraint firstItem="Rda-0V-9RO" firstAttribute="leading" secondItem="iuX-b7-GsP" secondAttribute="leading" id="yFR-CC-G8w"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Catalog" rowHeight="100" id="4x2-IC-tgo">
-                                        <rect key="frame" x="0.0" y="428" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Catalog" rowHeight="151" id="4x2-IC-tgo">
+                                        <rect key="frame" x="0.0" y="276" width="375" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4x2-IC-tgo" id="N0v-AH-b62">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDI-jT-nCY">
@@ -592,11 +622,40 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-iX-wol">
+                                                    <rect key="frame" x="0.0" y="53" width="375" height="89.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F9U-oX-f9W">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogCell" id="1Uk-v8-WxI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </view>
+                                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="aSJ-Fy-rq9" id="u8A-mw-Ums"/>
+                                                        <outlet property="delegate" destination="aSJ-Fy-rq9" id="tE5-g7-BUX"/>
+                                                    </connections>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9Fr-iX-wol" secondAttribute="bottom" constant="8" id="8tk-Hd-77J"/>
+                                                <constraint firstItem="9Fr-iX-wol" firstAttribute="top" secondItem="oDI-jT-nCY" secondAttribute="bottom" constant="8" id="9yk-FW-7tJ"/>
                                                 <constraint firstItem="oDI-jT-nCY" firstAttribute="top" secondItem="N0v-AH-b62" secondAttribute="top" constant="16" id="Abn-tu-roH"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDI-jT-nCY" secondAttribute="trailing" constant="20" symbolic="YES" id="DYi-ud-1Le"/>
                                                 <constraint firstItem="oDI-jT-nCY" firstAttribute="leading" secondItem="N0v-AH-b62" secondAttribute="leading" constant="24" id="abZ-fe-epY"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Fr-iX-wol" secondAttribute="trailing" id="m8t-jD-W1x"/>
+                                                <constraint firstItem="9Fr-iX-wol" firstAttribute="leading" secondItem="N0v-AH-b62" secondAttribute="leading" id="rjn-GI-ZND"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -647,7 +706,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2622" y="494"/>
+            <point key="canvasLocation" x="2621.5999999999999" y="493.40329835082463"/>
         </scene>
         <!--House Detail View Controller-->
         <scene sceneID="wSp-53-2bR">
