@@ -314,7 +314,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Xnt-AK-vtS" kind="show" id="VzN-tN-jsV"/>
+                                    <action selector="nextButton:" destination="VhF-oD-ro2" eventType="touchUpInside" id="NLy-hf-TVn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-x0-2Bb">
@@ -381,6 +381,7 @@
                         <outlet property="nextBtn" destination="MNp-lb-OeG" id="hbU-6O-10Y"/>
                         <outlet property="phoneNumTF" destination="H1z-a3-9ua" id="cmk-6l-G68"/>
                         <outlet property="phoneNumberTitle" destination="k66-qB-VdE" id="qPe-Hq-Mk9"/>
+                        <segue destination="Xnt-AK-vtS" kind="show" identifier="emailAndPassWord" id="UYp-wg-dc3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuj-OQ-vaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
