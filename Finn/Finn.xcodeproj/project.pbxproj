@@ -37,6 +37,8 @@
 		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
 		3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562D79F2086EE9D002C254E /* AddressInputViewController.swift */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
+		98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451257208853610038F362 /* PhotoPickerViewController.swift */; };
+		9845125A208854360038F362 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451259208854360038F362 /* CalendarData.swift */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
 		98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */; };
 		98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */; };
@@ -80,6 +82,8 @@
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
+		98451257208853610038F362 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
+		98451259208854360038F362 /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		98EFBEC520720AA4002F3A60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		1EA0DEA3207366A200971DCB /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				98451257208853610038F362 /* PhotoPickerViewController.swift */,
 				1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */,
 				1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */,
 				1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */,
@@ -174,6 +179,7 @@
 				1EB6A938207466DD00D000EF /* UserModels.swift */,
 				1EB6A93A2074674C00D000EF /* HouseModels.swift */,
 				1EB6A93E20747F3E00D000EF /* NetworkModels.swift */,
+				98451259208854360038F362 /* CalendarData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				1E8C8DC12072009300F4F673 /* Frameworks */,
 				1E8C8DC22072009300F4F673 /* Resources */,
 				21D409D425C3EE9D5E0D7BC6 /* [CP] Embed Pods Frameworks */,
+				B82E9DF9A010964401525302 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,6 +338,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 			);
@@ -340,6 +348,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 			);
@@ -366,6 +375,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B82E9DF9A010964401525302 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Finn/Pods-Finn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -380,9 +404,11 @@
 				98EFBECC20720B1E002F3A60 /* ProfileTabViewController.swift in Sources */,
 				98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */,
 				1ECDAD292084667100C2FDB1 /* SearchFiltersViewController.swift in Sources */,
+				9845125A208854360038F362 /* CalendarData.swift in Sources */,
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
+				98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */,
 				351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */,
 				1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */,
 				351A0BAE2074B96700A288FB /* RoomImageAddViewController.swift in Sources */,

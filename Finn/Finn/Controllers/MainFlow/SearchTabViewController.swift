@@ -90,17 +90,42 @@ extension SearchTabViewController: UITableViewDataSource {
 }
 
 extension SearchTabViewController: UITableViewDelegate {
+  
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if isSearching {
-      return 200
+      return 240
     } else {
-      if indexPath.row == 0 {
-        return 420
-      } else if indexPath.row == 1 {
-        return 320
+      if indexPath.section == 0 {
+        return 72 // heading section
+      } else if indexPath.section == 1 {
+        return 180 // (72 + 100 + 8)
       } else {
         return 240
       }
     }
   }
+  
 }
+
+//MARK:- city: collectionView support
+extension SearchTabViewController: UICollectionViewDataSource {
+  
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 7
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    return UICollectionViewCell()
+  }
+  
+}
+
+extension SearchTabViewController: UICollectionViewDelegate {
+  
+}
+
+//MARK:- catalog: collectionView support

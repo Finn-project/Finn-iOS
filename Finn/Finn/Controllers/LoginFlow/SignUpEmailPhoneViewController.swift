@@ -41,9 +41,47 @@ class SignUpEmailPhoneViewController: UIViewController {
     super.viewWillDisappear(animated)
     NotificationCenter.default.removeObserver(self)
   }
+}
+
+extension SignUpEmailPhoneViewController {
   
-  //MARK: Alamofire
-  private func dataInfo() {
+  //MARK:- IBAction
+  //MARK: removeKeyobard
+  @IBAction func removeKeyboard(_ sender: Any) {
+    emailTF.resignFirstResponder()
+    passWordTF.resignFirstResponder()
+    checkPassWordTF.resignFirstResponder()
+  }
+  //MARK: signUpButton
+  @IBAction func signUpAction(_ sender: Any) {
+    
+    //MARK: Data Receive
+    guard let email = emailTF.text,
+      email != "",
+      email.contains("@") == true,
+      email.contains(".") == true,
+      email != "gmail.com",
+      email != "naver.com",
+      email != "hanmail.com"
+      else {
+        let alertAC = UIAlertController(title: "e-mail 형식이 올바르지 않습니다. 다시 입력해주세요", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "네", style: .default)
+        alertAC.addAction(action)
+        self.present(alertAC, animated: true, completion: nil)
+        emailTF.shake()
+        return
+    }
+    signUpData.updateValue(emailTF.text!, forKey: "username")
+    guard let passWord = passWordTF.text,
+      passWord.count >= 8
+      else { return passWordTF.shake() }
+    signUpData.updateValue(passWordTF.text!, forKey: "password")
+    guard let checkPassWord = checkPassWordTF.text,
+      passWordTF.text == checkPassWord
+      else { return checkPassWordTF.shake() }
+    signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
+    
+    //MARK: Alamofire
     let params: Parameters = [
       "username" : signUpData["username"]!,
       "password" : signUpData["password"]!,
@@ -82,43 +120,8 @@ class SignUpEmailPhoneViewController: UIViewController {
         }
     }
   }
-}
-
-extension SignUpEmailPhoneViewController {
   
-  //MARK:- IBAction
-  @IBAction func removeKeyboard(_ sender: Any) {
-    emailTF.resignFirstResponder()
-    passWordTF.resignFirstResponder()
-    checkPassWordTF.resignFirstResponder()
-  }
   
-  @IBAction func signUpAction(_ sender: Any) {
-    emailPassWordData()
-    dataInfo()
-  }
-  
-  //MARK: Data Receive
-  private func emailPassWordData() {
-    guard let email = emailTF.text,
-      email != "",
-      email.contains("@") == true,
-      email.contains(".") == true,
-      email != "gmail",
-      email != "naver",
-      email != "hanmail"
-      else { return emailTF.shake() }
-    signUpData.updateValue(emailTF.text!, forKey: "username")
-    guard let passWord = passWordTF.text,
-      passWord.count >= 8
-      else { return passWordTF.shake() }
-    signUpData.updateValue(passWordTF.text!, forKey: "password")
-    guard let checkPassWord = checkPassWordTF.text,
-      passWordTF.text == checkPassWord
-      else { return checkPassWordTF.shake() }
-    signUpData.updateValue(checkPassWordTF.text!, forKey: "confirm_password")
-    
-  }
   //MARK: keyboardNotification
   private func addKeyboardObserver() {
     NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) {
