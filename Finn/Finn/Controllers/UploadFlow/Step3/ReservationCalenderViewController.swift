@@ -51,7 +51,7 @@ extension ReservationCalenderViewController: FSCalendarDelegate {
     let deselectData = self.formatter.string(from: date)
     print("deselectData:\(deselectData)")
   }
-  //
+  //monthCount
   func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
     let currentMonth = calendar.month(of: calendar.currentPage)
     print("PageMonth: \(currentMonth)")
@@ -91,9 +91,5 @@ extension ReservationCalenderViewController: FSCalendarDataSource {
     let threeMonthFromNow = self.gregorian.date(byAdding: .month, value: 2, to: Date(), wrappingComponents: true)
     return threeMonthFromNow!
   }
-}
-
-extension ReservationCalenderViewController: FSCalendarDelegateAppearance {
-  
 }
 
