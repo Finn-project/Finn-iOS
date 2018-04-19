@@ -18,19 +18,12 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.31.1):
     - FBSDKCoreKit
+  - FSCalendar (2.7.9)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - FacebookLogin
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - Bolts
-    - FacebookCore
-    - FacebookLogin
-    - FBSDKCoreKit
-    - FBSDKLoginKit
+  - FSCalendar
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -39,7 +32,8 @@ SPEC CHECKSUMS:
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FBSDKCoreKit: e08ccfcefa7bc1347a07c276dac9bf6c7fe57024
   FBSDKLoginKit: 99797ac39252fef6f72600b886f6ee60b4b29cab
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
 
-PODFILE CHECKSUM: 540e1a6212ebcae221d1b015c16c0c4e2bfb0312
+PODFILE CHECKSUM: e34a13e3662cef53e5826542a95e522e24dd66f6
 
-COCOAPODS: 1.5.0.beta.1
+COCOAPODS: 1.4.0

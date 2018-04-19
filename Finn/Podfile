@@ -7,4 +7,5 @@ target 'Finn' do
 
 	pod 'Alamofire', '~> 4.7'
 	pod 'FacebookLogin'
+	pod 'FSCalendar'
 end
