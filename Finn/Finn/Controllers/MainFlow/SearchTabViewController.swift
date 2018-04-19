@@ -107,7 +107,7 @@ extension SearchTabViewController: UITableViewDelegate {
   
 }
 
-//MARK:- city: collectionView support
+//MARK:- CollectionView support
 extension SearchTabViewController: UICollectionViewDataSource {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -119,7 +119,14 @@ extension SearchTabViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    return UICollectionViewCell()
+    if collectionView.tag == 0 {
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityCell", for: indexPath)
+      return cell
+    } else { // tag ==1
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogCell", for: indexPath)
+      return cell
+    }
+    
   }
   
 }
@@ -128,4 +135,5 @@ extension SearchTabViewController: UICollectionViewDelegate {
   
 }
 
-//MARK:- catalog: collectionView support
+
+

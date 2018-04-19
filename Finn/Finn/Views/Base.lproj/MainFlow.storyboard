@@ -565,7 +565,7 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-0V-9RO">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-0V-9RO">
                                                     <rect key="frame" x="0.0" y="53" width="375" height="118.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e69-1n-xlS">
@@ -622,7 +622,7 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-iX-wol">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Fr-iX-wol">
                                                     <rect key="frame" x="0.0" y="53" width="375" height="89.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F9U-oX-f9W">
@@ -639,12 +639,12 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </view>
-                                                            <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" name="ThemeColor"/>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="aSJ-Fy-rq9" id="u8A-mw-Ums"/>
-                                                        <outlet property="delegate" destination="aSJ-Fy-rq9" id="tE5-g7-BUX"/>
+                                                        <outlet property="dataSource" destination="aSJ-Fy-rq9" id="lAI-nN-09q"/>
+                                                        <outlet property="delegate" destination="aSJ-Fy-rq9" id="GJr-8l-d1F"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
@@ -1036,6 +1036,9 @@
         <image name="messagesTab24px" width="24" height="24"/>
         <image name="profileTab24px" width="24" height="24"/>
         <image name="tempHostBackground" width="774" height="571"/>
+        <namedColor name="ThemeColor">
+            <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ThemeColor">
             <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
