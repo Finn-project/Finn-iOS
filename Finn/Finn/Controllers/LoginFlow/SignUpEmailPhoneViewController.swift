@@ -103,7 +103,10 @@ extension SignUpEmailPhoneViewController {
     guard let email = emailTF.text,
       email != "",
       email.contains("@") == true,
-      email.contains(".") == true
+      email.contains(".") == true,
+      email != "gmail",
+      email != "naver",
+      email != "hanmail"
       else { return emailTF.shake() }
     signUpData.updateValue(emailTF.text!, forKey: "username")
     guard let passWord = passWordTF.text,

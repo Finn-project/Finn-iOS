@@ -35,6 +35,7 @@
 		351A0BB22074B9F300A288FB /* RoomDescriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */; };
 		351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */; };
 		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
+		3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562D79F2086EE9D002C254E /* AddressInputViewController.swift */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
 		98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */; };
@@ -75,6 +76,7 @@
 		351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDescriptViewController.swift; sourceTree = "<group>"; };
 		351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSettingViewController.swift; sourceTree = "<group>"; };
 		351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalenderViewController.swift; sourceTree = "<group>"; };
+		3562D79F2086EE9D002C254E /* AddressInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInputViewController.swift; sourceTree = "<group>"; };
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				351A0BA32074B76900A288FB /* UploadIntroViewController.swift */,
+				3562D79F2086EE9D002C254E /* AddressInputViewController.swift */,
 				351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */,
 				351A0BAB2074B87A00A288FB /* ConvenientViewController.swift */,
 			);
@@ -386,6 +389,7 @@
 				98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */,
 				351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */,
 				351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */,
+				3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */,
 				1ECDAD2B20846CF000C2FDB1 /* HouseDetailViewController.swift in Sources */,
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
 				1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */,
