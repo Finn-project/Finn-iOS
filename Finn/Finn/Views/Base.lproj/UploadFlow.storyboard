@@ -20,25 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 상세 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpT-cz-Caf">
-                                <rect key="frame" x="24" y="96" width="327" height="37"/>
+                                <rect key="frame" x="24" y="96" width="261" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙박 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12H-na-PfO">
-                                <rect key="frame" x="24" y="183" width="327" height="24"/>
+                                <rect key="frame" x="24" y="183" width="261" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최소 숙박 가능 일수 (최소 체크인 기간)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSQ-Q8-oMJ">
-                                <rect key="frame" x="24" y="215" width="327" height="21"/>
+                                <rect key="frame" x="24" y="237" width="261" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 숙박 가능 일수 (최대 체크인 기간)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxC-Lo-rLc">
-                                <rect key="frame" x="24" y="244" width="327" height="21"/>
+                                <rect key="frame" x="24" y="318" width="261" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,13 +59,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요금 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWl-rm-TrM">
-                                <rect key="frame" x="24" y="368" width="327" height="24"/>
+                                <rect key="frame" x="24" y="442" width="74" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFS-G1-4sj">
-                                <rect key="frame" x="24" y="400" width="151" height="22"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFS-G1-4sj">
+                                <rect key="frame" x="108" y="447" width="150.5" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -74,49 +74,62 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noU-lg-E2R">
-                                <rect key="frame" x="176" y="400" width="15" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="267.5" y="443.5" width="17.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUd-LO-JWR">
+                                <rect key="frame" x="65" y="266" width="152" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAu-uG-ywp">
+                                <rect key="frame" x="267" y="273" width="18" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cxC-Lo-rLc" firstAttribute="top" secondItem="sSQ-Q8-oMJ" secondAttribute="bottom" constant="8" id="0dg-k9-KTE"/>
-                            <constraint firstItem="xWl-rm-TrM" firstAttribute="trailing" secondItem="NpT-cz-Caf" secondAttribute="trailing" id="4Re-sN-PUX"/>
-                            <constraint firstItem="38g-8D-bux" firstAttribute="trailing" secondItem="noU-lg-E2R" secondAttribute="trailing" constant="184" id="573-yR-1g4"/>
+                            <constraint firstItem="cxC-Lo-rLc" firstAttribute="top" secondItem="sSQ-Q8-oMJ" secondAttribute="bottom" constant="60" id="0dg-k9-KTE"/>
+                            <constraint firstItem="noU-lg-E2R" firstAttribute="centerY" secondItem="AFS-G1-4sj" secondAttribute="centerY" id="1AJ-IZ-esy"/>
+                            <constraint firstItem="noU-lg-E2R" firstAttribute="trailing" secondItem="cxC-Lo-rLc" secondAttribute="trailing" id="438-6S-n3f"/>
                             <constraint firstItem="Y1g-H8-uiC" firstAttribute="leading" secondItem="38g-8D-bux" secondAttribute="leading" constant="280" id="7Ic-KE-vzv"/>
+                            <constraint firstItem="AFS-G1-4sj" firstAttribute="top" secondItem="cxC-Lo-rLc" secondAttribute="bottom" constant="108" id="8OB-Ti-Qxo"/>
                             <constraint firstItem="NpT-cz-Caf" firstAttribute="top" secondItem="38g-8D-bux" secondAttribute="top" constant="32" id="AmZ-vD-nyz"/>
-                            <constraint firstItem="noU-lg-E2R" firstAttribute="top" secondItem="AFS-G1-4sj" secondAttribute="top" id="BGB-ja-efW"/>
                             <constraint firstItem="12H-na-PfO" firstAttribute="trailing" secondItem="NpT-cz-Caf" secondAttribute="trailing" id="CCJ-i2-aDf"/>
+                            <constraint firstItem="AFS-G1-4sj" firstAttribute="leading" secondItem="xWl-rm-TrM" secondAttribute="trailing" constant="10" id="CFC-Ys-KcN"/>
                             <constraint firstItem="38g-8D-bux" firstAttribute="trailing" secondItem="Y1g-H8-uiC" secondAttribute="trailing" constant="24" id="Esr-lK-3CT"/>
+                            <constraint firstItem="MAu-uG-ywp" firstAttribute="top" secondItem="sSQ-Q8-oMJ" secondAttribute="bottom" constant="15" id="FMI-w3-s1J"/>
                             <constraint firstItem="xWl-rm-TrM" firstAttribute="leading" secondItem="NpT-cz-Caf" secondAttribute="leading" id="HbN-ts-Iwg"/>
                             <constraint firstItem="38g-8D-bux" firstAttribute="bottom" secondItem="Y1g-H8-uiC" secondAttribute="bottom" constant="32" id="Lql-vn-aeM"/>
-                            <constraint firstItem="sSQ-Q8-oMJ" firstAttribute="top" secondItem="12H-na-PfO" secondAttribute="bottom" constant="8" id="QS4-h5-qJu"/>
-                            <constraint firstItem="noU-lg-E2R" firstAttribute="leading" secondItem="AFS-G1-4sj" secondAttribute="trailing" constant="1" id="U4H-cn-hVJ"/>
-                            <constraint firstItem="38g-8D-bux" firstAttribute="trailing" secondItem="AFS-G1-4sj" secondAttribute="trailing" constant="200" id="Uhg-Zu-KpP"/>
-                            <constraint firstItem="38g-8D-bux" firstAttribute="trailing" secondItem="NpT-cz-Caf" secondAttribute="trailing" constant="24" id="eHC-4s-mi5"/>
-                            <constraint firstItem="AFS-G1-4sj" firstAttribute="top" secondItem="xWl-rm-TrM" secondAttribute="bottom" constant="8" id="k33-FN-wWw"/>
+                            <constraint firstItem="sSQ-Q8-oMJ" firstAttribute="top" secondItem="12H-na-PfO" secondAttribute="bottom" constant="30" id="QS4-h5-qJu"/>
+                            <constraint firstItem="38g-8D-bux" firstAttribute="trailing" secondItem="NpT-cz-Caf" secondAttribute="trailing" constant="90" id="eHC-4s-mi5"/>
+                            <constraint firstItem="MAu-uG-ywp" firstAttribute="trailing" secondItem="sSQ-Q8-oMJ" secondAttribute="trailing" id="i83-Ru-U12"/>
                             <constraint firstItem="cxC-Lo-rLc" firstAttribute="trailing" secondItem="sSQ-Q8-oMJ" secondAttribute="trailing" id="n4v-p6-Nd0"/>
-                            <constraint firstItem="noU-lg-E2R" firstAttribute="bottom" secondItem="AFS-G1-4sj" secondAttribute="bottom" id="ovP-ke-W76"/>
                             <constraint firstItem="12H-na-PfO" firstAttribute="top" secondItem="NpT-cz-Caf" secondAttribute="bottom" constant="50" id="qAA-B5-yNb"/>
                             <constraint firstItem="cxC-Lo-rLc" firstAttribute="leading" secondItem="sSQ-Q8-oMJ" secondAttribute="leading" id="rFu-GR-5Mi"/>
                             <constraint firstItem="sSQ-Q8-oMJ" firstAttribute="leading" secondItem="12H-na-PfO" secondAttribute="leading" id="t1e-yB-QUN"/>
                             <constraint firstItem="NpT-cz-Caf" firstAttribute="leading" secondItem="38g-8D-bux" secondAttribute="leading" constant="24" id="uWe-L7-3J3"/>
                             <constraint firstItem="xWl-rm-TrM" firstAttribute="top" secondItem="cxC-Lo-rLc" secondAttribute="bottom" constant="103" id="ujz-00-8r2"/>
                             <constraint firstItem="12H-na-PfO" firstAttribute="leading" secondItem="NpT-cz-Caf" secondAttribute="leading" id="v6q-oW-Cju"/>
-                            <constraint firstItem="AFS-G1-4sj" firstAttribute="leading" secondItem="xWl-rm-TrM" secondAttribute="leading" id="y68-yu-qzz"/>
+                            <constraint firstItem="noU-lg-E2R" firstAttribute="leading" secondItem="AFS-G1-4sj" secondAttribute="trailing" constant="9" id="wj3-6B-WZk"/>
                             <constraint firstItem="sSQ-Q8-oMJ" firstAttribute="trailing" secondItem="12H-na-PfO" secondAttribute="trailing" id="zeK-sn-Fub"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="38g-8D-bux"/>
                     </view>
                     <connections>
+                        <outlet property="payTF" destination="AFS-G1-4sj" id="HMU-aX-aTM"/>
                         <outlet property="setPriceTf" destination="AFS-G1-4sj" id="jWC-Id-ZNa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LX4-0v-Ymx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3911" y="-552"/>
+            <point key="canvasLocation" x="3909.5999999999999" y="-552.77361319340332"/>
         </scene>
         <!--Upload Flow Main View Controller-->
         <scene sceneID="dwm-Sv-Jte">
