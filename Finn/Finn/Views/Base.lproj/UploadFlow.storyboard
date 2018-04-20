@@ -258,6 +258,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="stepOneBtn" destination="oKZ-ww-rD6" id="aQm-YU-Jep"/>
+                        <outlet property="stepThreeBtn" destination="KLA-ie-ehA" id="A1Q-n5-H1C"/>
+                        <outlet property="stepTwoBtn" destination="5yF-Vu-3Jb" id="q4G-9s-Wvv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKC-WA-drb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,6 +500,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="inh-gX-Wlu"/>
                     </view>
+                    <connections>
+                        <outlet property="roomDescriptTf" destination="JBL-GB-nn4" id="IFl-w5-fb5"/>
+                        <outlet property="roomNameTf" destination="ibS-Vm-kpe" id="cOq-pq-4TM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kA-St-EVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
