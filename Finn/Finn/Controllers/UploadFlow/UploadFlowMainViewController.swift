@@ -12,7 +12,9 @@ class UploadFlowMainViewController: UIViewController {
   
   //MARK:- IBOutlets
   @IBOutlet weak var stepOneBtn: UIButton!
- 
+  @IBOutlet weak var stepTwoBtn: UIButton!
+  @IBOutlet weak var stepThreeBtn: UIButton!
+  
   //MARK:- IBActions
   @IBAction func dismissAct(_ sender: Any){
     self.dismiss(animated: true, completion: nil)
@@ -23,6 +25,7 @@ class UploadFlowMainViewController: UIViewController {
   
   var houseModel: HouseInfoForInternal = HouseInfoForInternal()
   var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
+  var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
   var houseInfoData: [String: Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,7 @@ class UploadFlowMainViewController: UIViewController {
     super.viewWillAppear(animated)
     btnChange()
     houseModel.houseInfoStepOneForInternal = stepOne
+//    houseModel.houseInfoStepTwoForInternal = stepTwo
     print("city: ", stepOne.address.city)
     print("dong: ", stepOne.address.dong)
     print("houseType: ", stepOne.houseType)

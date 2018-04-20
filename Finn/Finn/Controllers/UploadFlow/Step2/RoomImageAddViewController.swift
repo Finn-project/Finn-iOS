@@ -9,7 +9,9 @@
 import UIKit
 
 class RoomImageAddViewController: UIViewController {
-    
+  
+  //MARK:- Internal Property
+    var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,10 @@ class RoomImageAddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      guard let previewVC = segue.destination as? RoomImagePreviewViewController else {return}
+      previewVC.stepTwo = stepTwo
+    }
     /*
     // MARK: - Navigation
 
