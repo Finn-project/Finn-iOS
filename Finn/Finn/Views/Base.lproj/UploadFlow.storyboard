@@ -366,6 +366,9 @@
                                         <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addAction:" destination="yUz-Wg-v6f" eventType="touchUpInside" id="8dv-hv-svg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-7f-WfG">
                                 <rect key="frame" x="280" y="593" width="71" height="42"/>
@@ -397,6 +400,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OAN-oU-GuS"/>
                     </view>
+                    <connections>
+                        <outlet property="imageAddBtn" destination="0Pp-Ax-ZXm" id="bUu-kh-SmB"/>
+                        <outlet property="roomImage" destination="9iN-YH-6RK" id="PFl-ty-e5c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTL-bn-J0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

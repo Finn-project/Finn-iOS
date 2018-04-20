@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct Stack <T> {
-  var list = [T] ()
+class Stack {
+  var list: [String] = []
   var isEmpty : Bool {
     return list.isEmpty
   }
-  mutating func push(_ element: T) {
+  func push(_ element: String) {
     list.append(element)
+    list.sort()
     
   }
   
-  mutating func pop() -> T? {
+  func pop() -> String? {
     if !list.isEmpty {
       let index = list.count - 1
       let poppedValue = list.remove(at: index)
@@ -28,7 +29,7 @@ struct Stack <T> {
     }
   }
   
-  func peek() -> T? {
+  func peek() -> String? {
     if !list.isEmpty {
       return list.last
     } else {
