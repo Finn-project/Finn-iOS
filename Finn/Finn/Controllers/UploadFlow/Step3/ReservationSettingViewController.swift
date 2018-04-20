@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 
 class ReservationSettingViewController: UIViewController {
-
+  
+  @IBOutlet weak var payTF: UITextField!
+  var list: [String] = []
   @IBOutlet weak var setPriceTf:UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-      
-    
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    payTF.drawBottomBorder(backColor: .white, withColor: .lightGray)
+    print("\(list)")
+  }
 }
