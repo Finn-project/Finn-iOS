@@ -113,6 +113,7 @@ extension ProfileTabViewController {
       .response {
         (response) in
         self.profileImgView.image = UIImage(data: response.data!, scale: 1)
+//        response.data?.write(to: myCachedFileURL)
     }
   }
 }
