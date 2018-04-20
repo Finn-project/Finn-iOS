@@ -25,13 +25,13 @@ class AddressInputViewController: UIViewController {
   @IBOutlet weak var zipCodeTf: UITextField!
   @IBOutlet weak var detailAddressTf: UITextField!
   //MARK:- Internal Property
-  var houseInfoData: [String: Any] = [:]
-  var addressForUpload: AddressForInternal = AddressForInternal()
+  var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
+  
   var tmpForMapSearch: String = ""
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      print(houseInfoData)
+     
         // Do any additional setup after loading the view.
     }
 
@@ -52,8 +52,8 @@ class AddressInputViewController: UIViewController {
     guard let tmpAddress = inputAddressTf.text else {return}
     roomAddressVC.tmpForMapSearch = tmpAddress
     
-    roomAddressVC.houseInfoData = houseInfoData
-    roomAddressVC.addressForUpload = addressForUpload
+    roomAddressVC.stepOne = stepOne
+    
   }
     /*
     // MARK: - Navigation

@@ -15,8 +15,7 @@ class ConvenientViewController: UIViewController {
   @IBOutlet weak var saveBtn: UIButton!
   
   //MARK:- Internal property
-  var houseInfoData: [String: Any] = [:]
-  var addressforupload = AddressForInternal()
+ 
   var stepOne = HouseInfoStepOneForInternal()
   
   
@@ -51,7 +50,7 @@ class ConvenientViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    print(stepOne.address.city)
     btnDisable()
   }
   
@@ -67,13 +66,7 @@ class ConvenientViewController: UIViewController {
 extension ConvenientViewController {
   //MARK: save to Internal
   func stepOneUploadForInternal() {
-    stepOne.address = addressforupload
-    stepOne.houseType = houseInfoData["houseType"] as! String
-    stepOne.bedCount = houseInfoData["bedCount"] as! Int
-    stepOne.bathroomCount = houseInfoData["bathroomCount"] as! Int
-    stepOne.roomCount = houseInfoData["roomCount"] as! Int
-    stepOne.peopleCount = houseInfoData["peopleCount"] as! Int
-    stepOne.country = houseInfoData["country"] as! String
+   
   }
   func btnDisable() {
     saveBtn.backgroundColor = .white
