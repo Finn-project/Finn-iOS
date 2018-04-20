@@ -15,7 +15,6 @@ class Stack {
   }
   func push(_ element: String) {
     list.append(element)
-    list.sort()
     
   }
   
