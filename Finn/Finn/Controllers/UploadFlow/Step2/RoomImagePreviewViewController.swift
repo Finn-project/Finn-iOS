@@ -8,11 +8,40 @@
 
 import UIKit
 
-class RoomImagePreviewViewController: UIViewController {
+class RoomImagePreviewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    override func viewDidLoad() {
+  //MARK:- property
+  var imagePicker = UIImagePickerController()
+  var tmpImg = UIImageView()
+  //MARK:- IBOutlets
+  @IBOutlet weak var roomImage: UIImageView!
+  @IBOutlet weak var imageAddBtn: UIButton!
+  
+  //MARK:- IBActions
+  @IBAction func addAction(_ sender: UIButton) {
+   
+    let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "지금 사진 찍기", style: .default, handler: { _ in
+      self.openCamera()
+    }))
+    alert.addAction(UIAlertAction(title: "갤러리에서 선택", style: .default, handler: { _ in
+      self.openGallery()
+    }))
+    
+    switch UIDevice.current.userInterfaceIdiom {
+    case .pad:
+      alert.popoverPresentationController?.sourceView = sender
+      alert.popoverPresentationController?.sourceRect = sender.bounds
+      alert.popoverPresentationController?.permittedArrowDirections = .up
+    default:
+      break
+    }
+    self.present(alert, animated: true, completion: nil)
+    
+  }
+  override func viewDidLoad() {
         super.viewDidLoad()
-
+      imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -20,16 +49,37 @@ class RoomImagePreviewViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    roomImage.image = tmpImg.image
+  }
+  
 }
+extension RoomImagePreviewViewController {
+  
+  func openCamera() {
+    if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)){
+      imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+      imagePicker.allowsEditing = true
+      self.present(imagePicker, animated: true, completion: nil)
+    }else {
+      let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+    }
+  }
+  
+  func openGallery() {
+    imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+    imagePicker.allowsEditing = true
+    self.present(imagePicker, animated: true, completion: nil)
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      tmpImg.image = pickedImage
+    }
+    self.dismiss(animated: true, completion: nil)
+  }
+}
+
