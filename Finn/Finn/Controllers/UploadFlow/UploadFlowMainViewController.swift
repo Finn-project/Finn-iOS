@@ -26,6 +26,8 @@ class UploadFlowMainViewController: UIViewController {
   var houseModel: HouseInfoForInternal = HouseInfoForInternal()
   var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
   var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
+  var stepThree: HouseInfoStepThreeForInternal = HouseInfoStepThreeForInternal()
+  
   var houseInfoData: [String: Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +43,15 @@ class UploadFlowMainViewController: UIViewController {
     super.viewWillAppear(animated)
     btnChange()
     houseModel.houseInfoStepOneForInternal = stepOne
-//    houseModel.houseInfoStepTwoForInternal = stepTwo
+    houseModel.houseInfoStepTwoForInternal = stepTwo
+    houseModel.houseInfoStepThreeForInternal = stepThree
     print("city: ", stepOne.address.city)
     print("dong: ", stepOne.address.dong)
     print("houseType: ", stepOne.houseType)
     print("amenities : ", stepOne.amenities)
     print("facilities : ", stepOne.facilities)
-    
+    print("roomName : ", stepTwo.roomName)
+    print("roomImage : ", stepTwo.roomImageURL)
    
     
   }
