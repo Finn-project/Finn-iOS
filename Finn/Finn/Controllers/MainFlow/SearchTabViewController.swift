@@ -16,7 +16,7 @@ class SearchTabViewController: UIViewController {
   
   //MARK:- internal properties
   var isSearching: Bool = false
-  var searchedData: [House] = []
+  var searchedData: [House] = [] // currently not using
   var searchedPKs: [Int] = []
   
   //MARK:- LifeCycles
@@ -58,11 +58,11 @@ extension SearchTabViewController {
             do {
               let houses = try JSONDecoder().decode(ListOfHouse.self, from: data)
               print("searchTab: decode success")
-              // do repackaging for collectionView cells
               
-//              for pk in 0..<houses.count {
-//                self.searchedPKs.append(houses.results[pk].pk)
-//              }
+              // do repackaging for collectionView cells
+              for pk in 0..<houses.count {
+                self.searchedPKs.append(houses.results[pk].pk)
+              }
 
             } catch(let error) {
               print("searchTab: decode failed, \(error.localizedDescription.debugDescription)")
@@ -156,7 +156,7 @@ extension SearchTabViewController: UICollectionViewDataSource {
     if collectionView.tag == 0 {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityCell", for: indexPath)
       return cell
-    } else { // tag ==1
+    } else { // tag == 1, cityCatalog
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogCell", for: indexPath)
       return cell
     }
