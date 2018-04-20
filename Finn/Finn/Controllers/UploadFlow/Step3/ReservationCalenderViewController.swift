@@ -10,9 +10,9 @@ import UIKit
 import FSCalendar
 
 class ReservationCalenderViewController: UIViewController {
+  
   //MARK:- IBOutlets
   @IBOutlet weak var calendar: FSCalendar!
-  
   
   //MARK:- IBAction
   @IBAction func backToIntro(_ sender: Any) {
@@ -91,6 +91,15 @@ extension ReservationCalenderViewController: FSCalendarDelegate {
       cell.titleLabel.alpha = 0.4
     }
   }
+  
+  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+    return true
+  }
+
+  func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+    return true
+  }
+  
 }
 //MARK: -FSCalendarDataSource
 extension ReservationCalenderViewController: FSCalendarDataSource {
