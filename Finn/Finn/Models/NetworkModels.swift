@@ -17,6 +17,11 @@ enum Network {
     static let fbLoginURL: String = Network.hostURL + "/user/facebook-login/"
     static let logoutURL: String = Network.hostURL + "/user/logout/"
   }
+  
+  enum House {
+    static let getHouseURL: String = Network.hostURL + "/house/"
+    
+  }
 }
 
 
