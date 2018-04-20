@@ -17,6 +17,8 @@ class RoomImagePreviewViewController: UIViewController, UIImagePickerControllerD
   @IBOutlet weak var roomImage: UIImageView!
   @IBOutlet weak var imageAddBtn: UIButton!
   
+  //MARK:- Internal Property
+  var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
   //MARK:- IBActions
   @IBAction func addAction(_ sender: UIButton) {
    
@@ -39,20 +41,27 @@ class RoomImagePreviewViewController: UIViewController, UIImagePickerControllerD
     self.present(alert, animated: true, completion: nil)
     
   }
-  override func viewDidLoad() {
-        super.viewDidLoad()
-      imagePicker.delegate = self
-        // Do any additional setup after loading the view.
-    }
+    override func viewDidLoad() {
+          super.viewDidLoad()
+        imagePicker.delegate = self
+          // Do any additional setup after loading the view.
+      }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    roomImage.image = tmpImg.image
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      roomImage.image = tmpImg.image
+    }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let descriptVC = segue.destination as? RoomDescriptViewController else {return}
+    guard let roomImage = tmpImg.image else {return}
+//    descriptVC.stepTwo.roomImage = roomImage
+    descriptVC.stepTwo = stepTwo
   }
+  
   
 }
 extension RoomImagePreviewViewController {

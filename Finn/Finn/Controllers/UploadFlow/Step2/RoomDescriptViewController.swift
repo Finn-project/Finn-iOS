@@ -10,15 +10,24 @@ import UIKit
 
 class RoomDescriptViewController: UIViewController {
  
+  //MARK:- Internal Property
+  var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
+
+  //MARK:- IBOutlets
+  @IBOutlet weak var roomNameTf: UITextField!
+  @IBOutlet weak var roomDescriptTf: UITextField!
+  
+  
   //MARK: GO TO UploadIntro
   @IBAction func backToIntro(_ sender: Any){
+    
+    
     self.navigationController?.popToRootViewController(animated: true)
   }
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,4 +46,12 @@ class RoomDescriptViewController: UIViewController {
     }
     */
 
+}
+extension RoomDescriptViewController {
+  func stepTwoForUpload() {
+    guard let roomName = roomNameTf.text else {return}
+//    stepTwo.roomName = roomName
+    guard let roomDescript = roomDescriptTf.text else {return}
+//    stepTwo.roomDescript = roomDescript
+  }
 }
