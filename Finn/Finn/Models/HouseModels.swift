@@ -15,11 +15,12 @@ let facilities: [String] = ["수영장", "엘리베이터", "세탁소","노래�
 class HouseInfoForInternal {
   var pk: Int = 0
   var houseInfoStepOneForInternal: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
- //var houseInfoStepTwoForInternal: HouseInfoStepTwoForInternal
- //var houseInfoStepThreeForInternal: HouseInfoStepThreeForInternal
+  var houseInfoStepTwoForInternal: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
+  var houseInfoStepThreeForInternal: HouseInfoStepThreeForInternal = HouseInfoStepThreeForInternal()
   
   
 }
+
 class HouseInfoStepOneForInternal {
   var houseType: String = "0000"
   var roomCount: Int = 0
@@ -32,6 +33,7 @@ class HouseInfoStepOneForInternal {
   var facilities: [Int] = []
 
 }
+
 class AddressForInternal {
   var city: String = "0000"
   var district: String = "0000"
@@ -44,10 +46,17 @@ class AddressForInternal {
 }
 
 class HouseInfoStepTwoForInternal {
-  
+  var roomImageURL: String = "0000"
+  var roomName: String = "0000"
+  var roomDescript: String = "0000"
 }
+
 class HouseInfoStepThreeForInternal {
-  
+  var minimumCheckDays: Int = 0
+  var maximumCheckDays: Int = 0
+  var totalCheckDays: Int = 0
+  var disableDays: [String] = []
+  var price: Int = 0
 }
 
 
