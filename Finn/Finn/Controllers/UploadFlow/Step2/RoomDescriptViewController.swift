@@ -21,6 +21,11 @@ class RoomDescriptViewController: UIViewController {
   //MARK: GO TO UploadIntro
   @IBAction func backToIntro(_ sender: Any){
     
+    if let rootVC = self.navigationController?.viewControllers[0] as? UploadFlowMainViewController {
+      stepTwoForUpload()
+      
+      rootVC.stepTwo = self.stepTwo
+    }
     
     self.navigationController?.popToRootViewController(animated: true)
   }
@@ -50,8 +55,8 @@ class RoomDescriptViewController: UIViewController {
 extension RoomDescriptViewController {
   func stepTwoForUpload() {
     guard let roomName = roomNameTf.text else {return}
-//    stepTwo.roomName = roomName
+    stepTwo.roomName = roomName
     guard let roomDescript = roomDescriptTf.text else {return}
-//    stepTwo.roomDescript = roomDescript
+    stepTwo.roomDescript = roomDescript
   }
 }
