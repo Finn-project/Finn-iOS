@@ -169,12 +169,12 @@ class UserInfo: Codable {
 
 class ProfileImages: Codable {
   var profileImg: String = "0000"
-  var profileImg_150: String = "0000"
-  var profileImg_300: String = "0000"
+  var profileImg_28: String = "0000"
+  var profileImg_225: String = "0000"
   
   enum CodingKeys: String, CodingKey {
     case profileImg = "img_profile"
-    case profileImg_150 = "img_profile_150"
-    case profileImg_300 = "img_profile_300"
+    case profileImg_28 = "img_profile_28"
+    case profileImg_225 = "img_profile_225"
   }
 }

@@ -17,6 +17,7 @@ class SearchTabViewController: UIViewController {
   //MARK:- internal properties
   var isSearching: Bool = false
   var searchedData: [House] = []
+  var searchedPKs: [Int] = []
   
   //MARK:- LifeCycles
   override func viewDidLoad() {
@@ -26,6 +27,7 @@ class SearchTabViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.navigationBar.isHidden = true
+    fetchDataSource()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -39,6 +41,37 @@ class SearchTabViewController: UIViewController {
 extension SearchTabViewController {
   @IBAction func wallTapped() {
     searchBar.resignFirstResponder()
+  }
+}
+
+extension SearchTabViewController {
+  func fetchDataSource() {
+    Alamofire
+      .request(Network.House.getHouseURL, method: .get, encoding: JSONEncoding.default)
+      .validate()
+      .responseJSON { (response) in
+        switch response.result {
+        case .success:
+          if let data = response.data ,
+             let text = String(data: data, encoding: .utf8) {
+            print(text)
+            do {
+              let houses = try JSONDecoder().decode(ListOfHouse.self, from: data)
+              print("searchTab: decode success")
+              // do repackaging for collectionView cells
+              
+//              for pk in 0..<houses.count {
+//                self.searchedPKs.append(houses.results[pk].pk)
+//              }
+
+            } catch(let error) {
+              print("searchTab: decode failed, \(error.localizedDescription.debugDescription)")
+            }
+          }
+        case .failure(let error):
+          print("searchTab: network failed, \(error.localizedDescription.debugDescription) ")
+        }
+    }
   }
 }
 
@@ -62,7 +95,7 @@ extension SearchTabViewController: UITableViewDataSource {
     if isSearching {
       return searchedData.count
     } else {
-      return (2 + 3) // current searchedData.count = 3
+      return (2 + 1) // current searchedData.count = 1
     }
   }
   
@@ -135,6 +168,7 @@ extension SearchTabViewController: UICollectionViewDataSource {
 extension SearchTabViewController: UICollectionViewDelegate {
   
 }
+
 
 
 
