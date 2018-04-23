@@ -13,6 +13,7 @@ class RoomImagePreviewViewController: UIViewController, UIImagePickerControllerD
   //MARK:- property
   var imagePicker = UIImagePickerController()
   var tmpImg = UIImageView()
+  var tmpURL = ""
   //MARK:- IBOutlets
   @IBOutlet weak var roomImage: UIImageView!
   @IBOutlet weak var imageAddBtn: UIButton!
@@ -57,8 +58,9 @@ class RoomImagePreviewViewController: UIViewController, UIImagePickerControllerD
     }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let descriptVC = segue.destination as? RoomDescriptViewController else {return}
-    guard let roomImage = tmpImg.image else {return}
-//    descriptVC.stepTwo.roomImage = roomImage
+    
+    stepTwo.roomImageURL = tmpURL
+    print("tmpurl : ", tmpURL)
     descriptVC.stepTwo = stepTwo
   }
   
@@ -85,10 +87,28 @@ extension RoomImagePreviewViewController {
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
       tmpImg.image = pickedImage
-      //info[UIImagePickerControllerImageURL]
     }
+    //MARK:- deprecated 됨 찾는중
+//    if let pickerImageURL = info[UIImagePickerControllerReferenceURL] as? URL {
+//      print(pickerImageURL)
+//
+//    }
+    //아래 방법으로 url 뽑았는데 정확한지 확인 예정
+    if let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first{
+      
+//      print(documentDirectory)
+      let photoURL = URL(fileURLWithPath: documentDirectory)
+//      print(photoURL)
+      let path = photoURL.path
+      tmpURL = path
+      print(path)
+    }
+    
+    
+ 
+    
     self.dismiss(animated: true, completion: nil)
   }
 }
