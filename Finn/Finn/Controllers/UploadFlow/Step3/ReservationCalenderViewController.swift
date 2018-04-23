@@ -39,7 +39,7 @@ class ReservationCalenderViewController: UIViewController {
   let segue: String = "calendarNextStep"
   var stack = Stack()
   var cell: FSCalendarEventIndicator!
-  var dd: String = "2018-04-30"
+  var testsouce: String = "2018-04-30"
   
   //MARK: -LifeCycle
   override func viewDidLoad() {
@@ -89,13 +89,13 @@ extension ReservationCalenderViewController: FSCalendarDelegate {
     if self.calendar.today! > date {
       cell.titleLabel.alpha = 0.2
     }
-    if (date == self.formatter.date(from: dd)!) {
+    if (date == self.formatter.date(from: testsouce)!) {
       cell.titleLabel.alpha = 0.2
     }
   }
   //MARK: shouldSelect
   func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-    let dt = self.formatter.date(from: dd)!
+    let dt = self.formatter.date(from: testsouce)!
     if (date == dt) {
       return false
     }
