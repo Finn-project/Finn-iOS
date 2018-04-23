@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class UploadFlowMainViewController: UIViewController {
   
@@ -14,11 +15,53 @@ class UploadFlowMainViewController: UIViewController {
   @IBOutlet weak var stepOneBtn: UIButton!
   @IBOutlet weak var stepTwoBtn: UIButton!
   @IBOutlet weak var stepThreeBtn: UIButton!
-  
+  @IBOutlet weak var saveBtn: UIButton!
   //MARK:- IBActions
-  @IBAction func dismissAct(_ sender: Any){
+  //MARK: dissmissAction
+  @IBAction func dismissAct(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
       
+  }
+  //MARK: upload to Server
+  @IBAction func saveToServer(_ sender: Any) {
+    
+      var requestHeader: HTTPHeaders = [:]
+      requestHeader.updateValue("Token " + User.loadTokenFromUserDefaults()!, forKey: "Authorization")
+      
+      //MARK:- parameters
+      let params: [String: Any] = ["house_type": "HO", "name": stepTwo.roomName,
+                                   "description": stepTwo.roomDescript, "room": stepOne.roomCount,
+                                   "bed": stepOne.bedCount, "bathroom": stepOne.bathroomCount,
+                                   "personnel": stepOne.peopleCount, "amenities": stepOne.amenities,
+                                   "facilities": stepOne.facilities,
+                                   "minimum_check_in_duration": stepThree.minimumCheckDays,
+                                   "maximum_check_in_duration": stepThree.maximumCheckDays,
+                                   "maximum_check_in_range": stepThree.totalCheckDays,
+                                   "price_per_night": stepThree.price, "country": stepOne.country,
+                                   "city": stepOne.address.city, "district": stepOne.address.district,
+                                   "dong": stepOne.address.dong, "address1": stepOne.address.firstDetailAddress,
+                                   "latitude": stepOne.address.latitude, "longitude": stepOne.address.longitude,
+                                   "disable_days": stepThree.disableDays,
+                                   "reserve_days": [], "img_cover": "",
+                                   "house_images" : ""]
+      
+      print(params)
+    //response code 400 찍힘 현재
+    //MARK:- Alamofire post 
+      Alamofire
+        .request(Network.House.getHouseURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: requestHeader)
+        .validate()
+        .responseJSON { (response) in
+          switch response.result {
+          case .success:
+            print("success")
+            self.dismiss(animated: true, completion: nil)
+          case .failure(let error):
+            print("post failed : \(error.localizedDescription)")
+          }
+      }
+    
+
   }
   //MARK:- Internal Property
   let originColor: UIColor = UIColor.init(named: "ThemeColor")!
@@ -35,12 +78,14 @@ class UploadFlowMainViewController: UIViewController {
       print("mainVC: ", houseInfoData)
         // Do any additional setup after loading the view.
     }
+  //MARK:- prepare
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let uploadIntroVC = segue.destination as? UploadIntroViewController else {return}
     uploadIntroVC.stepOne = stepOne
     guard let roomImageVC = segue.destination as? RoomImageAddViewController else {return}
     roomImageVC.stepTwo = stepTwo
   }
+  //MARK:- viewWillAppear
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     btnChange()
@@ -99,5 +144,13 @@ extension UploadFlowMainViewController {
     }else {
       changeToDoneBtn(btn: stepTwoBtn)
     }
+    if stepThree.price == 0 {
+      resetContinueBtn(btn: stepThreeBtn)
+      saveBtn.isHidden = true
+    }else {
+      changeToDoneBtn(btn: stepThreeBtn)
+      saveBtn.isHidden = false
+    }
   }
+  
 }
