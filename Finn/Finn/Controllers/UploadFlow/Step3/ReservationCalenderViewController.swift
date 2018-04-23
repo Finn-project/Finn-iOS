@@ -29,11 +29,6 @@ class ReservationCalenderViewController: UIViewController {
     }
     performSegue(withIdentifier: segue, sender: self)
   }
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let settingVC = segue.destination as? ReservationSettingViewController else { return }
-    settingVC.list = self.stack.list
-  }
   //MARK:- Internal Properties
   fileprivate let gregorian = Calendar(identifier: .gregorian)
   fileprivate let formatter: DateFormatter = {
@@ -44,7 +39,7 @@ class ReservationCalenderViewController: UIViewController {
   let segue: String = "calendarNextStep"
   var stack = Stack()
   var cell: FSCalendarEventIndicator!
-  var date: Date!
+  var testsouce: String = "2018-04-30"
   
   //MARK: -LifeCycle
   override func viewDidLoad() {
@@ -52,12 +47,19 @@ class ReservationCalenderViewController: UIViewController {
     calendar.scrollDirection = .vertical
     calendar.swipeToChooseGesture.isEnabled = true
     calendar.allowsMultipleSelection = true
+    
     self.calendar.accessibilityIdentifier = "calendar"
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.calendar.reloadData()
     print("viewWillAppear")
+  }
+  
+  //MARK:- prepare
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let settingVC = segue.destination as? ReservationSettingViewController else { return }
+    settingVC.list = self.stack.list
   }
 }
 
@@ -70,47 +72,49 @@ extension ReservationCalenderViewController: FSCalendarDelegate {
     self.stack.push(selectData)
     print("\(self.stack.list)")
   }
-  
-  //선택된 날짜를 다시 선택해제한 뒤
+  //MARK: 선택된 날짜를 다시 선택해제한 뒤
   func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
     let deselectData = self.formatter.string(from: date)
     self.stack.pop()
     print("\(self.stack.list)")
     print("deselectData:\(deselectData)")
   }
-  
-  //monthCount
+  //MARK: monthCount
   func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
     let currentMonth = calendar.month(of: calendar.currentPage)
     print("PageMonth: \(currentMonth)")
   }
-  
-  //whilDisplayCell
+  //MARK: whilDisplayCell
   func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
     if self.calendar.today! > date {
-      cell.titleLabel.alpha = 0.4
+      cell.titleLabel.alpha = 0.2
+    }
+    if (date == self.formatter.date(from: testsouce)!) {
+      cell.titleLabel.textColor = UIColor.orange
     }
   }
-  
+  //MARK: shouldSelect
   func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+    let dt = self.formatter.date(from: testsouce)!
+    if (date == dt) {
+      return false
+    }
     return true
   }
-
-  func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-    return true
-  }
-  
 }
+
 //MARK: -FSCalendarDataSource
 extension ReservationCalenderViewController: FSCalendarDataSource {
-  //Today이전 날짜는 선택x
+  //MARK: todayBeforeSelect
   func minimumDate(for calendar: FSCalendar) -> Date {
     return Date()
   }
-  //Today 기준 최대 선택가능 요일
+  
+  //MARK: TodayMaximumDate
   func maximumDate(for calendar: FSCalendar) -> Date {
     let threeMonthFromNow = self.gregorian.date(byAdding: .month, value: 2, to: Date(), wrappingComponents: true)
     return threeMonthFromNow!
   }
 }
+
 
