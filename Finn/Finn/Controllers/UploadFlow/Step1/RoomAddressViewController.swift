@@ -25,8 +25,8 @@ class RoomAddressViewController: UIViewController {
 //  }
   //MARK:- Internal Property
   var tmpForMapSearch: String = ""
-  var houseInfoData: [String: Any] = [:]
-  var addressForUpload: AddressForInternal = AddressForInternal()
+  var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
+//  var addressForUpload: AddressForInternal = AddressForInternal()
   var searchFlag: Bool = false {
     didSet {
       if searchFlag {
@@ -143,7 +143,7 @@ class RoomAddressViewController: UIViewController {
       
       
       // Do any additional setup after loading the view.
-      print(houseInfoData)
+    
       btnDisable()
     }
   override func viewDidLayoutSubviews() {
@@ -161,16 +161,15 @@ class RoomAddressViewController: UIViewController {
     guard let convenientVC = segue.destination as? ConvenientViewController else { return }
     
     
-    houseInfoData.updateValue(country, forKey: "country")
-    addressForUpload.city = administrativeArea
-    addressForUpload.district = locality
-    addressForUpload.dong = subLocality
-    addressForUpload.firstDetailAddress = subThoroughfare
-    addressForUpload.latitude = latitude
-    addressForUpload.longitude = longitude
+    stepOne.address.city = administrativeArea
+    stepOne.country = country
+    stepOne.address.district = locality
+    stepOne.address.dong = subLocality
+    stepOne.address.firstDetailAddress = subThoroughfare
+    stepOne.address.latitude = latitude
+    stepOne.address.longitude = longitude
     
-    convenientVC.houseInfoData = houseInfoData
-    convenientVC.addressforupload = addressForUpload
+    convenientVC.stepOne = stepOne
   }
   
 
