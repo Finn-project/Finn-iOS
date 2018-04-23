@@ -36,7 +36,8 @@ class UploadIntroViewController: UIViewController {
   let allowedPeopleData = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16+"]
   
   //MARK:- Internal Property
-  var houseInfoData: [String: Any] = [:]
+//  var houseInfoData: [String: Any] = [:]
+  var stepOne: HouseInfoStepOneForInternal = HouseInfoStepOneForInternal()
   var nilCheckTmp = 0
   let totalCount = 5
   var currentCount = 0
@@ -44,7 +45,7 @@ class UploadIntroViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    print(houseInfoData)
+    
     roomTypePicker.delegate = self
     roomTypePicker.dataSource = self
     roomCountPicker.delegate = self
@@ -130,7 +131,7 @@ class UploadIntroViewController: UIViewController {
     guard let addressInputVC = segue.destination as? AddressInputViewController else {return}
     uploadIntroData()
     
-    addressInputVC.houseInfoData = houseInfoData
+    addressInputVC.stepOne = stepOne
     
   }
   override func didReceiveMemoryWarning() {
@@ -144,25 +145,15 @@ class UploadIntroViewController: UIViewController {
 extension UploadIntroViewController {
   func uploadIntroData(){
     guard let roomType = roomTypeTf.text else {return}
-    
-    houseInfoData.updateValue(roomType, forKey: "houseType")
-    
+    stepOne.houseType = roomType
     guard let roomCount: Int = Int(roomCountTf.text!) else {return}
-   
-    houseInfoData.updateValue(roomCount, forKey: "roomCount")
-    
+    stepOne.roomCount = roomCount
     guard let bedCount: Int = Int(bedCountTf.text!) else {return}
-    
-    houseInfoData.updateValue(bedCount, forKey: "bedCount")
-    
+    stepOne.bedCount = bedCount
     guard let bathCount: Int = Int(bathCountTf.text!) else {return}
-    
-    houseInfoData.updateValue(bathCount, forKey: "bathroomCount")
-    
+    stepOne.bathroomCount = bathCount
     guard let allowedPeople: Int = Int(allowedPeopleTf.text!) else {return}
-    
-    houseInfoData.updateValue(allowedPeople, forKey: "peopleCount")
-    
+    stepOne.peopleCount = allowedPeople
   }
   
   //MARK:- Change Button status

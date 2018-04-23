@@ -37,7 +37,9 @@ class UploadFlowMainViewController: UIViewController {
     }
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let uploadIntroVC = segue.destination as? UploadIntroViewController else {return}
-    uploadIntroVC.houseInfoData = houseInfoData
+    uploadIntroVC.stepOne = stepOne
+    guard let roomImageVC = segue.destination as? RoomImageAddViewController else {return}
+    roomImageVC.stepTwo = stepTwo
   }
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -45,13 +47,16 @@ class UploadFlowMainViewController: UIViewController {
     houseModel.houseInfoStepOneForInternal = stepOne
     houseModel.houseInfoStepTwoForInternal = stepTwo
     houseModel.houseInfoStepThreeForInternal = stepThree
-    print("city: ", stepOne.address.city)
-    print("dong: ", stepOne.address.dong)
-    print("houseType: ", stepOne.houseType)
-    print("amenities : ", stepOne.amenities)
-    print("facilities : ", stepOne.facilities)
-    print("roomName : ", stepTwo.roomName)
-    print("roomImage : ", stepTwo.roomImageURL)
+    
+    //MARK:- test print
+    print("internal city: ", stepOne.address.city)
+    print("internal dong: ", stepOne.address.dong)
+    print("internal houseType: ", stepOne.houseType)
+    print("internal roomcount: ", stepOne.roomCount)
+    print("internal amenities : ", stepOne.amenities)
+    print("internal facilities : ", stepOne.facilities)
+    print("internal roomName : ", stepTwo.roomName)
+    print("internal roomImage : ", stepTwo.roomImageURL)
    
     
   }
@@ -87,6 +92,12 @@ extension UploadFlowMainViewController {
       resetContinueBtn(btn: stepOneBtn)
     }else {
       changeToDoneBtn(btn: stepOneBtn)
+    }
+    
+    if stepTwo.roomName == "0000" {
+      resetContinueBtn(btn: stepTwoBtn)
+    }else {
+      changeToDoneBtn(btn: stepTwoBtn)
     }
   }
 }
