@@ -54,7 +54,7 @@ class HouseInfoStepTwoForInternal {
 class HouseInfoStepThreeForInternal {
   var minimumCheckDays: Int = 0
   var maximumCheckDays: Int = 0
-  var totalCheckDays: Int = 0
+  var totalCheckDays: Int = 90
   var disableDays: [String] = []
   var price: Int = 0
 }

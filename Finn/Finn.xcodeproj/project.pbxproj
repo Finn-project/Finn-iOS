@@ -36,6 +36,9 @@
 		351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */; };
 		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
 		3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562D79F2086EE9D002C254E /* AddressInputViewController.swift */; };
+		35C661DB208DAC44002B2FB7 /* FinalReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */; };
+		35C661DD208DB308002B2FB7 /* ReservationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */; };
+		35C661DF208DB33C002B2FB7 /* ReservationStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C661DE208DB33C002B2FB7 /* ReservationStepTwoViewController.swift */; };
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
 		98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451257208853610038F362 /* PhotoPickerViewController.swift */; };
 		9845125A208854360038F362 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451259208854360038F362 /* CalendarData.swift */; };
@@ -79,6 +82,9 @@
 		351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSettingViewController.swift; sourceTree = "<group>"; };
 		351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalenderViewController.swift; sourceTree = "<group>"; };
 		3562D79F2086EE9D002C254E /* AddressInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInputViewController.swift; sourceTree = "<group>"; };
+		35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReservationViewController.swift; sourceTree = "<group>"; };
+		35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationStepOneViewController.swift; sourceTree = "<group>"; };
+		35C661DE208DB33C002B2FB7 /* ReservationStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationStepTwoViewController.swift; sourceTree = "<group>"; };
 		35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFlowMainViewController.swift; sourceTree = "<group>"; };
 		61469443F95D9982AA5910DA /* Pods_Finn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 				1E7D6E5B207EFF9900A438DB /* ProfilePasswordChangeViewController.swift */,
 				1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */,
 				1EA0DEA42073698800971DCB /* SettingViewController.swift */,
+				35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */,
+				35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */,
+				35C661DE208DB33C002B2FB7 /* ReservationStepTwoViewController.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -391,6 +400,7 @@
 				9845125A208854360038F362 /* CalendarData.swift in Sources */,
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
+				35C661DF208DB33C002B2FB7 /* ReservationStepTwoViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
 				98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */,
 				351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */,
@@ -401,11 +411,13 @@
 				351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */,
 				3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */,
 				1ECDAD2B20846CF000C2FDB1 /* HouseDetailViewController.swift in Sources */,
+				35C661DD208DB308002B2FB7 /* ReservationStepOneViewController.swift in Sources */,
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
 				1EB6A93F20747F3E00D000EF /* NetworkModels.swift in Sources */,
 				1EA0DEA02073652300971DCB /* ProfileDetailViewController.swift in Sources */,
 				1E9E0B8A20773FEC0035486A /* DrawableExtensions.swift in Sources */,
 				1E9E0B8820773FDB0035486A /* Animations.swift in Sources */,
+				35C661DB208DAC44002B2FB7 /* FinalReservationViewController.swift in Sources */,
 				351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */,
 				351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */,
 				1E7D6E5C207EFF9900A438DB /* ProfilePasswordChangeViewController.swift in Sources */,
@@ -579,7 +591,10 @@
 					"$(PROJECT_DIR)/Finn/Framework",
 				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -610,7 +625,10 @@
 					"$(PROJECT_DIR)/Finn/Framework",
 				);
 				INFOPLIST_FILE = Finn/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
