@@ -1,24 +1,15 @@
 //
-//  RoomImageAddViewController.swift
+//  ReservationStepTwoViewController.swift
 //  Finn
 //
-//  Created by choi hyunho on 2018. 4. 4..
+//  Created by choi hyunho on 2018. 4. 23..
 //  Copyright © 2018년 Willicious-k. All rights reserved.
 //
 
 import UIKit
 
-class RoomImageAddViewController: UIViewController {
-  
-  //MARK:- IBOutlet
-  @IBOutlet weak var backBtn: UIButton!
-  //MARK:- IBaction
-  @IBAction func backAct(_ sender: Any) {
-   self.navigationController?.popViewController(animated: true)
-  }
-    var stepTwo: HouseInfoStepTwoForInternal = HouseInfoStepTwoForInternal()
-  
-  
+class ReservationStepTwoViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,10 +21,7 @@ class RoomImageAddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard let previewVC = segue.destination as? RoomImagePreviewViewController else {return}
-      previewVC.stepTwo = stepTwo
-    }
+
     /*
     // MARK: - Navigation
 
