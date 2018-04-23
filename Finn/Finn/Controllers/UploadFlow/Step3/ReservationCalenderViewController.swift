@@ -90,7 +90,7 @@ extension ReservationCalenderViewController: FSCalendarDelegate {
       cell.titleLabel.alpha = 0.2
     }
     if (date == self.formatter.date(from: testsouce)!) {
-      cell.titleLabel.alpha = 0.2
+      cell.titleLabel.textColor = UIColor.orange
     }
   }
   //MARK: shouldSelect
