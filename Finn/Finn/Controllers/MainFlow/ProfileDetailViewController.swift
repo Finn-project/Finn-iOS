@@ -66,12 +66,28 @@ extension ProfileDetailViewController {
     
     drawInitialState()
   }
+  
+  //MARK:- segue support
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toPasswordEdit" {
+      let targetVC = segue.destination as! ProfilePasswordChangeViewController
+      targetVC.userProfile = userProfile
+    }
+  }
 }
 
 //MARK:- drawing function
 extension ProfileDetailViewController {
   func drawInitialState() {
     guard let profile = self.userProfile else {return}
+    
+    // draw profileImage if needed
+    let profileImageURL = profile.profileImg
+    if profileImageURL != "0000" {
+      drawProfileImgFromServer(url: profileImageURL)
+    } else {
+      profileImageView.image = #imageLiteral(resourceName: "defaultProfileImg")
+    }
     
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "수정하기", style: .plain,
                                                              target: self, action: #selector(self.awakeToEdit))
@@ -135,6 +151,16 @@ extension ProfileDetailViewController {
     
     changePWBtn.isHidden = true
     changeProfileImg.isHidden = false
+  }
+  
+  func drawProfileImgFromServer(url: String) {
+    Alamofire
+      .request(url, method: .get)
+      .response {
+        (response) in
+        self.profileImageView.image = UIImage(data: response.data!, scale: 1)
+        //        response.data?.write(to: myCachedFileURL)
+    }
   }
 }
 

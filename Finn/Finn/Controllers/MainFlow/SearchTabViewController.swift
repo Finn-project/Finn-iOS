@@ -15,11 +15,10 @@ class SearchTabViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var wholePage: UITableView!
   
-  
   //MARK:- internal properties
   var isSearching: Bool = false
+  var isFetched: Bool = false
   var searchedData: [House] = []
-  var searchedPKs: [Int] = []
   
   //MARK:- LifeCycles
   override func viewDidLoad() {
@@ -30,7 +29,11 @@ class SearchTabViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.setNavigationBarHidden(true, animated: false)
-    fetchDataSource()
+    
+    if !isFetched {
+      fetchDataSource()
+    }
+    
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -53,18 +56,16 @@ extension SearchTabViewController {
 //            print(text)
             do {
               let houses = try JSONDecoder().decode(ListOfHouse.self, from: data)
-//              print("searchTab: decode success")
               
               // do repackaging for collectionView cells
               for i in 0..<20 {
-                self.searchedPKs.append(houses.results[i].pk)
                 self.searchedData.append(houses.results[i])
               }
               
+              self.isFetched = true
               self.wholePage.reloadData()
 //              let sectionRow = self.wholePage.cellForRow(at: IndexPath(row: 0, section: 2) ) as! CatalogSectionCell
 //              sectionRow.houseCatalogCollection.reloadData()
-              
               
             } catch(let error) {
               print("searchTab: decode failed, \(error.localizedDescription.debugDescription)")
@@ -174,7 +175,7 @@ extension SearchTabViewController: UICollectionViewDataSource {
       cell.houseName.text = searchedData[indexPath.item].name
       cell.housePrice.text = String(searchedData[indexPath.item].accommodationFee) + "원 부터"
       
-      // do networking
+      // do photo fetching
       Alamofire
         .request(self.searchedData[indexPath.item].imgCoverThumbnail)
         .validate()
@@ -199,10 +200,10 @@ extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
   //MARK:- transition trigger
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if collectionView.tag == 0 {
-      // city cell is touched
       print("city cell touched!")
+      
     } else { //if collectionView.tag == 1
-//      print("houseCatalogCell touched")
+
       let sb = UIStoryboard(name: "HouseDetail", bundle: nil)
       let detailVC = sb.instantiateViewController(withIdentifier: "HouseDetailViewController") as! HouseDetailViewController
       detailVC.house = searchedData[indexPath.item]

@@ -26,10 +26,21 @@ class ProfilePasswordChangeViewController: UIViewController {
   let themeColor = UIColor(named: "ThemeColor")!
   
   //MARK:- internal data
+  var userProfile: UserProfile!
+  
   var isConfirmed: Bool = false {
     didSet {
       if isConfirmed {
         drawConfirmedState()
+      }
+    }
+  }
+  
+  var isDone: Bool = false {
+    didSet {
+      if isDone {
+        print("password changed successfully")
+        self.navigationController?.popViewController(animated: true)
       }
     }
   }
@@ -63,14 +74,110 @@ extension ProfilePasswordChangeViewController {
   }
   
   @objc func checkCurrentPassword() {
-    // do psudo-login to check current password
-    isConfirmed = true
+    
+    guard let password = currentPWTf.text,
+      password != "",
+      password.count >= 8 else {
+        currentPWTf.shake()
+        return
+    }
+    doPsudoLogin(password: password)
   }
   
   @objc func changePassword() {
-    self.navigationController?.popViewController(animated: true)
+    
+    guard let password = newPWTf.text,
+      password != "",
+      password.count >= 8 else {
+        newPWTf.shake()
+        return
+    }
+    
+    guard let confirmPassword = confirmPWTf.text,
+      confirmPassword == password else {
+        confirmPWTf.shake()
+        return
+    }
+    
+    doChangePassword(newPw: password, confirmPw: confirmPassword)
   }
 }
+
+//MARK:- networking support
+extension ProfilePasswordChangeViewController {
+  func doPsudoLogin(password: String){
+    
+    var parameters: [String: String] = [:]
+    parameters.updateValue(userProfile.email, forKey: "username")
+    parameters.updateValue(password, forKey: "password")
+    
+    Alamofire
+      .request(Network.Auth.loginURL, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+      .validate()
+      .responseJSON { (response) in
+        switch response.result {
+        case .success:
+          if let data = response.data {
+            //            , let text = String(data: data, encoding: .utf8) {
+            //            print(text)
+            do {
+              let user = try JSONDecoder().decode(User.self, from: data)
+              user.saveToUserDefaults()
+              
+              if let writtenToken = User.loadTokenFromUserDefaults() {
+                print("passwordChangeLogin: success, writtenToken: \(writtenToken)")
+              }
+              
+              self.isConfirmed = true
+              
+            } catch (let error) {
+              print("passwordChangeLogin: decode failed, \(error.localizedDescription)")
+            }
+          }
+        case .failure(let error):
+          print("passwordChangeLogin: auth failed, \(error.localizedDescription)")
+          self.currentPWTf.shake()
+      }
+    }
+    
+  }
+  
+  func doChangePassword(newPw: String, confirmPw: String) {
+    
+    // password not changing, checked from postman at 1847
+    
+    var headers: HTTPHeaders = [:]
+    headers.updateValue("token " + User.loadTokenFromUserDefaults(), forKey: "Authorization")
+    print(headers)
+    
+    var parameters:[String: String] = [:]
+    parameters.updateValue(newPw, forKey: "password")
+    parameters.updateValue(confirmPw, forKey: "confirm_password")
+    print(parameters)
+    
+    Alamofire
+      .request(Network.Auth.loginURL + "\(userProfile.pk)/", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+      .validate()
+      .responseJSON { (response) in
+        switch response.result {
+        case .success:
+          if let data = response.data {
+            do {
+              let _ = try JSONDecoder().decode(UserInfo.self, from: data)
+              self.isDone = true
+            } catch (let error) {
+              print("changePW: decode failed, \(error.localizedDescription)")
+            }
+          }
+        case .failure(let error):
+          print("changePW: auth failed, \(error.localizedDescription)")
+      }
+    }
+    
+  }
+  
+}
+
 
 //MARK:- state change functions
 extension ProfilePasswordChangeViewController {
