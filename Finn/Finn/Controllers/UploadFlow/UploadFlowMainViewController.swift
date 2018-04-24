@@ -43,7 +43,7 @@ class UploadFlowMainViewController: UIViewController {
                                    "latitude": stepOne.address.latitude, "longitude": stepOne.address.longitude,
                                    "disable_days": stepThree.disableDays,
                                    "reserve_days": [], "img_cover": "",
-                                   "house_images" : ""]
+                                   "house_images": []]
       
       print(params)
     //response code 400 찍힘 현재
@@ -51,7 +51,7 @@ class UploadFlowMainViewController: UIViewController {
       Alamofire
         .request(Network.House.getHouseURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: requestHeader)
         .validate()
-        .responseJSON { (response) in
+        .responseData { (response) in
           switch response.result {
           case .success:
             print("success")
