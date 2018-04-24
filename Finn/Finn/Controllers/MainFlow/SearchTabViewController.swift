@@ -16,7 +16,8 @@ class SearchTabViewController: UIViewController {
   
   //MARK:- internal properties
   var isSearching: Bool = false
-  var searchedData: [House] = [] // currently not using
+  var cities: [Int] = []
+  var searchedData: [House] = []
   var searchedPKs: [Int] = []
   
   //MARK:- LifeCycles
@@ -57,11 +58,11 @@ extension SearchTabViewController {
 //            print(text)
             do {
               let houses = try JSONDecoder().decode(ListOfHouse.self, from: data)
-              print("searchTab: decode success")
-              
+//              print("searchTab: decode success")
               // do repackaging for collectionView cells
-              for pk in 0..<houses.count {
-                self.searchedPKs.append(houses.results[pk].pk)
+              for i in 0..<20 {
+                self.searchedPKs.append(houses.results[i].pk)
+                self.searchedData.append(houses.results[i])
               }
 
             } catch(let error) {
@@ -149,14 +150,21 @@ extension SearchTabViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 7
+    if collectionView.tag == 0 {
+      return 7
+    } else {
+      return 10
+    }
+    
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if collectionView.tag == 0 {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityCell", for: indexPath)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityCell", for: indexPath) as! CityCell
+//      cell.imageView.image = UIImage()
+//      cell.cityName.text =
       return cell
-    } else { // tag == 1, cityCatalog
+    } else { // tag == 1, houseCatalog
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogCell", for: indexPath)
       return cell
     }
@@ -165,7 +173,23 @@ extension SearchTabViewController: UICollectionViewDataSource {
   
 }
 
-extension SearchTabViewController: UICollectionViewDelegate {
+extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    if collectionView.tag == 0 {
+      return CGSize(width: 100.0, height: 100.0)
+    } else {
+      return CGSize(width: 100.0, height: 100.0)
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 8.0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 8.0
+  }
   
 }
 

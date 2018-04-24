@@ -26,6 +26,9 @@
 		1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC0583920725970005D24E0 /* UploadFlow.storyboard */; };
 		1ECDAD292084667100C2FDB1 /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */; };
 		1ECDAD2B20846CF000C2FDB1 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */; };
+		1EE8302E208ECC6D000DEB07 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8302D208ECC6D000DEB07 /* CityCell.swift */; };
+		1EE83030208ED0D4000DEB07 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8302F208ED0D4000DEB07 /* CityModel.swift */; };
+		1EE83032208ED2C5000DEB07 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE83031208ED2C5000DEB07 /* CatalogCell.swift */; };
 		2510C577AAE7421246196775 /* Pods_Finn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61469443F95D9982AA5910DA /* Pods_Finn.framework */; };
 		351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA32074B76900A288FB /* UploadIntroViewController.swift */; };
 		351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BA72074B7F900A288FB /* RoomAddressViewController.swift */; };
@@ -72,6 +75,9 @@
 		1EC0583A20725970005D24E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UploadFlow.storyboard; sourceTree = "<group>"; };
 		1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFiltersViewController.swift; sourceTree = "<group>"; };
 		1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
+		1EE8302D208ECC6D000DEB07 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		1EE8302F208ED0D4000DEB07 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		1EE83031208ED2C5000DEB07 /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		350E61302072041C00904768 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Finn/Framework/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		350E6132207205D400904768 /* Finn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finn-Bridging-Header.h"; sourceTree = "<group>"; };
 		351A0BA32074B76900A288FB /* UploadIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadIntroViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 				1EC05836207258C9005D24E0 /* LoginFlow.storyboard */,
 				1EC0583920725970005D24E0 /* UploadFlow.storyboard */,
 				3557F6E6208EB9EB0002B29A /* ReservationFlow.storyboard */,
+				1EE8302D208ECC6D000DEB07 /* CityCell.swift */,
+				1EE83031208ED2C5000DEB07 /* CatalogCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 				1EB6A93A2074674C00D000EF /* HouseModels.swift */,
 				1EB6A93E20747F3E00D000EF /* NetworkModels.swift */,
 				98451259208854360038F362 /* CalendarData.swift */,
+				1EE8302F208ED0D4000DEB07 /* CityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 				9845125A208854360038F362 /* CalendarData.swift in Sources */,
 				35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */,
 				1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */,
+				1EE83032208ED2C5000DEB07 /* CatalogCell.swift in Sources */,
 				35C661DF208DB33C002B2FB7 /* ReservationStepTwoViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
 				98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */,
@@ -414,6 +424,7 @@
 				351A0BA42074B76900A288FB /* UploadIntroViewController.swift in Sources */,
 				351A0BA82074B7F900A288FB /* RoomAddressViewController.swift in Sources */,
 				3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */,
+				1EE83030208ED0D4000DEB07 /* CityModel.swift in Sources */,
 				1ECDAD2B20846CF000C2FDB1 /* HouseDetailViewController.swift in Sources */,
 				35C661DD208DB308002B2FB7 /* ReservationStepOneViewController.swift in Sources */,
 				1EB6A93B2074674C00D000EF /* HouseModels.swift in Sources */,
@@ -422,6 +433,7 @@
 				1E9E0B8A20773FEC0035486A /* DrawableExtensions.swift in Sources */,
 				1E9E0B8820773FDB0035486A /* Animations.swift in Sources */,
 				35C661DB208DAC44002B2FB7 /* FinalReservationViewController.swift in Sources */,
+				1EE8302E208ECC6D000DEB07 /* CityCell.swift in Sources */,
 				351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */,
 				351A0BAC2074B87A00A288FB /* ConvenientViewController.swift in Sources */,
 				1E7D6E5C207EFF9900A438DB /* ProfilePasswordChangeViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HouseDetailViewController: UIViewController {
+class HouseDetailViewController: UITableViewController {
 
   //MARK:- LifeCycles
   override func viewDidLoad() {
