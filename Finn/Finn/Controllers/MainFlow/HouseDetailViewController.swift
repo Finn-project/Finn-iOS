@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class HouseDetailViewController: UITableViewController {
+  
+  //MARK:- Internal Data property
+  var house: House!
 
   //MARK:- LifeCycles
   override func viewDidLoad() {
