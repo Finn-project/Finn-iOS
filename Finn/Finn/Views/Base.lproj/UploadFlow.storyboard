@@ -274,7 +274,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmT-pP-uV2">
                                 <rect key="frame" x="280" y="593" width="71" height="42"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Bf9-tC-DNP"/>
                                 </constraints>
