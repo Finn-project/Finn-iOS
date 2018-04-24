@@ -35,6 +35,7 @@
 		351A0BB22074B9F300A288FB /* RoomDescriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */; };
 		351A0BB42074BA2100A288FB /* ReservationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */; };
 		351A0BB62074BA4700A288FB /* ReservationCalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */; };
+		3557F6E7208EB9EB0002B29A /* ReservationFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3557F6E6208EB9EB0002B29A /* ReservationFlow.storyboard */; };
 		3562D7A02086EE9D002C254E /* AddressInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3562D79F2086EE9D002C254E /* AddressInputViewController.swift */; };
 		35C661DB208DAC44002B2FB7 /* FinalReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */; };
 		35C661DD208DB308002B2FB7 /* ReservationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */; };
@@ -81,6 +82,7 @@
 		351A0BB12074B9F300A288FB /* RoomDescriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDescriptViewController.swift; sourceTree = "<group>"; };
 		351A0BB32074BA2100A288FB /* ReservationSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSettingViewController.swift; sourceTree = "<group>"; };
 		351A0BB52074BA4700A288FB /* ReservationCalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCalenderViewController.swift; sourceTree = "<group>"; };
+		3557F6E6208EB9EB0002B29A /* ReservationFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReservationFlow.storyboard; sourceTree = "<group>"; };
 		3562D79F2086EE9D002C254E /* AddressInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInputViewController.swift; sourceTree = "<group>"; };
 		35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReservationViewController.swift; sourceTree = "<group>"; };
 		35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationStepOneViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				1E8C8DCB2072009300F4F673 /* MainFlow.storyboard */,
 				1EC05836207258C9005D24E0 /* LoginFlow.storyboard */,
 				1EC0583920725970005D24E0 /* UploadFlow.storyboard */,
+				3557F6E6208EB9EB0002B29A /* ReservationFlow.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC05838207258C9005D24E0 /* LoginFlow.storyboard in Resources */,
+				3557F6E7208EB9EB0002B29A /* ReservationFlow.storyboard in Resources */,
 				1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */,
 				1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */,
 				1E8C8DCD2072009300F4F673 /* MainFlow.storyboard in Resources */,
