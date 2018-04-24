@@ -80,6 +80,8 @@ class ListOfHouse: Codable {
 class House: Codable {
   
   var pk: Int = 0
+  var name: String = "0000"
+  var description: String = "0000"
   var houseType: String = "0000"
   var roomCount: Int = 0
   var bedCount: Int = 0
@@ -109,6 +111,8 @@ class House: Codable {
   
   enum CodingKeys: String, CodingKey {
     case pk
+    case name
+    case description
     case houseType = "house_type"
     case roomCount = "room"
     case bedCount = "bed"
