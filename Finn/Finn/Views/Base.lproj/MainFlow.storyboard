@@ -684,8 +684,8 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-lo-oGT">
-                                                                        <rect key="frame" x="62" y="128" width="31" height="14.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-lo-oGT">
+                                                                        <rect key="frame" x="8" y="128" width="139" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -693,11 +693,13 @@
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="SZq-lo-oGT" secondAttribute="trailing" constant="8" id="6bk-rc-eOj"/>
                                                                 <constraint firstItem="9q1-OO-ivj" firstAttribute="leading" secondItem="1Uk-v8-WxI" secondAttribute="leading" id="DTg-rc-2up"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="mAd-aW-NSW" secondAttribute="bottom" constant="8" id="FAU-Xg-CC8"/>
                                                                 <constraint firstItem="mAd-aW-NSW" firstAttribute="centerX" secondItem="1Uk-v8-WxI" secondAttribute="centerX" id="HtE-0T-beO"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9q1-OO-ivj" secondAttribute="trailing" id="L7F-hG-CSE"/>
                                                                 <constraint firstItem="9q1-OO-ivj" firstAttribute="top" secondItem="1Uk-v8-WxI" secondAttribute="top" id="N3F-lM-H1i"/>
+                                                                <constraint firstItem="SZq-lo-oGT" firstAttribute="leading" secondItem="1Uk-v8-WxI" secondAttribute="leading" constant="8" id="P4L-ab-Jsf"/>
                                                                 <constraint firstItem="SZq-lo-oGT" firstAttribute="top" secondItem="9q1-OO-ivj" secondAttribute="bottom" constant="8" id="Qvu-77-JUp"/>
                                                                 <constraint firstItem="SZq-lo-oGT" firstAttribute="centerX" secondItem="1Uk-v8-WxI" secondAttribute="centerX" id="Z1J-Rn-TJj"/>
                                                             </constraints>
@@ -716,7 +718,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="9Fr-iX-wol" secondAttribute="bottom" constant="8" id="8tk-Hd-77J"/>
-                                                <constraint firstItem="9Fr-iX-wol" firstAttribute="top" secondItem="oDI-jT-nCY" secondAttribute="bottom" constant="8" id="9yk-FW-7tJ"/>
+                                                <constraint firstItem="9Fr-iX-wol" firstAttribute="top" secondItem="oDI-jT-nCY" secondAttribute="bottom" priority="999" constant="8" id="9yk-FW-7tJ"/>
                                                 <constraint firstItem="oDI-jT-nCY" firstAttribute="top" secondItem="N0v-AH-b62" secondAttribute="top" constant="16" id="Abn-tu-roH"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oDI-jT-nCY" secondAttribute="trailing" constant="20" symbolic="YES" id="DYi-ud-1Le"/>
                                                 <constraint firstItem="oDI-jT-nCY" firstAttribute="leading" secondItem="N0v-AH-b62" secondAttribute="leading" constant="24" id="abZ-fe-epY"/>
@@ -759,9 +761,6 @@
                             <constraint firstItem="dL2-JG-WTE" firstAttribute="top" secondItem="dW5-bY-aCm" secondAttribute="bottom" id="uei-Ub-LSJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SU3-fN-cdd"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="xRb-Ev-hfb" appends="YES" id="YLa-Vq-fHa"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="6pF-Jm-yny"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -771,42 +770,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhV-H4-Ekz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xRb-Ev-hfb">
-                    <connections>
-                        <action selector="wallTapped" destination="aSJ-Fy-rq9" id="IqH-0D-fKj"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2621.5999999999999" y="493.40329835082463"/>
-        </scene>
-        <!--Title-->
-        <scene sceneID="wVG-KL-9DW">
-            <objects>
-                <tableViewController storyboardIdentifier="HouseDetailViewController" id="3u2-6R-UaT" customClass="HouseDetailViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JNh-FL-klA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="t5u-3w-p1e">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5u-3w-p1e" id="h4g-Zf-RoK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="3u2-6R-UaT" id="Kok-BS-2ZR"/>
-                            <outlet property="delegate" destination="3u2-6R-UaT" id="XLm-YK-g4R"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="aRR-7O-v3T"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="moa-cW-LlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3377" y="494"/>
         </scene>
         <!--ReservationFlow-->
         <scene sceneID="f9Y-MC-Dip">

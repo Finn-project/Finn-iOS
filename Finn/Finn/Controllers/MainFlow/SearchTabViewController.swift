@@ -40,13 +40,6 @@ class SearchTabViewController: UIViewController {
 
 }
 
-//MARK:- IBActions
-extension SearchTabViewController {
-  @IBAction func wallTapped() {
-    searchBar.resignFirstResponder()
-  }
-}
-
 extension SearchTabViewController {
   func fetchDataSource() {
     Alamofire
@@ -102,9 +95,9 @@ extension SearchTabViewController: UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     if isSearching {
-      return searchedData.count
+      return 1
     } else {
-      return 2 + (searchedData.count / 4)
+      return 2 + 1 //(searchedData.count / 4)
     }
   }
   
@@ -117,7 +110,9 @@ extension SearchTabViewController: UITableViewDataSource {
     var cell = UITableViewCell()
     
     if isSearching {
-      cell = tableView.dequeueReusableCell(withIdentifier: "Catalog", for: indexPath)
+      if let newCell = tableView.dequeueReusableCell(withIdentifier: "Catalog", for: indexPath) as? CatalogSectionCell {
+        newCell.sectionHeading.text = "검색된 숙소들입니다"
+      }
     } else {
       if indexPath.section == 0 {
         cell = tableView.dequeueReusableCell(withIdentifier: "Heading", for: indexPath)
@@ -126,7 +121,6 @@ extension SearchTabViewController: UITableViewDataSource {
       } else {
         if let newCell = tableView.dequeueReusableCell(withIdentifier: "Catalog", for: indexPath) as? CatalogSectionCell {
           newCell.sectionHeading.text = "최근 등록된 숙소들을 둘러보세요"
-          newCell.houseCatalogCollection.reloadData()
         }
       }
     }
@@ -139,14 +133,14 @@ extension SearchTabViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if isSearching {
-      return 240
+      return 390 * CGFloat((Double(searchedData.count) / 4.0))
     } else {
       if indexPath.section == 0 {
         return 88 // heading section
       } else if indexPath.section == 1 {
         return 200 // (72 + 100 + 8)
       } else {
-        return 420
+        return 400 * CGFloat((Double(searchedData.count) / 4.0))
       }
     }
   }
@@ -180,6 +174,7 @@ extension SearchTabViewController: UICollectionViewDataSource {
       cell.houseName.text = searchedData[indexPath.item].name
       cell.housePrice.text = String(searchedData[indexPath.item].accommodationFee) + "원 부터"
       
+      // do networking
       Alamofire
         .request(self.searchedData[indexPath.item].imgCoverThumbnail)
         .validate()
@@ -200,6 +195,20 @@ extension SearchTabViewController: UICollectionViewDataSource {
 }
 
 extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
+  
+  //MARK:- transition trigger
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if collectionView.tag == 0 {
+      // city cell is touched
+      print("city cell touched!")
+    } else { //if collectionView.tag == 1
+      print("houseCatalogCell touched")
+//      let sb = UIStoryboard(name: "HouseDetail", bundle: nil)
+//      let detailVC = sb.instantiateViewController(withIdentifier: "HouseDetailViewController") as! HouseDetailViewController
+//      detailVC.house = searchedData[indexPath.item]
+//      self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+  }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     if collectionView.tag == 0 {

@@ -47,6 +47,7 @@
 		35D8B62E20735634008EEA2E /* UploadFlowMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D8B62D20735634008EEA2E /* UploadFlowMainViewController.swift */; };
 		98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451257208853610038F362 /* PhotoPickerViewController.swift */; };
 		9845125A208854360038F362 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98451259208854360038F362 /* CalendarData.swift */; };
+		988E9462208F0700005D0D53 /* HouseDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988E9461208F0700005D0D53 /* HouseDetail.storyboard */; };
 		98EFBEC620720AA4002F3A60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC520720AA4002F3A60 /* LoginViewController.swift */; };
 		98EFBEC820720AB3002F3A60 /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */; };
 		98EFBECA20720ACA002F3A60 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */; };
@@ -100,6 +101,7 @@
 		808D50B1236199C7088AC0C0 /* Pods-Finn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.debug.xcconfig"; sourceTree = "<group>"; };
 		98451257208853610038F362 /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
 		98451259208854360038F362 /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
+		988E9461208F0700005D0D53 /* HouseDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HouseDetail.storyboard; sourceTree = "<group>"; };
 		98EFBEC520720AA4002F3A60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98EFBEC720720AB2002F3A60 /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		98EFBEC920720ACA002F3A60 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				1EC05836207258C9005D24E0 /* LoginFlow.storyboard */,
 				1EC0583920725970005D24E0 /* UploadFlow.storyboard */,
 				3557F6E6208EB9EB0002B29A /* ReservationFlow.storyboard */,
+				988E9461208F0700005D0D53 /* HouseDetail.storyboard */,
 				1EE8302D208ECC6D000DEB07 /* CityCell.swift */,
 				1EE83031208ED2C5000DEB07 /* CatalogCell.swift */,
 			);
@@ -343,6 +346,7 @@
 				3557F6E7208EB9EB0002B29A /* ReservationFlow.storyboard in Resources */,
 				1E8C8DD22072009400F4F673 /* LaunchScreen.storyboard in Resources */,
 				1E8C8DCF2072009400F4F673 /* Assets.xcassets in Resources */,
+				988E9462208F0700005D0D53 /* HouseDetail.storyboard in Resources */,
 				1E8C8DCD2072009300F4F673 /* MainFlow.storyboard in Resources */,
 				1EC0583B20725970005D24E0 /* UploadFlow.storyboard in Resources */,
 			);
