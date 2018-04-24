@@ -52,9 +52,9 @@ extension SearchTabViewController {
       .responseJSON { (response) in
         switch response.result {
         case .success:
-          if let data = response.data ,
-             let text = String(data: data, encoding: .utf8) {
-            print(text)
+          if let data = response.data {
+//             let text = String(data: data, encoding: .utf8) {
+//            print(text)
             do {
               let houses = try JSONDecoder().decode(ListOfHouse.self, from: data)
               print("searchTab: decode success")
