@@ -119,6 +119,9 @@
                                 <state key="normal" title="달력">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButton:" destination="4H0-g0-7Un" eventType="touchUpInside" id="nK3-Qq-IHP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -141,6 +144,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="178-rm-e5H"/>
                     </view>
+                    <connections>
+                        <segue destination="aSY-Rm-cKo" kind="show" identifier="finalReservationViewController" id="grW-WJ-ill"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rM8-1I-qCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,9 +160,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-WX-M4S" customClass="FSCalendar">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="finalCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-WX-M4S" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="88.5" width="375" height="328.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                        <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="aSY-Rm-cKo" id="4tZ-Tp-j2i"/>
                                     <outlet property="delegate" destination="aSY-Rm-cKo" id="wxx-Vz-lNT"/>
@@ -168,26 +202,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o15-d1-ha4">
+                                <rect key="frame" x="301" y="601" width="50" height="42"/>
+                                <color key="backgroundColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="I7D-PC-Ifl"/>
+                                    <constraint firstAttribute="width" constant="50" id="Nid-d3-WHc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="완료"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Z2U-gf-uHi" firstAttribute="bottom" secondItem="o15-d1-ha4" secondAttribute="bottom" constant="24" id="3LM-CR-YfR"/>
                             <constraint firstItem="Z2U-gf-uHi" firstAttribute="trailing" secondItem="6Qv-VO-I1V" secondAttribute="trailing" constant="24" id="4xX-YQ-qqW"/>
                             <constraint firstItem="Z2U-gf-uHi" firstAttribute="bottom" secondItem="O9q-WX-M4S" secondAttribute="bottom" constant="250" id="E3W-AQ-EcA"/>
+                            <constraint firstItem="o15-d1-ha4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="O9q-WX-M4S" secondAttribute="bottom" constant="167" id="XB7-kT-r38"/>
                             <constraint firstItem="Z2U-gf-uHi" firstAttribute="trailing" secondItem="O9q-WX-M4S" secondAttribute="trailing" id="Z95-C6-t85"/>
                             <constraint firstItem="6Qv-VO-I1V" firstAttribute="leading" secondItem="Z2U-gf-uHi" secondAttribute="leading" constant="24" id="a66-2Z-qVV"/>
                             <constraint firstItem="O9q-WX-M4S" firstAttribute="top" secondItem="6Qv-VO-I1V" secondAttribute="bottom" constant="10" id="cM1-vz-Osc"/>
                             <constraint firstItem="O9q-WX-M4S" firstAttribute="leading" secondItem="Z2U-gf-uHi" secondAttribute="leading" id="edP-06-pBz"/>
+                            <constraint firstItem="Z2U-gf-uHi" firstAttribute="trailing" secondItem="o15-d1-ha4" secondAttribute="trailing" constant="24" id="hRD-dB-vbp"/>
                             <constraint firstItem="6Qv-VO-I1V" firstAttribute="top" secondItem="Z2U-gf-uHi" secondAttribute="top" constant="32" id="itf-TI-AaF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z2U-gf-uHi"/>
                     </view>
+                    <connections>
+                        <outlet property="finalCalendar" destination="O9q-WX-M4S" id="aPO-4H-ULP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25D-Vu-tok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="127"/>
+            <point key="canvasLocation" x="1676" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="ThemeColor">
+            <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ThemeColor">
             <color red="0.0" green="0.56862745100000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
