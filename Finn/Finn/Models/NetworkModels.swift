@@ -9,7 +9,7 @@
 import Foundation
 
 enum Network {
-  static let hostURL: String = "https://himanmen.com"
+  static let hostURL: String = "http://delighter.com"
   
   enum Auth {
     static let signUpURL: String = Network.hostURL + "/user/"
