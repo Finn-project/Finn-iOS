@@ -699,7 +699,6 @@
                                                                 <constraint firstItem="mAd-aW-NSW" firstAttribute="centerX" secondItem="1Uk-v8-WxI" secondAttribute="centerX" id="HtE-0T-beO"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9q1-OO-ivj" secondAttribute="trailing" id="L7F-hG-CSE"/>
                                                                 <constraint firstItem="9q1-OO-ivj" firstAttribute="top" secondItem="1Uk-v8-WxI" secondAttribute="top" id="N3F-lM-H1i"/>
-                                                                <constraint firstItem="SZq-lo-oGT" firstAttribute="leading" secondItem="1Uk-v8-WxI" secondAttribute="leading" constant="8" id="P4L-ab-Jsf"/>
                                                                 <constraint firstItem="SZq-lo-oGT" firstAttribute="top" secondItem="9q1-OO-ivj" secondAttribute="bottom" constant="8" id="Qvu-77-JUp"/>
                                                                 <constraint firstItem="SZq-lo-oGT" firstAttribute="centerX" secondItem="1Uk-v8-WxI" secondAttribute="centerX" id="Z1J-Rn-TJj"/>
                                                             </constraints>
@@ -811,9 +810,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1Nx-cE-Adu">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="1Nx-cE-Adu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="ZxW-Ur-A3O" id="Iqf-pL-y7Y"/>
@@ -822,6 +820,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1Nx-cE-Adu" firstAttribute="trailing" secondItem="NLw-K5-ehZ" secondAttribute="trailing" id="5Rz-mG-hE8"/>
+                            <constraint firstItem="1Nx-cE-Adu" firstAttribute="top" secondItem="B95-eV-TmG" secondAttribute="bottom" id="AEv-0V-CgG"/>
+                            <constraint firstItem="1Nx-cE-Adu" firstAttribute="leading" secondItem="NLw-K5-ehZ" secondAttribute="leading" id="E9g-82-71c"/>
                             <constraint firstItem="B95-eV-TmG" firstAttribute="top" secondItem="NLw-K5-ehZ" secondAttribute="top" id="Gsc-nJ-iez"/>
                             <constraint firstItem="B95-eV-TmG" firstAttribute="trailing" secondItem="NLw-K5-ehZ" secondAttribute="trailing" id="YEB-N0-RYf"/>
                             <constraint firstItem="B95-eV-TmG" firstAttribute="leading" secondItem="NLw-K5-ehZ" secondAttribute="leading" id="ajo-5t-5BW"/>
@@ -1078,6 +1079,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Xf-qw-QcH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="ThemeColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1095,6 +1097,9 @@
         <image name="messagesTab24px" width="24" height="24"/>
         <image name="profileTab24px" width="24" height="24"/>
         <image name="tempHostBackground" width="774" height="571"/>
+        <namedColor name="ThemeColor">
+            <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ThemeColor">
             <color red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -202,11 +202,11 @@ extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
       // city cell is touched
       print("city cell touched!")
     } else { //if collectionView.tag == 1
-      print("houseCatalogCell touched")
-//      let sb = UIStoryboard(name: "HouseDetail", bundle: nil)
-//      let detailVC = sb.instantiateViewController(withIdentifier: "HouseDetailViewController") as! HouseDetailViewController
-//      detailVC.house = searchedData[indexPath.item]
-//      self.navigationController?.pushViewController(detailVC, animated: true)
+//      print("houseCatalogCell touched")
+      let sb = UIStoryboard(name: "HouseDetail", bundle: nil)
+      let detailVC = sb.instantiateViewController(withIdentifier: "HouseDetailViewController") as! HouseDetailViewController
+      detailVC.house = searchedData[indexPath.item]
+      self.navigationController?.pushViewController(detailVC, animated: true)
     }
   }
   
@@ -234,7 +234,7 @@ extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return UIEdgeInsetsMake(4.0, 0.0, 4.0, 0.0)
+    return UIEdgeInsetsMake(4.0, 8.0, 4.0, 8.0)
   }
   
 }
