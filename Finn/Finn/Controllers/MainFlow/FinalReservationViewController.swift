@@ -7,29 +7,67 @@
 //
 
 import UIKit
-
+import FSCalendar
 class FinalReservationViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  //MARK:- IBOutlet
+  @IBOutlet weak var finalCalendar: FSCalendar!
+  
+  //MARK:- Internal Properties
+  let gregorian = Calendar(identifier: .gregorian)
+  let formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter
+  }()
+  
+  //MARK: -LifeCycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    finalCalendar.scrollDirection = .vertical
+    finalCalendar.swipeToChooseGesture.isEnabled = true
+    finalCalendar.allowsMultipleSelection = true
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    self.finalCalendar.accessibilityIdentifier = "finalCalendar"
+  }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.finalCalendar.reloadData()
+    print("viewWillAppear")
+  }
 }
+
+////MARK: -FSCAlendarDelegate
+//extension FinalReservationViewController: FSCalendarDelegate {
+//  func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+//    if self.finalCalendar.today! > date {
+//      cell.titleLabel.alpha = 0.2
+//    }
+//    if (date == self.formatter.date(from: )!) {
+//      cell.titleLabel.textColor = UIColor.orange
+//    }
+//  }
+//  //MARK: shouldSelect
+//  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+//    let dt = self.formatter.date(from: testsouce)!
+//    if (date == dt) {
+//      return false
+//    }
+//    return true
+//  }
+//}
+
+//MARK: -FSCalendarDataSource
+extension FinalReservationViewController: FSCalendarDataSource {
+  //MARK: todayBeforeSelect
+  func minimumDate(for calendar: FSCalendar) -> Date {
+    return Date()
+  }
+  
+  //MARK: TodayMaximumDate
+  func maximumDate(for calendar: FSCalendar) -> Date {
+    let threeMonthFromNow = self.gregorian.date(byAdding: .month, value: 2, to: Date(), wrappingComponents: true)
+    return threeMonthFromNow!
+  }
+}
+
