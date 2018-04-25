@@ -855,6 +855,10 @@
                                                             </view>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="dvP-Yg-Orf" id="IE8-ap-d0p"/>
+                                                        <outlet property="delegate" destination="dvP-Yg-Orf" id="9Eb-vl-RTG"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -874,6 +878,11 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="1334"/>
+                    <connections>
+                        <outlet property="heading" destination="enZ-HB-rjL" id="Oqv-PX-msz"/>
+                        <outlet property="houseCollection" destination="ZP5-1J-jXL" id="Ntu-ak-PzT"/>
+                        <outlet property="mapView" destination="yZJ-0h-4Kg" id="ZkL-Zy-a0L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiA-yq-Bzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
