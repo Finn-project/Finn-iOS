@@ -118,8 +118,8 @@ extension ProfilePasswordChangeViewController {
         switch response.result {
         case .success:
           if let data = response.data {
-            //            , let text = String(data: data, encoding: .utf8) {
-            //            print(text)
+//            , let text = String(data: data, encoding: .utf8) {
+//            print(text)
             do {
               let user = try JSONDecoder().decode(User.self, from: data)
               user.saveToUserDefaults()
@@ -148,20 +148,20 @@ extension ProfilePasswordChangeViewController {
     
     var headers: HTTPHeaders = [:]
     headers.updateValue("token " + User.loadTokenFromUserDefaults(), forKey: "Authorization")
-    print(headers)
     
     var parameters:[String: String] = [:]
     parameters.updateValue(newPw, forKey: "password")
     parameters.updateValue(confirmPw, forKey: "confirm_password")
-    print(parameters)
     
     Alamofire
-      .request(Network.Auth.loginURL + "\(userProfile.pk)/", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+      .request(Network.Auth.signUpURL + "\(userProfile.pk)/", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
       .validate()
       .responseJSON { (response) in
         switch response.result {
         case .success:
           if let data = response.data {
+//            , let text = String(data: data, encoding: .utf8) {
+//            print(text)
             do {
               let _ = try JSONDecoder().decode(UserInfo.self, from: data)
               self.isDone = true
