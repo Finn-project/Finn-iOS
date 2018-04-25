@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */,
-				1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */,
 				1E434E8B20902204007947AF /* SearchedResultTableViewController.swift */,
+				1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */,
 				1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */,
 			);
 			path = SearchTab;
