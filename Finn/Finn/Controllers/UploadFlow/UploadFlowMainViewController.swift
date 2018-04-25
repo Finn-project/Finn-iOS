@@ -54,7 +54,7 @@ class UploadFlowMainViewController: UIViewController {
                                  "maximum_check_in_range": 90,
                                  "price_per_night": 123, "country": "seoul",
                                  "latitude": 36.333, "longitude": 127.333,
-                                 "disable_days": "2018-04-27"
+                                 "disable_days": ["2018-04-27"]
                                  ]
     
     
