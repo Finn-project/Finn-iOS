@@ -29,23 +29,36 @@ class UploadFlowMainViewController: UIViewController {
       requestHeader.updateValue("Token " + User.loadTokenFromUserDefaults()!, forKey: "Authorization")
       
       //MARK:- parameters
-      let params: [String: Any] = ["house_type": "HO", "name": stepTwo.roomName,
-                                   "description": stepTwo.roomDescript, "room": stepOne.roomCount,
-                                   "bed": stepOne.bedCount, "bathroom": stepOne.bathroomCount,
-                                   "personnel": stepOne.peopleCount, "amenities": stepOne.amenities,
-                                   "facilities": stepOne.facilities,
-                                   "minimum_check_in_duration": stepThree.minimumCheckDays,
-                                   "maximum_check_in_duration": stepThree.maximumCheckDays,
-                                   "maximum_check_in_range": stepThree.totalCheckDays,
-                                   "price_per_night": stepThree.price, "country": stepOne.country,
-                                   "city": stepOne.address.city, "district": stepOne.address.district,
-                                   "dong": stepOne.address.dong, "address1": stepOne.address.firstDetailAddress,
-                                   "latitude": stepOne.address.latitude, "longitude": stepOne.address.longitude,
-                                   "disable_days": stepThree.disableDays,
-                                   "reserve_days": [], "img_cover": "",
-                                   "house_images": []]
-      
+//      let params: [String: Any] = ["house_type": "HO", "name": stepTwo.roomName,
+//                                   "description": stepTwo.roomDescript, "room": stepOne.roomCount,
+//                                   "bed": stepOne.bedCount, "bathroom": stepOne.bathroomCount,
+//                                   "personnel": stepOne.peopleCount, "amenities": stepOne.amenities,
+//                                   "facilities": stepOne.facilities,
+//                                   "minimum_check_in_duration": stepThree.minimumCheckDays,
+//                                   "maximum_check_in_duration": stepThree.maximumCheckDays,
+//                                   "maximum_check_in_range": stepThree.totalCheckDays,
+//                                   "price_per_night": stepThree.price, "country": stepOne.country,
+//                                   "city": stepOne.address.city, "district": stepOne.address.district,
+//                                   "dong": stepOne.address.dong, "address1": stepOne.address.firstDetailAddress,
+//                                   "latitude": stepOne.address.latitude, "longitude": stepOne.address.longitude,
+//                                   "disable_days": stepThree.disableDays,
+//                                   "reserve_days": [], "img_cover": "",
+//                                   "house_images": []]
+    let params: [String: Any] = ["house_type": "HO", "name": "최현호집",
+                                 "description": "되는것이냐", "room": 1,
+                                 "bed": 2, "bathroom": 3,
+                                 "personnel": 2, "amenities": [1, 2],
+                                 "facilities": [2, 3],
+                                 "minimum_check_in_duration": 1,
+                                 "maximum_check_in_duration": 2,
+                                 "maximum_check_in_range": 90,
+                                 "price_per_night": 123, "country": "seoul",
+                                 "latitude": 36.333, "longitude": 127.333,
+                                 "disable_days": "2018-04-27"
+                                 ]
+    
       print(params)
+      print(requestHeader)
     //response code 400 찍힘 현재
     //MARK:- Alamofire post 
       Alamofire
@@ -58,10 +71,9 @@ class UploadFlowMainViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
           case .failure(let error):
             print("post failed : \(error.localizedDescription)")
+            self.dismiss(animated: true, completion: nil)
           }
       }
-    
-
   }
   //MARK:- Internal Property
   let originColor: UIColor = UIColor.init(named: "ThemeColor")!

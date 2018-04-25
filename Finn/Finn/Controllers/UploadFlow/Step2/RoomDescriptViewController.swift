@@ -17,7 +17,10 @@ class RoomDescriptViewController: UIViewController {
   @IBOutlet weak var roomNameTf: UITextField!
   @IBOutlet weak var roomDescriptTf: UITextField!
   
-  
+  @IBAction func tappedView(_ sender: UITapGestureRecognizer) {
+    roomNameTf.resignFirstResponder()
+    roomDescriptTf.resignFirstResponder()
+  }
   //MARK: GO TO UploadIntro
   @IBAction func backToIntro(_ sender: Any){
     
@@ -53,6 +56,7 @@ class RoomDescriptViewController: UIViewController {
     */
 
 }
+//MARK:- extension
 extension RoomDescriptViewController {
   func stepTwoForUpload() {
     guard let roomName = roomNameTf.text else {return}
@@ -61,3 +65,17 @@ extension RoomDescriptViewController {
     stepTwo.roomDescript = roomDescript
   }
 }
+extension RoomDescriptViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if roomNameTf.text != "" {
+      roomNameTf.resignFirstResponder()
+      roomDescriptTf.becomeFirstResponder()
+    }else {
+      roomDescriptTf.resignFirstResponder()
+    }
+    return true
+    
+  }
+}
+
+
