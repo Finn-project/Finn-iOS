@@ -408,7 +408,7 @@
                         <barButtonItem key="rightBarButtonItem" title="예약하기" id="Fcf-ls-vEE">
                             <color key="tintColor" name="ThemeColor"/>
                             <connections>
-                                <segue destination="j3q-XE-f8S" kind="presentation" id="jc7-e8-oDC"/>
+                                <segue destination="j3q-XE-f8S" kind="presentation" identifier="nextVC" id="jc7-e8-oDC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
