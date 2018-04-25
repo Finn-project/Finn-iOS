@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fdw-pZ-q3D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qE-j6-6Oa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,19 +14,19 @@
         <!--Reservation Step One View Controller-->
         <scene sceneID="ITl-kT-qJt">
             <objects>
-                <viewController id="fdw-pZ-q3D" customClass="ReservationStepOneViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReservationStepOneViewController" id="fdw-pZ-q3D" customClass="ReservationStepOneViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TIR-Q6-VdO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용 가능 편의 시설" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12T-6i-qsF">
-                                <rect key="frame" x="24" y="134" width="327" height="24"/>
+                                <rect key="frame" x="24" y="178" width="327" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용 가능 편의 물품" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfN-7j-RdK">
-                                <rect key="frame" x="24" y="323" width="327" height="21"/>
+                                <rect key="frame" x="24" y="367" width="327" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약전 숙소 정보를 한번 더 확인하세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkN-cA-gs9">
-                                <rect key="frame" x="24" y="52" width="327" height="74"/>
+                                <rect key="frame" x="24" y="96" width="327" height="74"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,10 +68,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nfP-hW-lFF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Riz-Qi-tMa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3d3-LW-K1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="108" y="134"/>
+            <point key="canvasLocation" x="1047.2" y="133.5832083958021"/>
         </scene>
         <!--Reservation Step Two View Controller-->
         <scene sceneID="5Bs-dP-uin">
@@ -82,37 +83,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙박 인원은 몇명인가요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAa-kL-zmQ">
-                                <rect key="frame" x="24" y="52" width="327" height="26.5"/>
+                                <rect key="frame" x="24" y="96" width="327" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6As-K8-sQa">
-                                <rect key="frame" x="24" y="88.5" width="327" height="30"/>
+                                <rect key="frame" x="24" y="132.5" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요금을 확인하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-lm-n2I">
-                                <rect key="frame" x="24" y="173" width="327" height="27"/>
+                                <rect key="frame" x="24" y="217" width="327" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="기본 요금 x 숙박인원" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-5a-k8B">
-                                <rect key="frame" x="24" y="210" width="327" height="30"/>
+                                <rect key="frame" x="24" y="254" width="327" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크인 날짜를 선택해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy5-9X-6C1">
-                                <rect key="frame" x="24" y="295" width="327" height="27"/>
+                                <rect key="frame" x="24" y="339" width="327" height="27"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tW2-AK-H0Z">
-                                <rect key="frame" x="161" y="344" width="52" height="42"/>
+                                <rect key="frame" x="161" y="416" width="52" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="ThemeColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -150,12 +151,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rM8-1I-qCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="804" y="130"/>
+            <point key="canvasLocation" x="1743.2" y="129.98500749625188"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="sZh-Ma-6d7">
             <objects>
-                <viewController id="aSY-Rm-cKo" customClass="FinalReservationViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinalReservationViewController" id="aSY-Rm-cKo" customClass="FinalReservationViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oom-5i-9Kh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +235,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25D-Vu-tok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676" y="129.98500749625188"/>
+            <point key="canvasLocation" x="2615.1999999999998" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tXt-ot-JVM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qE-j6-6Oa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uyn-fJ-KSH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fdw-pZ-q3D" kind="relationship" relationship="rootViewController" id="lOz-Fa-CfV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l8n-nR-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
