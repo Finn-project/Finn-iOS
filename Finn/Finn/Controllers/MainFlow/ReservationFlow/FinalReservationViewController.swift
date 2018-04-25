@@ -37,26 +37,29 @@ class FinalReservationViewController: UIViewController {
   }
 }
 
-////MARK: -FSCAlendarDelegate
-//extension FinalReservationViewController: FSCalendarDelegate {
-//  func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
-//    if self.finalCalendar.today! > date {
-//      cell.titleLabel.alpha = 0.2
-//    }
-//    if (date == self.formatter.date(from: )!) {
-//      cell.titleLabel.textColor = UIColor.orange
-//    }
-//  }
+//MARK: -FSCAlendarDelegate
+extension FinalReservationViewController: FSCalendarDelegate {
+  func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+    if self.finalCalendar.today! > date {
+      cell.titleLabel.alpha = 0.2
+    }
+    for i in house.disableDays {
+      if (date == self.formatter.date(from: i)!) {
+        cell.titleLabel.textColor = UIColor.orange
+      }
+    }
+  }
   //MARK: shouldSelect
-//  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-//    for i in
-//    let dt = self.formatter.date(from: testsouce)!
-//    if (date == dt) {
-//      return false
-//    }
-//    return true
-//  }
-//}
+  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+    for i in house.disableDays {
+      let dt = self.formatter.date(from: i)!
+      if (date == dt) {
+        return false
+      }
+    }
+    return true
+  }
+}
 
 //MARK: -FSCalendarDataSource
 extension FinalReservationViewController: FSCalendarDataSource {
