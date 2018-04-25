@@ -60,6 +60,18 @@ class HouseDetailViewController: UITableViewController {
       }
     }
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    let latitude = Double(house.latitude)!
+    let longitude = Double(house.longitude)!
+    
+    let location = CLLocationCoordinate2DMake(latitude, longitude)
+    let camera = MKMapCamera(lookingAtCenter: location, fromDistance: 1000, pitch: 0, heading: 0)
+    detailMapView.setCamera(camera, animated: true)
+  }
+  
 }
 
 extension HouseDetailViewController {
