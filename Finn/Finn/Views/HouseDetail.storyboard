@@ -224,26 +224,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="2JM-XI-2BK">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv" translatesAutoresizingMaskIntoConstraints="NO" id="2JM-XI-2BK">
                                                     <rect key="frame" x="16" y="52" width="80" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="IpX-re-IBV"/>
                                                         <constraint firstAttribute="height" constant="60" id="X96-CW-Wkr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeMaker" translatesAutoresizingMaskIntoConstraints="NO" id="mps-Sb-CWv">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeeMaker" translatesAutoresizingMaskIntoConstraints="NO" id="mps-Sb-CWv">
                                                     <rect key="frame" x="16" y="144" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aircon" translatesAutoresizingMaskIntoConstraints="NO" id="lmI-uw-zDC">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aircon" translatesAutoresizingMaskIntoConstraints="NO" id="lmI-uw-zDC">
                                                     <rect key="frame" x="137" y="52" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microwave" translatesAutoresizingMaskIntoConstraints="NO" id="INs-ck-WYF">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microwave" translatesAutoresizingMaskIntoConstraints="NO" id="INs-ck-WYF">
                                                     <rect key="frame" x="257" y="52" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="lbZ-TT-Li1">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="lbZ-TT-Li1">
                                                     <rect key="frame" x="137" y="144" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air" translatesAutoresizingMaskIntoConstraints="NO" id="r9H-XP-zUE">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="air" translatesAutoresizingMaskIntoConstraints="NO" id="r9H-XP-zUE">
                                                     <rect key="frame" x="257" y="144" width="80" height="60"/>
                                                 </imageView>
                                             </subviews>
@@ -300,26 +300,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swimmingPool" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-Og-F5g">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swimmingPool" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-Og-F5g">
                                                     <rect key="frame" x="16" y="38" width="80" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="C80-Vx-DBy"/>
                                                         <constraint firstAttribute="width" constant="80" id="fQE-o7-k0P"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic" translatesAutoresizingMaskIntoConstraints="NO" id="afe-66-g4V">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic" translatesAutoresizingMaskIntoConstraints="NO" id="afe-66-g4V">
                                                     <rect key="frame" x="16" y="114" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevator" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-8F-Z3A">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elevator" translatesAutoresizingMaskIntoConstraints="NO" id="jqx-8F-Z3A">
                                                     <rect key="frame" x="134" y="37.5" width="80" height="60.5"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arcade" translatesAutoresizingMaskIntoConstraints="NO" id="hRB-CG-0Dl">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arcade" translatesAutoresizingMaskIntoConstraints="NO" id="hRB-CG-0Dl">
                                                     <rect key="frame" x="134" y="114" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wash" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-CY-5VG">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wash" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-CY-5VG">
                                                     <rect key="frame" x="254" y="38" width="80" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spa" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-oi-yg5">
+                                                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spa" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-oi-yg5">
                                                     <rect key="frame" x="254" y="114" width="80" height="60"/>
                                                 </imageView>
                                             </subviews>
@@ -407,42 +407,53 @@
                     <navigationItem key="navigationItem" id="yXB-Rv-upp">
                         <barButtonItem key="rightBarButtonItem" title="예약하기" id="Fcf-ls-vEE">
                             <color key="tintColor" name="ThemeColor"/>
+                            <connections>
+                                <segue destination="j3q-XE-f8S" kind="presentation" id="jc7-e8-oDC"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <size key="freeformSize" width="375" height="2000"/>
                     <connections>
-                        <outlet property="airCleanerImg" destination="qoD-oi-yg5" id="auX-nv-MR0"/>
-                        <outlet property="airConditionerImg" destination="jqx-8F-Z3A" id="RCk-Eg-ZOd"/>
-                        <outlet property="arcadeImg" destination="lbZ-TT-Li1" id="JPK-u8-ynN"/>
                         <outlet property="bathroomCount" destination="rT1-S4-CwF" id="vHL-Bk-RPd"/>
                         <outlet property="bathroomImg" destination="rT1-S4-CwF" id="zQb-Pl-Ylg"/>
                         <outlet property="bedCount" destination="jcS-jW-bD7" id="MTa-IC-Oro"/>
                         <outlet property="bedImg" destination="1Qw-9d-UIo" id="App-gt-XfS"/>
-                        <outlet property="coffeePotImg" destination="afe-66-g4V" id="evI-ZT-G6R"/>
-                        <outlet property="computerImg" destination="hRB-CG-0Dl" id="X1O-GS-uFC"/>
                         <outlet property="detailImg" destination="uIh-vN-wpD" id="CI2-Uz-mRg"/>
                         <outlet property="detailMapView" destination="bG2-Fg-6kW" id="1xF-Ln-084"/>
-                        <outlet property="elevatorImg" destination="lmI-uw-zDC" id="ict-FA-BEr"/>
                         <outlet property="guestCount" destination="qB5-6S-ks2" id="L9Y-mk-694"/>
                         <outlet property="guestImg" destination="olJ-ve-SUX" id="CDj-BO-8zH"/>
                         <outlet property="hostName" destination="qls-sK-0gT" id="McY-WI-K7D"/>
                         <outlet property="hostProfileImg" destination="Vq8-Lb-vjI" id="S3i-ND-mnv"/>
                         <outlet property="houseTitle" destination="FrZ-NQ-PPD" id="CXA-Gy-3kx"/>
-                        <outlet property="karaokeImg" destination="mps-Sb-CWv" id="Hqf-fe-qY2"/>
-                        <outlet property="laundryImg" destination="INs-ck-WYF" id="yOe-Ja-8Yp"/>
-                        <outlet property="microwaveImg" destination="MKj-CY-5VG" id="PiR-JJ-aoh"/>
                         <outlet property="roomCount" destination="2EG-LG-tP5" id="GF6-UJ-kUO"/>
                         <outlet property="roomImg" destination="de1-lA-anz" id="3pO-zR-xJb"/>
                         <outlet property="roomInfomationText" destination="vPt-Rh-cav" id="ceh-4d-hRH"/>
-                        <outlet property="spaImg" destination="r9H-XP-zUE" id="o0w-3t-tPb"/>
-                        <outlet property="swimmingPoolImg" destination="2JM-XI-2BK" id="0no-g9-IOS"/>
-                        <outlet property="tvImg" destination="mDO-Og-F5g" id="lzM-TU-qpM"/>
+                        <outletCollection property="facilities" destination="2JM-XI-2BK" collectionClass="NSMutableArray" id="5bF-sy-ilF"/>
+                        <outletCollection property="facilities" destination="lmI-uw-zDC" collectionClass="NSMutableArray" id="fBI-Cx-9AZ"/>
+                        <outletCollection property="facilities" destination="INs-ck-WYF" collectionClass="NSMutableArray" id="Udm-EM-3bD"/>
+                        <outletCollection property="facilities" destination="mps-Sb-CWv" collectionClass="NSMutableArray" id="fhm-zI-79V"/>
+                        <outletCollection property="facilities" destination="lbZ-TT-Li1" collectionClass="NSMutableArray" id="zBr-ac-9SB"/>
+                        <outletCollection property="facilities" destination="r9H-XP-zUE" collectionClass="NSMutableArray" id="zls-Ld-LYH"/>
+                        <outletCollection property="amenities" destination="mDO-Og-F5g" collectionClass="NSMutableArray" id="Qtr-uj-umS"/>
+                        <outletCollection property="amenities" destination="jqx-8F-Z3A" collectionClass="NSMutableArray" id="HCB-j5-THK"/>
+                        <outletCollection property="amenities" destination="MKj-CY-5VG" collectionClass="NSMutableArray" id="JcX-qL-nxi"/>
+                        <outletCollection property="amenities" destination="afe-66-g4V" collectionClass="NSMutableArray" id="CgD-AV-8Cd"/>
+                        <outletCollection property="amenities" destination="hRB-CG-0Dl" collectionClass="NSMutableArray" id="OTT-Fi-Yk7"/>
+                        <outletCollection property="amenities" destination="qoD-oi-yg5" collectionClass="NSMutableArray" id="y96-6P-YMN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pup-a2-0WS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="121.4392803598201"/>
+        </scene>
+        <!--ReservationFlow-->
+        <scene sceneID="gbp-9R-aSw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReservationFlow" id="j3q-XE-f8S" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWC-AB-Tha" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-340"/>
         </scene>
     </scenes>
     <resources>

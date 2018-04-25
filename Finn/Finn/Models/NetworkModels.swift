@@ -19,7 +19,7 @@ enum Network {
   }
   
   enum House {
-    static let getHouseURL: String = Network.hostURL + "/house/?page=1&page_size=20"//&ordering=-pk
+    static let getHouseURL: String = Network.hostURL + "/house/"//&ordering=-pk
     static let hostingURL: String = Network.hostURL + "/house/"
   }
 }
