@@ -46,7 +46,7 @@ class SearchTabViewController: UIViewController {
 extension SearchTabViewController {
   func fetchDataSource() {
     Alamofire
-      .request(Network.House.getHouseURL, method: .get, encoding: JSONEncoding.default)
+      .request(Network.House.getHouseURL + "?page=1&page_size=20", method: .get, encoding: JSONEncoding.default)
       .validate()
       .responseJSON { (response) in
         switch response.result {
@@ -202,6 +202,7 @@ extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
     if collectionView.tag == 0 {
       let sb = UIStoryboard(name: "MainFlow", bundle: nil)
       let detailVC = sb.instantiateViewController(withIdentifier: "SearchedResultTableViewController") as! SearchedResultTableViewController
+      detailVC.selectedCity = cities[indexPath.item]
       self.navigationController?.pushViewController(detailVC, animated: true)
       
     } else { //if collectionView.tag == 1
