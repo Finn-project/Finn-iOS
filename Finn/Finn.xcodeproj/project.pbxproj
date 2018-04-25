@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E434E8C20902204007947AF /* SearchedResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E434E8B20902204007947AF /* SearchedResultTableViewController.swift */; };
+		1E434E91209022DB007947AF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E434E90209022DB007947AF /* MessagesViewController.swift */; };
 		1E7D6E5C207EFF9900A438DB /* ProfilePasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7D6E5B207EFF9900A438DB /* ProfilePasswordChangeViewController.swift */; };
 		1E8C8DC82072009300F4F673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC72072009300F4F673 /* AppDelegate.swift */; };
 		1E8C8DCA2072009300F4F673 /* SearchTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		06FBF5FA90CDBB1779124772 /* Pods-Finn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finn/Pods-Finn.release.xcconfig"; sourceTree = "<group>"; };
+		1E434E8B20902204007947AF /* SearchedResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedResultTableViewController.swift; sourceTree = "<group>"; };
+		1E434E90209022DB007947AF /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1E7D6E5B207EFF9900A438DB /* ProfilePasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordChangeViewController.swift; sourceTree = "<group>"; };
 		1E8C8DC42072009300F4F673 /* Finn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8C8DC72072009300F4F673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E434E8D20902290007947AF /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+				1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */,
+				1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */,
+				1E434E8B20902204007947AF /* SearchedResultTableViewController.swift */,
+				1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */,
+			);
+			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		1E434E8E209022A2007947AF /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				98EFBECB20720B1E002F3A60 /* ProfileTabViewController.swift */,
+				1EA0DE9F2073652300971DCB /* ProfileDetailViewController.swift */,
+				1E7D6E5B207EFF9900A438DB /* ProfilePasswordChangeViewController.swift */,
+				1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */,
+				98451257208853610038F362 /* PhotoPickerViewController.swift */,
+				1EA0DEA42073698800971DCB /* SettingViewController.swift */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		1E434E8F209022B9007947AF /* ReservationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */,
+				35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */,
+				35C661DE208DB33C002B2FB7 /* ReservationStepTwoViewController.swift */,
+			);
+			path = ReservationFlow;
+			sourceTree = "<group>";
+		};
 		1E8C8DBB2072009300F4F673 = {
 			isa = PBXGroup;
 			children = (
@@ -155,19 +193,11 @@
 		1EA0DEA3207366A200971DCB /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
-				98451257208853610038F362 /* PhotoPickerViewController.swift */,
-				1E8C8DC92072009300F4F673 /* SearchTabViewController.swift */,
-				1ECDAD282084667100C2FDB1 /* SearchFiltersViewController.swift */,
-				1ECDAD2A20846CF000C2FDB1 /* HouseDetailViewController.swift */,
-				98EFBECB20720B1E002F3A60 /* ProfileTabViewController.swift */,
-				1EA0DE9F2073652300971DCB /* ProfileDetailViewController.swift */,
-				1E7D6E5B207EFF9900A438DB /* ProfilePasswordChangeViewController.swift */,
-				1EA0DEA12073653800971DCB /* BecomeHostViewController.swift */,
-				1EA0DEA42073698800971DCB /* SettingViewController.swift */,
-				35C661DA208DAC44002B2FB7 /* FinalReservationViewController.swift */,
-				35C661DC208DB308002B2FB7 /* ReservationStepOneViewController.swift */,
-				35C661DE208DB33C002B2FB7 /* ReservationStepTwoViewController.swift */,
+				1E434E8F209022B9007947AF /* ReservationFlow */,
+				1E434E8D20902290007947AF /* SearchTab */,
+				1E434E8E209022A2007947AF /* ProfileTab */,
 				1EC5D2ED208EE79B00CDC3C3 /* FavoritesTabViewController.swift */,
+				1E434E90209022DB007947AF /* MessagesViewController.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -423,7 +453,9 @@
 				1EE83032208ED2C5000DEB07 /* CatalogCell.swift in Sources */,
 				35C661DF208DB33C002B2FB7 /* ReservationStepTwoViewController.swift in Sources */,
 				1EA0DEA52073698800971DCB /* SettingViewController.swift in Sources */,
+				1E434E8C20902204007947AF /* SearchedResultTableViewController.swift in Sources */,
 				98451258208853610038F362 /* PhotoPickerViewController.swift in Sources */,
+				1E434E91209022DB007947AF /* MessagesViewController.swift in Sources */,
 				351A0BB02074B98E00A288FB /* RoomImagePreviewViewController.swift in Sources */,
 				1EB6A93D2074795A00D000EF /* SignUpEmailPhoneViewController.swift in Sources */,
 				351A0BAE2074B96700A288FB /* RoomImageAddViewController.swift in Sources */,
