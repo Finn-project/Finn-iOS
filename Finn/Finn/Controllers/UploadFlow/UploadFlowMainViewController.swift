@@ -57,6 +57,7 @@ class UploadFlowMainViewController: UIViewController {
                                  "disable_days": "2018-04-27"
                                  ]
     
+    
       print(params)
       print(requestHeader)
     //response code 400 찍힘 현재

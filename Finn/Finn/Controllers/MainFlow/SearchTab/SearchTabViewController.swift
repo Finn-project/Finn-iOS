@@ -200,7 +200,9 @@ extension SearchTabViewController: UICollectionViewDelegateFlowLayout {
   //MARK:- transition trigger
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if collectionView.tag == 0 {
-      print("city cell touched!")
+      let sb = UIStoryboard(name: "MainFlow", bundle: nil)
+      let detailVC = sb.instantiateViewController(withIdentifier: "SearchedResultTableViewController") as! SearchedResultTableViewController
+      self.navigationController?.pushViewController(detailVC, animated: true)
       
     } else { //if collectionView.tag == 1
 
