@@ -514,6 +514,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BgK-lz-Qci" id="Ze6-mg-l8f"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXk-aP-U56">
                                 <rect key="frame" x="24" y="593" width="71" height="42"/>
@@ -559,9 +562,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BgK-lz-Qci" id="hiw-8e-2zG"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="inh-gX-Wlu" firstAttribute="trailing" secondItem="lBZ-Ga-hfU" secondAttribute="trailing" constant="24" id="7qT-LP-xh6"/>
                             <constraint firstItem="mdI-eb-iIS" firstAttribute="top" secondItem="ibS-Vm-kpe" secondAttribute="bottom" constant="58" id="AqQ-9G-2bN"/>
@@ -583,6 +590,9 @@
                             <constraint firstItem="inh-gX-Wlu" firstAttribute="bottom" secondItem="lBZ-Ga-hfU" secondAttribute="bottom" constant="32" id="xGm-zs-IF7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="inh-gX-Wlu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gme-Gt-BEu" appends="YES" id="90c-oZ-tGT"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="roomDescriptTf" destination="JBL-GB-nn4" id="IFl-w5-fb5"/>
@@ -590,6 +600,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8kA-St-EVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gme-Gt-BEu">
+                    <connections>
+                        <action selector="tappedView:" destination="BgK-lz-Qci" id="QCg-Tv-GOA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3773" y="845"/>
         </scene>
