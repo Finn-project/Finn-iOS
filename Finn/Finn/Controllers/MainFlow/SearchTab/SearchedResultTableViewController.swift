@@ -20,10 +20,12 @@ class SearchedResultTableViewController: UITableViewController {
   //MARK:- internal data
   var selectedCity: City!
   var fetchedHouse: [House]!
+  var fetchedAnnotations: [MKPointAnnotation] = []
   
   var isFetched: Bool = false {
     didSet {
       houseCollection.reloadData()
+      addAnnotations()
     }
   }
   
@@ -42,7 +44,7 @@ class SearchedResultTableViewController: UITableViewController {
     super.viewDidAppear(animated)
     
     //setting mapView's Camera
-    let camera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2DMake(selectedCity.latitude, selectedCity.longitude), fromDistance: 1000, pitch: 0, heading: 0)
+    let camera = MKMapCamera(lookingAtCenter: CLLocationCoordinate2DMake(selectedCity.latitude, selectedCity.longitude), fromDistance: 16000, pitch: 0, heading: 0)
     mapView.setCamera(camera, animated: true)
   }
   
@@ -78,6 +80,18 @@ class SearchedResultTableViewController: UITableViewController {
           print("searchResult: network failed: \(error.localizedDescription)")
         }
     }
+  }
+  
+  func addAnnotations() {
+    for i in 0..<fetchedHouse.count {
+      let lat = Double(fetchedHouse[i].latitude)!
+      let long = Double(fetchedHouse[i].longitude)!
+      let point = MKPointAnnotation()
+      point.coordinate = CLLocationCoordinate2DMake(lat, long)
+      fetchedAnnotations.append(point)
+      mapView.addAnnotation(point)
+    }
+
   }
   
   //MARK:- Table view data source
