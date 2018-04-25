@@ -14,6 +14,7 @@ let currentUserDictKey = "CurrentUser"
 class UserProfile {
   
   var token: String = ""
+  var pk: Int = 0
   var userName: String = ""
   var email: String = ""
   var firstName: String = ""
@@ -30,6 +31,7 @@ class UserProfile {
   func resetUserDefaults() {
     var info: [String: Any] = [:]
     
+    info.updateValue(0, forKey: "pk")
     info.updateValue("0000", forKey: "userName")
     info.updateValue("0000", forKey: "email")
     info.updateValue("0000", forKey: "phoneNumber")
@@ -64,6 +66,7 @@ class User: Codable {
   func saveToUserDefaults() {
     var info: [String: Any] = [:]
     
+    info.updateValue(self.userInfo.pk, forKey: "pk")
     info.updateValue(self.userInfo.userName, forKey: "userName")
     info.updateValue(self.userInfo.phoneNumber, forKey: "phoneNumber")
     info.updateValue(self.userInfo.firstName, forKey: "firstName")
@@ -121,6 +124,7 @@ class User: Codable {
       
       let targetUserProfile = UserProfile()
       
+      targetUserProfile.pk = dict["pk"] as! Int
       targetUserProfile.token = dict["token"] as! String
       targetUserProfile.userName = dict["userName"] as! String
       targetUserProfile.phoneNumber = dict["phoneNumber"] as! String
