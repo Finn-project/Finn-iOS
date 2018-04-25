@@ -61,6 +61,12 @@ class HouseDetailViewController: UITableViewController {
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let calendar = segue.destination as! UINavigationController
+    let finalCalendar = calendar.viewControllers[0] as? ReservationStepOneViewController
+    finalCalendar?.house = house
+  }
+  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
@@ -68,8 +74,13 @@ class HouseDetailViewController: UITableViewController {
     let longitude = Double(house.longitude)!
     
     let location = CLLocationCoordinate2DMake(latitude, longitude)
-    let camera = MKMapCamera(lookingAtCenter: location, fromDistance: 1000, pitch: 0, heading: 0)
+    let camera = MKMapCamera(lookingAtCenter: location, fromDistance: 2400, pitch: 0, heading: 0)
+    
+    let annotation = MKPointAnnotation()
+    annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+    
     detailMapView.setCamera(camera, animated: true)
+    detailMapView.addAnnotation(annotation)
   }
   
 }
