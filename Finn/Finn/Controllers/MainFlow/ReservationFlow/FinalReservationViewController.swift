@@ -20,14 +20,14 @@ class FinalReservationViewController: UIViewController {
     formatter.dateFormat = "yyyy-MM-dd"
     return formatter
   }()
-  
+  var house: House!
   //MARK: -LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     finalCalendar.scrollDirection = .vertical
     finalCalendar.swipeToChooseGesture.isEnabled = true
     finalCalendar.allowsMultipleSelection = true
-    
+    print("\(house)")
     self.finalCalendar.accessibilityIdentifier = "finalCalendar"
   }
   override func viewWillAppear(_ animated: Bool) {
@@ -47,8 +47,9 @@ class FinalReservationViewController: UIViewController {
 //      cell.titleLabel.textColor = UIColor.orange
 //    }
 //  }
-//  //MARK: shouldSelect
+  //MARK: shouldSelect
 //  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+//    for i in
 //    let dt = self.formatter.date(from: testsouce)!
 //    if (date == dt) {
 //      return false

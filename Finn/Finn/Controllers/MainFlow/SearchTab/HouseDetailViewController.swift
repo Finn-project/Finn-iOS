@@ -24,21 +24,10 @@ class HouseDetailViewController: UITableViewController {
   @IBOutlet weak var roomCount: UILabel!
   @IBOutlet weak var bedCount: UILabel!
   @IBOutlet weak var bathroomCount: UILabel!
-  @IBOutlet weak var swimmingPoolImg: UIImageView!
-  @IBOutlet weak var elevatorImg: UIImageView!
-  @IBOutlet weak var laundryImg: UIImageView!
-  @IBOutlet weak var karaokeImg: UIImageView!
-  @IBOutlet weak var arcadeImg: UIImageView!
-  @IBOutlet weak var spaImg: UIImageView!
-  @IBOutlet weak var tvImg: UIImageView!
-  @IBOutlet weak var airConditionerImg: UIImageView!
-  @IBOutlet weak var microwaveImg: UIImageView!
-  @IBOutlet weak var coffeePotImg: UIImageView!
-  @IBOutlet weak var computerImg: UIImageView!
-  @IBOutlet weak var airCleanerImg: UIImageView!
   @IBOutlet weak var roomInfomationText: UITextView!
+  @IBOutlet var facilities: [UIImageView]!
+  @IBOutlet var amenities: [UIImageView]!
   @IBOutlet weak var detailMapView: MKMapView!
-  
   //MARK:- Internal Data property
   var house: House!
   
@@ -49,18 +38,40 @@ class HouseDetailViewController: UITableViewController {
     drawImg()
     houseTitle.text = house.name
     hostName.text = house.host.userName
-    guard let peopleCount: String = String(house.peopleCount) else { return }
-    self.guestCount.text = peopleCount
-    guard let myRoomCount: String = String(house.roomCount) else { return }
-    self.roomCount.text = myRoomCount
-    guard let bed: String = String(house.bedCount) else { return }
-    self.bedCount.text = bed
-    guard let bath: String = String(house.bathroomCount) else { return }
-    self.bathroomCount.text = bath
+    self.guestCount.text = String(house.peopleCount)
+    self.roomCount.text = String(house.roomCount)
+    self.bedCount.text = String(house.bedCount)
+    self.bathroomCount.text = String(house.bathroomCount)
     self.roomInfomationText.text = house.description
     
+    for i in house.facilities {
+      if facilities[i-1].tag == i {
+        facilities[i-1].alpha = 1
+      } else {
+        facilities[i-1].alpha = 0.2
+      }
+    }
     
+    for i in house.amenities {
+      if amenities[i-1].tag == i {
+        amenities[i-1].alpha = 1
+      } else {
+        amenities[i-1].alpha = 0.2
+      }
+    }
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    let latitude = Double(house.latitude)!
+    let longitude = Double(house.longitude)!
+    
+    let location = CLLocationCoordinate2DMake(latitude, longitude)
+    let camera = MKMapCamera(lookingAtCenter: location, fromDistance: 1000, pitch: 0, heading: 0)
+    detailMapView.setCamera(camera, animated: true)
+  }
+  
 }
 
 extension HouseDetailViewController {
