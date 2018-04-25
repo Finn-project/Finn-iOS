@@ -11,7 +11,7 @@ Finn-project
 
 ### Finn 화면 구성 (이미지 넣기)
 
--	<회원가입 및 페이스북 로그인> ![for_readme.001](/assets/for_readme.001.png)<br> -------------------------------------------------------------------------------
+-	<회원가입 및 페이스북 로그인> ![for_readme.001](/assets/for_readme.001.png)<br> -------------
 -	<숙소 등록하기 Step One>
 
 	![for_readme.002](/assets/for_readme.002.png)<br>
@@ -31,7 +31,12 @@ Finn-project
 
 ![for_readme.005](/assets/for_readme.005_yv5gg9o22.png)<br>
 
----
+-	< Room Detail View> ![for_readme_006](/assets/for_readme_006.png)<br>
+
+-	< Reservation Flow>
+
+	![for_readme_007](/assets/for_readme_007.png)<br>
+	-------------------------------------------------
 
 ### 어플리케이션 구동 영상 링크
 
