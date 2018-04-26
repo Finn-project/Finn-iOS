@@ -9,7 +9,7 @@ Finn-project
 
 ---
 
-### Finn 화면 구성 (이미지 넣기)
+### Finn 화면 미리보기
 
 -	<회원가입 및 페이스북 로그인> ![for_readme.001](/assets/for_readme.001.png)<br> -------------
 -	<숙소 등록하기 Step One>
@@ -40,35 +40,35 @@ Finn-project
 
 ### 어플리케이션 구동 영상 링크
 
-[영상 링크]
+[잠시 업로드 대]
 
 ---
 
 ### API 문서 링크
 
-[ 문서 링크]
+[gitbook is here!](https://himanmengit.gitbooks.io/airbnb/content/)
 
 ---
 
 ### 사용된 개념들
 
-1.	Cocoapods Alamofire 이용 네트워크 통신 <br>
-2.	페이스북 로그인
-	-	내용<br>
-3.	apple mapkit 이용
-	-	내용<br>
-4.	회원가입 에러처리 Animation 적용
-	-	내용<br>
-5.	Calender Open Source 적용
-	-	내용
+1. Cocoapods을 이용한 오픈소스 라이브러리 사용 <br>
+2. Alamofire 이용한 네트워크 통신 <br>
+3. FacebookLogin SDK를 이용한 로그인 방식 적용 <br>
+4. MapKit 이용
+	-	Camera, Annotation, Geocode <br>
+5.	회원가입 에러처리 Animation 적용
+6.	FSCalender 적용
 
 ---
 
 ### 프로젝트 회고
 
-\-
+- 최현호:
 --
 
-\-
+- 배지호:
+--
 
+- 김성종:  
 ---
