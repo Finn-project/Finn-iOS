@@ -5,7 +5,7 @@ Finn-project
 
 ### 프로젝트 소개
 
--	'AirBnB iOS App'을 카피캣 하여 Finn 이라는 이름으로 새로운 플랫폼 어플리케이션을 만들어보는 팀 프로젝트 입니다.<br>
+-	'AirBnB iOS App'을 카피하여 Finn 이라는 이름으로 새로운 플랫폼 어플리케이션을 만들어보는 팀 프로젝트 입니다.<br>
 
 ---
 
@@ -40,13 +40,13 @@ Finn-project
 
 ### 어플리케이션 구동 영상 링크
 
-[업로드 대기중]
+[to:YouTube](https://youtu.be/N2_1WeTn_6k)
 
 ---
 
 ### API 문서 링크
 
-[gitbook is here!](https://himanmengit.gitbooks.io/airbnb/content/)
+[to:gitbooks](https://himanmengit.gitbooks.io/airbnb/content/)
 
 ---
 
